@@ -79,6 +79,8 @@ The 🎨 **Theme** button on the homepage switches the colors of the whole site,
 
 The colors are in `assets/portal.css` (one block per theme), and the list of themes is in `assets/theme.js`.
 
+Every page has a **city skyline** in the background (`assets/skyline.js`), colored to match the theme. In the 🎄 Christmas theme it's a snowy city at night with a moon. Apartment lights switch on and off one at a time, every 5–10 seconds.
+
 ## Player name
 
 The first time someone opens the landing page, it asks for their name. They can type one, or build a silly name like "Curious Cucumber" from two word lists. The name is saved in that browser and used again next time. The **✏️ Change name** button lets them change it, and the game fills it in as Player 1.

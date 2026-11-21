@@ -162,6 +162,12 @@
   --teal-tint: var(--alabaster-grey);
   --yellow-tint: var(--alabaster-grey);
 
+  --sky-far: var(--alabaster-grey);
+  --sky-near: var(--pale-slate);
+  --win-off: var(--platinum);
+  --win-on: var(--bright-snow);
+  --win-glow: transparent;
+
   --overlay: rgba(33, 37, 41, 0.55);
   --shadow: 0 5px 0 rgba(33, 37, 41, 0.12), 0 12px 24px rgba(33, 37, 41, 0.12);
   --press: rgba(33, 37, 41, 0.25);
@@ -185,8 +191,9 @@
   --on-coral: var(--vanilla-cream);
   --on-teal: #14261a;
 
-  --bg: #24442b;
-  --bg-image: linear-gradient(180deg, #1b3622 0%, #24442b 50%, var(--hunter-green) 100%);
+  --bg: #0f2117;
+  --bg-image: linear-gradient(180deg, #050d08 0%, #0f2117 40%, #1f3d28 78%, #2c5234 100%);
+  --blob-alpha: 0%;
   --surface: #2c5234;
   --surface-2: var(--hunter-green);
   --line: #4d7a52;
@@ -196,10 +203,23 @@
   --coral-tint: #4a3330;
   --teal-tint: #33593a;
   --yellow-tint: #3d5a30;
+
+  /* Skyline at night */
+  --sky-far: #10241a;
+  --sky-near: #07110b;
+  --win-off: #1b2d21;
+  --win-on: #ffe6a3;
+  --win-glow: rgba(255, 210, 110, 0.8);
 }
 
-/* Player colors follow the theme */
+/* Player colors and skyline colors follow the theme */
 :root {
+  --sky-far: color-mix(in srgb, var(--surface) 65%, var(--bg));
+  --sky-near: color-mix(in srgb, var(--bg) 70%, #000);
+  --win-off: color-mix(in srgb, var(--sky-near) 85%, #fff);
+  --win-on: color-mix(in srgb, var(--yellow) 55%, #fff);
+  --win-glow: color-mix(in srgb, var(--yellow) 60%, transparent);
+
   --p1: var(--coral);  --p1-soft: var(--coral-tint);
   --p2: var(--teal);   --p2-soft: var(--teal-tint);
   --p3: var(--yellow); --p3-soft: var(--yellow-tint);
@@ -257,6 +277,84 @@ body {
 @keyframes snowfall {
   from { transform: translate3d(0, 0, 0); }
   to   { transform: translate3d(30px, 50%, 0); }
+}
+
+/* ---------- City skyline (built by assets/skyline.js) ---------- */
+.skyline {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: clamp(130px, 30vh, 300px);
+  z-index: -2;            /* behind content and behind the Christmas snow */
+  pointer-events: none;
+  overflow: hidden;
+}
+.skyline-row {
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 2400px;
+  display: flex;
+  align-items: flex-end;
+}
+.skyline-far { height: 100%; }
+.skyline-near { height: 82%; }
+.skyline .bld { position: relative; flex: none; background-color: var(--sky-near); transition: background-color .3s; }
+.skyline-far .bld { background-color: var(--sky-far); margin-right: -6px; }
+.skyline .bld.spire::before,
+.skyline .bld.antenna::before {
+  content: ""; position: absolute; bottom: 100%; left: 50%;
+  width: 4px; height: 26px; transform: translateX(-50%);
+  background: inherit;
+}
+.skyline .bld.antenna::after {           /* little blinking light on top of the antenna */
+  content: ""; position: absolute; bottom: calc(100% + 24px); left: 50%;
+  width: 6px; height: 6px; border-radius: 50%; transform: translateX(-50%);
+  background: var(--coral); box-shadow: 0 0 6px var(--coral);
+  animation: beacon 2.4s ease-in-out infinite;
+}
+.skyline .bld.stepped::before {
+  content: ""; position: absolute; bottom: 100%; left: 18%;
+  width: 64%; height: 14px; background: inherit;
+}
+.skyline .wins {
+  position: absolute;
+  inset: 10px 7px 0 7px;
+  display: grid;
+  grid-auto-rows: 8px;
+  gap: 6px 5px;
+  overflow: hidden;
+}
+.skyline .win {
+  background: var(--win-off);
+  border-radius: 1px;
+  transition: background-color 1.2s ease, box-shadow 1.2s ease;
+}
+.skyline .win.on { background: var(--win-on); box-shadow: 0 0 6px var(--win-glow); }
+.skyline-moon { display: none; }
+@keyframes beacon { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+
+/* Christmas: night city with a moon, snowy rooftops and festive roof lights */
+:root[data-theme="christmas"] .skyline-moon {
+  display: block;
+  position: fixed; top: 11vh; right: 7%;   /* high in the sky, not clipped by the skyline */
+  width: clamp(38px, 6vw, 64px); aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fffdf2, var(--vanilla-cream) 60%, #d9cfb2);
+  box-shadow: 0 0 30px rgba(242, 232, 207, .55), 0 0 80px rgba(242, 232, 207, .25);
+}
+:root[data-theme="christmas"] .skyline-near .bld { border-top: 4px solid #f4f7f4; }
+:root[data-theme="christmas"] .skyline-far .bld { border-top: 3px solid rgba(244, 247, 244, .55); }
+:root[data-theme="christmas"] .skyline-near .bld.festive {
+  background-image:
+    radial-gradient(circle, var(--blushed-brick) 0 2px, transparent 2.6px),
+    radial-gradient(circle, var(--yellow-green) 0 2px, transparent 2.6px);
+  background-size: 16px 8px, 16px 8px;
+  background-position: 0 1px, 8px 1px;
+  background-repeat: repeat-x;
+  animation: twinkle 1.8s steps(1) infinite;
+}
+@keyframes twinkle {
+  0%   { background-position: 0 1px, 8px 1px; }
+  50%  { background-position: 8px 1px, 0 1px; }
 }
 
 button, input { font-family: inherit; }

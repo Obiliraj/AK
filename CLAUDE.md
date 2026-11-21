@@ -43,6 +43,13 @@ New games must get their own `README.md` in the same style.
   Ocean Sunset (`sunset`), Silver Steel (`steel`, the only light theme), Christmas (`christmas`, CSS snowfall
   via `body::before/::after`). To add a theme: add a `:root[data-theme="x"]` block in `portal.css` and an entry in `assets/theme.js`.
   Every new page must include `<script src="…/assets/theme.js"></script>` right after the theme-color meta tag.
+- **Skyline background:** `assets/skyline.js` (loaded at the end of `<body>` on every page) builds a city skyline from
+  HTML elements (far silhouettes + near buildings with apartment windows), fixed at the bottom behind content
+  (`z-index: -2`; Christmas snow is `-1`, so it falls in front). Colors come from `--sky-far`, `--sky-near`,
+  `--win-off`, `--win-on`, `--win-glow` per theme. Christmas shows the city at night with a moon, snowy rooftops and
+  twinkling roof lights. **Window lights (owner's requirement):** one at a time, at a random interval of 5–10 s,
+  one lit on-screen apartment switches off and a different one switches on 0.7 s later. Never switch many at once.
+  New pages must include `<script src="…/assets/skyline.js"></script>` before `</body>`.
 - **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
   emoji as icons. Keep pages working without the font.
 - **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`), always in try/catch.
@@ -117,5 +124,7 @@ and no console errors. Playwright with Chromium works well:
 4. Quiz Champs with 11 themes (first as JS files).
 5. Quiz questions converted to the JSON format above.
 6. Site-wide color theme picker with six themes.
+7. Per-folder game READMEs, this file, and the question validator.
+8. City skyline background; Christmas night city with wandering window lights and snow.
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
