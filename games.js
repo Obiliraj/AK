@@ -1,6 +1,7 @@
 /*
   List of games shown on the landing page.
   To add a new game, put its folder in /games and add an entry here.
+  color: "yellow", "coral" or "teal" (these follow the chosen color theme).
 */
 window.PORTAL_GAMES = [
   {
@@ -10,7 +11,7 @@ window.PORTAL_GAMES = [
     players: "2–4 players",
     age: "Ages 4+",
     url: "games/would-you-rather/",
-    color: "#00A8B5"
+    color: "teal"
   },
   {
     title: "Quiz Champs",
@@ -19,7 +20,7 @@ window.PORTAL_GAMES = [
     players: "1–4 players",
     age: "Ages 8+",
     url: "games/quiz/",
-    color: "#FAD201"
+    color: "yellow"
   }
-  // { title: "Next Game", emoji: "🎲", description: "...", players: "1–4 players", age: "Ages 5+", url: "games/next-game/", color: "#E15959" }
+  // { title: "Next Game", emoji: "🎲", description: "...", players: "1–4 players", age: "Ages 5+", url: "games/next-game/", color: "coral" }
 ];

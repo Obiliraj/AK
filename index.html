@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#1A252C" />
+  <script src="assets/theme.js"></script>
   <title>Kids Game Zone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,6 +85,7 @@
       margin-top: auto;
       align-self: flex-start;
       background: var(--game-color);
+      color: var(--game-on);
     }
     .coming-soon {
       display: grid;
@@ -117,7 +119,7 @@
     /* ---------- Name dialog ---------- */
     .overlay {
       position: fixed; inset: 0; z-index: 50;
-      background: rgba(10, 16, 20, 0.75);
+      background: var(--overlay);
       display: grid; place-items: center;
       padding: 16px;
       overflow-y: auto;
@@ -176,9 +178,60 @@
       transition: transform .1s ease;
     }
     .word:active { transform: scale(.94); }
-    .word-group.first .word.on { background: var(--coral); border-color: var(--coral); color: var(--on-color); }
-    .word-group.last .word.on { background: var(--teal); border-color: var(--teal); color: var(--on-color); }
+    .word-group.first .word.on { background: var(--coral); border-color: var(--coral); color: var(--on-coral); }
+    .word-group.last .word.on { background: var(--teal); border-color: var(--teal); color: var(--on-teal); }
     .name-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    /* ---------- Color theme picker ---------- */
+    header { position: relative; }
+    .theme-btn { position: absolute; top: 16px; right: 0; }
+    .theme-box {
+      position: relative;
+      width: 100%; max-width: 720px;
+      background: var(--surface);
+      border: 4px solid var(--yellow);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 32px);
+      text-align: center;
+      animation: popIn .3s cubic-bezier(.3,1.5,.5,1);
+    }
+    .theme-box h2 { margin: 0 0 6px; font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+    .theme-box .sub { margin: 0; color: var(--ink-soft); font-size: 1.1rem; }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+    .theme-card {
+      position: relative;
+      display: flex; flex-direction: column; gap: 10px;
+      padding: 14px;
+      border-radius: 20px;
+      border: 4px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 1.1rem; font-weight: 600;
+      text-align: left;
+      transition: transform .12s ease, border-color .12s;
+    }
+    .theme-card:active { transform: scale(.97); }
+    .theme-card[aria-pressed="true"] { border-color: var(--yellow); }
+    .theme-card[aria-pressed="true"]::after {
+      content: "✓"; position: absolute; top: 10px; right: 12px;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--yellow); color: var(--on-yellow); font-size: 1rem;
+    }
+    .theme-card .swatch { display: flex; height: 34px; border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 2px rgba(0,0,0,.15); }
+    .theme-card .swatch span { flex: 1; }
+    @media (max-width: 520px) {
+      header { padding-top: 64px; }
+      .theme-btn { top: 12px; }
+      .theme-grid { grid-template-columns: 1fr 1fr; }
+      .theme-card { font-size: 1rem; padding: 10px; }
+    }
+
     @keyframes popIn { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
     @keyframes bob { 0%,100% { transform: translateY(0) rotate(-4deg);} 50% { transform: translateY(-10px) rotate(4deg);} }
   </style>
@@ -186,6 +239,7 @@
 <body>
   <div class="wrap">
     <header>
+      <button type="button" class="btn ghost small theme-btn" id="themeBtn" aria-haspopup="dialog">🎨 Theme</button>
       <div class="logo" aria-hidden="true">🎈</div>
       <h1><span>Kids</span> <span>Game</span> <span>Zone</span></h1>
       <p class="tagline">Fun games to play together with family and friends!</p>
@@ -201,6 +255,17 @@
     </main>
 
     <footer>Made with 💛 for curious kids</footer>
+  </div>
+
+  <!-- Color theme picker -->
+  <div class="overlay" id="themeOverlay" hidden>
+    <div class="theme-box" role="dialog" aria-modal="true" aria-labelledby="themeTitle">
+      <button type="button" class="close-x" id="themeClose" aria-label="Close">✕</button>
+      <h2 id="themeTitle">🎨 Pick a color theme</h2>
+      <p class="sub">Tap a theme to try it. It's used in every game.</p>
+      <div class="theme-grid" id="themeGrid"></div>
+      <button type="button" class="btn yellow" id="themeDone">✅ Done</button>
+    </div>
   </div>
 
   <!-- Name picker -->
@@ -237,8 +302,12 @@
       const grid = document.getElementById("games");
       const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
       const games = window.PORTAL_GAMES || [];
+      // "yellow", "coral" and "teal" follow the chosen color theme
+      const gameColors = (c) => ["yellow", "coral", "teal"].includes(c)
+        ? `--game-color:var(--${c});--game-on:var(--on-${c})`
+        : `--game-color:${esc(c || "var(--teal)")};--game-on:#1A252C`;
       grid.innerHTML = games.map((g) => `
-        <a class="game-card" href="${esc(g.url)}" style="--game-color:${esc(g.color || "#00A8B5")}">
+        <a class="game-card" href="${esc(g.url)}" style="${gameColors(g.color)}">
           <div class="game-art" aria-hidden="true">${esc(g.emoji || "🎲")}</div>
           <div class="game-body">
             <h3>${esc(g.title)}</h3>
@@ -251,6 +320,37 @@
           </div>
         </a>`).join("") + `
         <div class="coming-soon"><div>🧩</div><p>More games<br>coming soon!</p></div>`;
+    })();
+
+    /* ---------- Color theme ---------- */
+    (function () {
+      const $ = (id) => document.getElementById(id);
+      const grid = $("themeGrid");
+      function render() {
+        const current = SiteTheme.get();
+        grid.innerHTML = "";
+        SiteTheme.list.forEach((t) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "theme-card";
+          b.setAttribute("aria-pressed", String(t.id === current));
+          const name = document.createElement("span");
+          name.textContent = `${t.emoji} ${t.name}`;
+          const sw = document.createElement("span");
+          sw.className = "swatch";
+          sw.setAttribute("aria-hidden", "true");
+          t.swatch.forEach((c) => { const x = document.createElement("span"); x.style.background = c; sw.appendChild(x); });
+          b.append(name, sw);
+          b.addEventListener("click", () => { SiteTheme.set(t.id); render(); grid.querySelector('[aria-pressed="true"]').focus(); });
+          grid.appendChild(b);
+        });
+      }
+      function open() { render(); $("themeOverlay").hidden = false; document.body.style.overflow = "hidden"; }
+      function close() { $("themeOverlay").hidden = true; document.body.style.overflow = ""; $("themeBtn").focus(); }
+      $("themeBtn").addEventListener("click", open);
+      $("themeClose").addEventListener("click", close);
+      $("themeDone").addEventListener("click", close);
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("themeOverlay").hidden) close(); });
     })();
 
     /* ---------- Player name ---------- */

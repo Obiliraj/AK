@@ -9,12 +9,17 @@
   const STREAK_BONUS_10 = 2;  // extra bonus for 10 right in a row
   const AVATARS = ["🦁", "🐼", "🦊", "🐸", "🐵", "🦄", "🐯", "🐧", "🐨", "🐙", "🦖", "🐰"];
   const COLORS = [
-    { c: "#E15959", soft: "#3A2A31" },
-    { c: "#00A8B5", soft: "#173A42" },
-    { c: "#FAD201", soft: "#3A3A22" },
-    { c: "#FFFFFF", soft: "#2C3E49" }
+    { c: "var(--p1)", soft: "var(--p1-soft)" },
+    { c: "var(--p2)", soft: "var(--p2-soft)" },
+    { c: "var(--p3)", soft: "var(--p3-soft)" },
+    { c: "var(--p4)", soft: "var(--p4-soft)" }
   ];
-  const THEME_TINTS = { "#E15959": "#3A2A31", "#00A8B5": "#173A42", "#FAD201": "#3A3A22" };
+  // Theme tile colors: "yellow", "coral" or "teal" follow the site's color theme
+  const ROLES = ["yellow", "coral", "teal"];
+  function tileColors(color) {
+    if (ROLES.includes(color)) return `--tcolor:var(--${color});--tsoft:var(--${color}-tint);--ton:var(--on-${color})`;
+    return `--tcolor:${color};--tsoft:var(--surface-2);--ton:#1A252C`;
+  }
   const LETTERS = ["A", "B", "C", "D", "E", "F"];
 
   const $ = (id) => document.getElementById(id);
@@ -53,7 +58,7 @@
         const r = await fetch("themes/" + t.file, { cache: "no-cache" });
         if (!r.ok) throw new Error(r.status);
         const raw = await r.json();
-        const theme = { id: t.id, name: t.name, emoji: t.emoji || "❓", color: t.color || "#00A8B5", imageStyle: t.imageStyle || "" };
+        const theme = { id: t.id, name: t.name, emoji: t.emoji || "❓", color: t.color || "teal", imageStyle: t.imageStyle || "" };
         theme.questions = (Array.isArray(raw) ? raw : []).map((x) => normalise(x, theme)).filter(Boolean);
         return theme;
       } catch (e) {
@@ -106,7 +111,7 @@
   function renderThemes() {
     $("themeGrid").innerHTML = THEMES.map((t) => `
       <button type="button" class="theme" data-id="${esc(t.id)}" aria-pressed="${state.selected.has(t.id)}"
-        style="--tcolor:${t.color};--tsoft:${THEME_TINTS[t.color] || "#2C3E49"}">
+        style="${tileColors(t.color)}">
         <span class="emoji" aria-hidden="true">${esc(t.emoji)}</span>
         <span>${esc(t.name)}</span>
         <span class="n">${t.questions.length} questions</span>
@@ -276,7 +281,7 @@
 
     document.querySelectorAll(".answer").forEach((b) => {
       b.disabled = true;
-      if (b.dataset.choice === q.answer) b.classList.add("correct");
+      if (b.dataset.choice === q.answer) { b.classList.add("correct"); b.querySelector(".key").textContent = "✓"; }
       else if (b !== btn) b.classList.add("dim");
     });
 
@@ -296,6 +301,7 @@
       $("feedback").className = "feedback good";
     } else {
       btn.classList.add("wrong");
+      btn.querySelector(".key").textContent = "✗";
       const lost = p.streak;
       p.streak = 0;
       html = `❌ Oops! The answer is <b>${esc(q.answer)}</b>.`;

@@ -1,35 +1,212 @@
-/* Shared styles for the Kids Game Zone (dark theme)
-   Palette: #FAD201 yellow · #E15959 coral · #00A8B5 teal · #1A252C navy · #FFFFFF white */
+/* ============================================================
+   Shared styles for the Kids Game Zone
+   Color themes are switched with <html data-theme="...">.
+   Every page uses these "role" colors, so a theme only has to
+   set them once:
+     --yellow  big buttons, highlights, card borders
+     --coral   option A, wrong answers, player 1
+     --teal    option B, right answers, player 2
+     --on-*    text color that sits on top of that color
+   ============================================================ */
+
+/* ---------- Midnight Pop (default) ---------- */
 :root {
-  /* palette */
   --yellow: #FAD201;
   --coral: #E15959;
   --teal: #00A8B5;
-  --navy: #1A252C;
-  --white: #FFFFFF;
+  --on-yellow: #1A252C;
+  --on-coral: #1A252C;
+  --on-teal: #1A252C;
 
-  /* surfaces built from the navy base */
   --bg: #1A252C;
+  --bg-image: none;
   --surface: #23323B;
   --surface-2: #2C3E49;
   --line: #3A4E5A;
-
-  /* text */
   --ink: #FFFFFF;
   --ink-soft: #B9C6CD;
-  --on-color: #1A252C; /* text on yellow / teal / coral fills */
 
-  /* tints for coloured panels */
   --coral-tint: #3A2A31;
   --teal-tint: #173A42;
   --yellow-tint: #3A3A22;
 
+  --overlay: rgba(10, 16, 20, 0.75);
   --shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 12px 28px rgba(0, 0, 0, 0.35);
-  --radius: 24px;
-  --font: "Fredoka", "Baloo 2", "Comic Sans MS", "Trebuchet MS", system-ui, sans-serif;
+  --press: rgba(0, 0, 0, 0.4);
+  --blob-alpha: 16%;
 
   color-scheme: dark;
 }
+
+/* ---------- Berry Twilight ---------- */
+:root[data-theme="berry"] {
+  --cherry-rose: #b7094c;
+  --dark-raspberry: #a01a58;
+  --royal-plum: #892b64;
+  --velvet-purple: #723c70;
+  --dusty-grape: #5c4d7d;
+  --dusk-blue: #455e89;
+  --rich-cerulean: #2e6f95;
+  --cerulean: #1780a1;
+  --pacific-cyan: #0091ad;
+
+  --yellow: var(--pacific-cyan);
+  --coral: var(--cherry-rose);
+  --teal: var(--cerulean);
+  --on-yellow: #FFFFFF;
+  --on-coral: #FFFFFF;
+  --on-teal: #FFFFFF;
+
+  --bg: #1e1027;
+  --bg-image: linear-gradient(160deg, #2c0b20 0%, #1e1027 45%, #0c2333 100%);
+  --surface: #2a1a36;
+  --surface-2: #3a2648;
+  --line: var(--dusty-grape);
+  --ink: #FFFFFF;
+  --ink-soft: #d6c7dd;
+
+  --coral-tint: #3d1230;
+  --teal-tint: #13304a;
+  --yellow-tint: #10334a;
+}
+
+/* ---------- Neon Lagoon ---------- */
+:root[data-theme="lagoon"] {
+  --dark-amethyst: #3c1642;
+  --stormy-teal: #086375;
+  --turquoise: #1dd3b0;
+  --green-yellow: #affc41;
+  --light-green: #b2ff9e;
+
+  --yellow: var(--green-yellow);
+  --coral: var(--stormy-teal);
+  --teal: var(--turquoise);
+  --on-yellow: var(--dark-amethyst);
+  --on-coral: #FFFFFF;
+  --on-teal: var(--dark-amethyst);
+
+  --bg: #2b0f30;
+  --bg-image: linear-gradient(170deg, #3c1642 0%, #2b0f30 55%, #062f38 100%);
+  --surface: #3c1642;
+  --surface-2: #4d2054;
+  --line: #6a3570;
+  --ink: #FFFFFF;
+  --ink-soft: var(--light-green);
+
+  --coral-tint: #0d3a45;
+  --teal-tint: #134a4a;
+  --yellow-tint: #3c4a26;
+}
+
+/* ---------- Ocean Sunset ---------- */
+:root[data-theme="sunset"] {
+  --ink-black: #001219;
+  --dark-teal: #005f73;
+  --dark-cyan: #0a9396;
+  --pearl-aqua: #94d2bd;
+  --vanilla-custard: #e9d8a6;
+  --golden-orange: #ee9b00;
+  --burnt-caramel: #ca6702;
+  --rusty-spice: #bb3e03;
+  --oxidized-iron: #ae2012;
+  --brown-red: #9b2226;
+
+  --yellow: var(--golden-orange);
+  --coral: var(--rusty-spice);
+  --teal: var(--dark-cyan);
+  --on-yellow: var(--ink-black);
+  --on-coral: #FFFFFF;
+  --on-teal: var(--ink-black);
+
+  --bg: var(--ink-black);
+  --bg-image: linear-gradient(180deg, #001219 0%, #001219 55%, #2a1410 85%, #3d1714 100%);
+  --surface: #062530;
+  --surface-2: #0b3440;
+  --line: var(--dark-teal);
+  --ink: #FFFFFF;
+  --ink-soft: var(--vanilla-custard);
+
+  --coral-tint: #2e1608;
+  --teal-tint: #04323a;
+  --yellow-tint: #302408;
+}
+
+/* ---------- Silver Steel (light) ---------- */
+:root[data-theme="steel"] {
+  --bright-snow: #f8f9fa;
+  --platinum: #e9ecef;
+  --alabaster-grey: #dee2e6;
+  --pale-slate: #ced4da;
+  --pale-slate-2: #adb5bd;
+  --slate-grey: #6c757d;
+  --iron-grey: #495057;
+  --gunmetal: #343a40;
+  --carbon-black: #212529;
+
+  --yellow: var(--gunmetal);
+  --coral: var(--pale-slate-2);
+  --teal: var(--iron-grey);
+  --on-yellow: var(--bright-snow);
+  --on-coral: var(--carbon-black);
+  --on-teal: var(--bright-snow);
+
+  --bg: var(--platinum);
+  --bg-image: linear-gradient(180deg, var(--bright-snow), var(--platinum));
+  --surface: var(--bright-snow);
+  --surface-2: var(--alabaster-grey);
+  --line: var(--pale-slate);
+  --ink: var(--carbon-black);
+  --ink-soft: var(--slate-grey);
+
+  --coral-tint: var(--platinum);
+  --teal-tint: var(--alabaster-grey);
+  --yellow-tint: var(--alabaster-grey);
+
+  --overlay: rgba(33, 37, 41, 0.55);
+  --shadow: 0 5px 0 rgba(33, 37, 41, 0.12), 0 12px 24px rgba(33, 37, 41, 0.12);
+  --press: rgba(33, 37, 41, 0.25);
+  --blob-alpha: 20%;
+
+  color-scheme: light;
+}
+
+/* ---------- Christmas ---------- */
+:root[data-theme="christmas"] {
+  --hunter-green: #386641;
+  --sage-green: #6a994e;
+  --yellow-green: #a7c957;
+  --vanilla-cream: #f2e8cf;
+  --blushed-brick: #bc4749;
+
+  --yellow: var(--yellow-green);
+  --coral: var(--blushed-brick);
+  --teal: var(--sage-green);
+  --on-yellow: #1c3322;
+  --on-coral: var(--vanilla-cream);
+  --on-teal: #14261a;
+
+  --bg: #24442b;
+  --bg-image: linear-gradient(180deg, #1b3622 0%, #24442b 50%, var(--hunter-green) 100%);
+  --surface: #2c5234;
+  --surface-2: var(--hunter-green);
+  --line: #4d7a52;
+  --ink: var(--vanilla-cream);
+  --ink-soft: #d9d0b4;
+
+  --coral-tint: #4a3330;
+  --teal-tint: #33593a;
+  --yellow-tint: #3d5a30;
+}
+
+/* Player colors follow the theme */
+:root {
+  --p1: var(--coral);  --p1-soft: var(--coral-tint);
+  --p2: var(--teal);   --p2-soft: var(--teal-tint);
+  --p3: var(--yellow); --p3-soft: var(--yellow-tint);
+  --p4: var(--ink);    --p4-soft: var(--surface-2);
+}
+
+/* ============================================================ */
 
 * { box-sizing: border-box; }
 
@@ -39,17 +216,47 @@ html, body {
 }
 
 body {
-  font-family: var(--font);
+  font-family: "Fredoka", "Baloo 2", "Comic Sans MS", "Trebuchet MS", system-ui, sans-serif;
   color: var(--ink);
   background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 8% 14%, rgba(225, 89, 89, 0.16) 0 70px, transparent 71px),
-    radial-gradient(circle at 92% 10%, rgba(0, 168, 181, 0.16) 0 90px, transparent 91px),
-    radial-gradient(circle at 88% 86%, rgba(250, 210, 1, 0.12) 0 70px, transparent 71px),
-    radial-gradient(circle at 4% 92%, rgba(0, 168, 181, 0.12) 0 90px, transparent 91px);
+    radial-gradient(circle at 8% 14%, color-mix(in srgb, var(--coral) var(--blob-alpha), transparent) 0 70px, transparent 71px),
+    radial-gradient(circle at 92% 10%, color-mix(in srgb, var(--teal) var(--blob-alpha), transparent) 0 90px, transparent 91px),
+    radial-gradient(circle at 88% 86%, color-mix(in srgb, var(--yellow) var(--blob-alpha), transparent) 0 70px, transparent 71px),
+    radial-gradient(circle at 4% 92%, color-mix(in srgb, var(--teal) var(--blob-alpha), transparent) 0 90px, transparent 91px),
+    var(--bg-image);
   background-attachment: fixed;
   -webkit-tap-highlight-color: transparent;
   line-height: 1.4;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+/* ---------- Christmas snow (pure CSS) ---------- */
+:root[data-theme="christmas"] body::before,
+:root[data-theme="christmas"] body::after {
+  content: "";
+  position: fixed;
+  inset: -100% 0 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle, rgba(255,255,255,.8) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle, rgba(255,255,255,.9) 0 3.5px, transparent 4.5px);
+  background-size: 180px 180px, 120px 120px, 260px 260px;
+  background-position: 0 0, 40px 60px, 130px 30px;
+  animation: snowfall 14s linear infinite;
+}
+:root[data-theme="christmas"] body::after {
+  background-size: 220px 220px, 150px 150px, 320px 320px;
+  background-position: 90px 20px, 10px 100px, 200px 150px;
+  opacity: .7;
+  animation-duration: 22s;
+  filter: blur(1px);
+}
+@keyframes snowfall {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(30px, 50%, 0); }
 }
 
 button, input { font-family: inherit; }
@@ -76,24 +283,24 @@ button {
   padding: 14px 28px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--on-color);
+  color: var(--on-teal);
   background: var(--teal);
-  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 0 var(--press);
   text-decoration: none;
   transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.15s;
   min-height: 52px;
 }
 .btn:hover { filter: brightness(1.08); }
-.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--press); }
 .btn:disabled { filter: grayscale(0.9) opacity(0.45); cursor: not-allowed; transform: none; }
-.btn.pink { background: var(--coral); }
-.btn.teal { background: var(--teal); }
+.btn.pink { background: var(--coral); color: var(--on-coral); }
+.btn.teal { background: var(--teal); color: var(--on-teal); }
 .btn.orange,
-.btn.yellow { background: var(--yellow); }
+.btn.yellow { background: var(--yellow); color: var(--on-yellow); }
 .btn.ghost {
   background: var(--surface-2);
   color: var(--ink);
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 0 var(--press);
 }
 .btn.small { padding: 8px 16px; font-size: 1rem; min-height: 42px; }
 

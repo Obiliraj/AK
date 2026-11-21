@@ -62,6 +62,21 @@ Flag pictures come from [flag-icons](https://github.com/lipis/flag-icons) and lo
 
 **Scoring:** 1 point for each right answer. 5 right in a row gives +1 bonus point, and 10 in a row gives +2 more. After 10, a new streak starts, so 15 in a row gives +1 again and 20 gives +2. A wrong answer resets the streak.
 
+## Color themes
+
+The 🎨 **Theme** button on the homepage switches the colors of the whole site, games included. The choice is saved in the browser.
+
+| Theme | Notes |
+|---|---|
+| 🌙 Midnight Pop | The original dark theme (default) |
+| 🍇 Berry Twilight | Cherry-rose to pacific-cyan gradient |
+| 🐢 Neon Lagoon | Dark amethyst with turquoise and lime |
+| 🌅 Ocean Sunset | Ink black with golden orange and rust |
+| 🪙 Silver Steel | A light grey theme |
+| 🎄 Christmas | Green and cream, with CSS snow falling in the background |
+
+The colors are in `assets/portal.css` (one block per theme), and the list of themes is in `assets/theme.js`.
+
 ## Player name
 
 The first time someone opens the landing page, it asks for their name. They can type one, or build a silly name like "Curious Cucumber" from two word lists. The name is saved in that browser and used again next time. The **✏️ Change name** button lets them change it, and the game fills it in as Player 1.

@@ -47,7 +47,7 @@
 }
 .count:active { transform: scale(.94); }
 .count[aria-checked="true"] {
-  background: var(--teal); color: var(--on-color); border-color: var(--teal);
+  background: var(--teal); color: var(--on-teal); border-color: var(--teal);
   transform: scale(1.06); box-shadow: 0 5px 0 rgba(0,0,0,.4);
 }
 
@@ -89,7 +89,7 @@
   content: "✓"; position: absolute; top: 6px; right: 8px;
   width: 28px; height: 28px; border-radius: 50%;
   display: grid; place-items: center;
-  background: var(--tcolor); color: var(--on-color); font-weight: 700; font-size: 1rem;
+  background: var(--tcolor); color: var(--ton); font-weight: 700; font-size: 1rem;
 }
 .setup-error { color: var(--coral); font-weight: 600; font-size: 1.1rem; margin: 16px 0 0; }
 .start { margin-top: 20px; }
@@ -143,7 +143,7 @@
 .qimage.flag { background: var(--surface-2); padding: 14px; }
 .qimage.flag img { width: 100%; max-height: none; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.4); }
 .qimage.logo img { width: 160px; height: 160px; object-fit: contain; }
-.img-error { color: var(--on-color); font-weight: 600; }
+.img-error { color: #212529; font-weight: 600; }
 .img-error p { margin: 0 0 10px; }
 .speak { margin-bottom: 16px; }
 
@@ -170,10 +170,12 @@
 .answer:not(:disabled):hover { border-color: var(--teal); }
 .answer:not(:disabled):active { transform: scale(.97); }
 .answer:disabled { cursor: default; }
-.answer.correct { background: var(--teal); border-color: var(--teal); color: var(--on-color); }
-.answer.correct .key { background: var(--on-color); color: var(--teal); }
-.answer.wrong { background: var(--coral); border-color: var(--coral); color: var(--on-color); animation: shake .4s ease; }
-.answer.wrong .key { background: var(--on-color); color: var(--coral); }
+.answer.correct { background: var(--teal); border-color: var(--teal); color: var(--on-teal); }
+.answer.correct .key { background: var(--on-teal); color: var(--teal); }
+.answer.wrong { background: var(--coral); border-color: var(--coral); color: var(--on-coral); animation: shake .4s ease; }
+.answer.wrong .key { background: var(--on-coral); color: var(--coral); }
+.answers.tf .answer.correct .key, .answers.tf .answer.wrong .key { display: grid; }
+.answers.tf .answer.correct, .answers.tf .answer.wrong { padding-left: 56px; }
 .answer.dim { opacity: .45; }
 .answers.tf .answer { text-align: center; padding-left: 16px; font-size: clamp(1.3rem, 4.5vw, 1.6rem); min-height: 84px; }
 .answers.tf .answer .key { display: none; }

@@ -53,7 +53,7 @@
 .count:active { transform: scale(.94); }
 .count[aria-checked="true"] {
   background: var(--teal);
-  color: var(--on-color);
+  color: var(--on-teal);
   border-color: var(--teal);
   transform: scale(1.06);
   box-shadow: 0 5px 0 rgba(0,0,0,.4);
@@ -152,8 +152,8 @@
   border: 6px solid var(--yellow);
   box-shadow: 0 6px 16px rgba(0,0,0,.45);
 }
-.deck-card.c3 { transform: translate(8px, 8px) rotate(4deg); background-color: #008A95; }
-.deck-card.c2 { transform: translate(4px, 4px) rotate(2deg); background-color: #0098A4; }
+.deck-card.c3 { transform: translate(8px, 8px) rotate(4deg); background-color: color-mix(in srgb, var(--teal) 80%, #000); }
+.deck-card.c2 { transform: translate(4px, 4px) rotate(2deg); background-color: color-mix(in srgb, var(--teal) 90%, #000); }
 .deck-card.c1 { display: grid; place-items: center; }
 .deck-face {
   font-size: 5rem; font-weight: 700; color: var(--yellow);
@@ -227,18 +227,18 @@
   position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
   width: 40px; height: 40px; border-radius: 50%;
   display: grid; place-items: center;
-  color: var(--on-color); font-weight: 700; font-size: 1.3rem;
+  color: var(--on-coral); font-weight: 700; font-size: 1.3rem;
   box-shadow: 0 3px 0 rgba(0,0,0,.35);
 }
 .option.a .opt-label { background: var(--coral); }
-.option.b .opt-label { background: var(--teal); }
+.option.b .opt-label { background: var(--teal); color: var(--on-teal); }
 .opt-text { font-size: clamp(1.25rem, 3.8vw, 1.7rem); font-weight: 600; }
 .opt-text::first-letter { text-transform: uppercase; }
 .or {
   align-self: center;
   font-weight: 700; font-size: 1.4rem;
   background: var(--yellow);
-  color: var(--on-color);
+  color: var(--on-yellow);
   width: 56px; height: 56px; border-radius: 50%;
   display: grid; place-items: center;
   box-shadow: 0 4px 0 rgba(0,0,0,.35);
@@ -286,8 +286,8 @@
 .pick.a { color: var(--coral); border-color: var(--coral); }
 .pick.b { color: var(--teal); border-color: var(--teal); }
 .pick:active { transform: scale(.92); }
-.pick.a.on { background: var(--coral); color: var(--on-color); border-color: var(--coral); }
-.pick.b.on { background: var(--teal); color: var(--on-color); border-color: var(--teal); }
+.pick.a.on { background: var(--coral); color: var(--on-coral); border-color: var(--coral); }
+.pick.b.on { background: var(--teal); color: var(--on-teal); border-color: var(--teal); }
 .explain { font-size: 1.2rem; margin: 18px 0 4px; }
 #nextBtn { margin-top: 18px; }
 
