@@ -98,6 +98,88 @@
     }
     .coming-soon div { font-size: 3rem; }
     footer { text-align: center; color: var(--ink-soft); padding: 0 0 32px; font-size: 0.95rem; }
+
+    /* ---------- Greeting ---------- */
+    .hello {
+      display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center;
+      gap: 10px 14px;
+      margin-top: 20px;
+      padding: 10px 12px 10px 20px;
+      background: var(--surface);
+      border: 2px solid var(--line);
+      border-radius: 999px;
+      font-size: clamp(1.15rem, 3.8vw, 1.4rem);
+      font-weight: 600;
+      max-width: 100%;
+    }
+    .hello b { color: var(--yellow); overflow-wrap: anywhere; }
+
+    /* ---------- Name dialog ---------- */
+    .overlay {
+      position: fixed; inset: 0; z-index: 50;
+      background: rgba(10, 16, 20, 0.75);
+      display: grid; place-items: center;
+      padding: 16px;
+      overflow-y: auto;
+    }
+    .overlay[hidden] { display: none; }
+    .name-box {
+      position: relative;
+      width: 100%; max-width: 620px;
+      background: var(--surface);
+      border: 4px solid var(--yellow);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 32px);
+      text-align: center;
+      animation: popIn .3s cubic-bezier(.3,1.5,.5,1);
+    }
+    .name-box h2 { margin: 0 0 6px; font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+    .name-box .sub { margin: 0 0 18px; color: var(--ink-soft); font-size: 1.1rem; }
+    .close-x {
+      position: absolute; top: 12px; right: 12px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: none; background: var(--surface-2); color: var(--ink);
+      font-size: 1.3rem;
+    }
+    .name-input {
+      width: 100%;
+      font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+      font-weight: 600;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 3px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .name-input:focus { outline: none; border-color: var(--yellow); }
+    .name-input::placeholder { color: var(--ink-soft); font-weight: 400; }
+    .divider { display: flex; align-items: center; gap: 12px; margin: 22px 0 14px; color: var(--ink-soft); font-weight: 600; }
+    .divider::before, .divider::after { content: ""; flex: 1; height: 2px; background: var(--line); }
+    .word-group { margin-bottom: 14px; text-align: left; }
+    .word-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    .word-head h3 { margin: 0; font-size: 1.1rem; }
+    .word-group.first h3 { color: var(--coral); }
+    .word-group.last h3 { color: var(--teal); }
+    .more { border: none; background: var(--surface-2); color: var(--ink); border-radius: 999px; padding: 6px 14px; font-size: .95rem; font-weight: 600; min-height: 36px; }
+    .words { display: flex; flex-wrap: wrap; gap: 8px; }
+    .word {
+      border: 3px solid var(--line);
+      background: var(--bg);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      min-height: 44px;
+      transition: transform .1s ease;
+    }
+    .word:active { transform: scale(.94); }
+    .word-group.first .word.on { background: var(--coral); border-color: var(--coral); color: var(--on-color); }
+    .word-group.last .word.on { background: var(--teal); border-color: var(--teal); color: var(--on-color); }
+    .name-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+    @keyframes popIn { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
     @keyframes bob { 0%,100% { transform: translateY(0) rotate(-4deg);} 50% { transform: translateY(-10px) rotate(4deg);} }
   </style>
 </head>
@@ -107,6 +189,10 @@
       <div class="logo" aria-hidden="true">🎈</div>
       <h1><span>Kids</span> <span>Game</span> <span>Zone</span></h1>
       <p class="tagline">Fun games to play together with family and friends!</p>
+      <div class="hello" id="hello" hidden>
+        <span>👋 Hi, <b id="helloName"></b>!</span>
+        <button type="button" class="btn ghost small" id="changeName">✏️ Change name</button>
+      </div>
     </header>
 
     <main>
@@ -117,7 +203,35 @@
     <footer>Made with 💛 for curious kids</footer>
   </div>
 
+  <!-- Name picker -->
+  <div class="overlay" id="nameOverlay" hidden>
+    <div class="name-box" role="dialog" aria-modal="true" aria-labelledby="nameTitle">
+      <button type="button" class="close-x" id="nameClose" aria-label="Close">✕</button>
+      <h2 id="nameTitle">What's your name?</h2>
+      <p class="sub">Type your name, or make a silly one below!</p>
+      <input class="name-input" id="nameInput" type="text" autocomplete="off" placeholder="Type your name" aria-label="Your name" />
+
+      <div class="divider">or make a silly name</div>
+
+      <div class="word-group first">
+        <div class="word-head"><h3>1. Pick a first name</h3><button type="button" class="more" data-more="first">🔀 More</button></div>
+        <div class="words" id="firstWords"></div>
+      </div>
+      <div class="word-group last">
+        <div class="word-head"><h3>2. Pick a last name</h3><button type="button" class="more" data-more="last">🔀 More</button></div>
+        <div class="words" id="lastWords"></div>
+      </div>
+
+      <div class="name-actions">
+        <button type="button" class="btn ghost" id="surprise">🎲 Surprise me</button>
+        <button type="button" class="btn yellow" id="saveName" disabled>✅ That's me!</button>
+      </div>
+    </div>
+  </div>
+
   <script src="games.js"></script>
+  <script src="assets/names.js"></script>
+  <script src="assets/player.js"></script>
   <script>
     (function () {
       const grid = document.getElementById("games");
@@ -137,6 +251,122 @@
           </div>
         </a>`).join("") + `
         <div class="coming-soon"><div>🧩</div><p>More games<br>coming soon!</p></div>`;
+    })();
+
+    /* ---------- Player name ---------- */
+    (function () {
+      const $ = (id) => document.getElementById(id);
+      const lists = window.SILLY_NAMES || { first: [], last: [] };
+      const SHOW = 8;
+      const picked = { first: "", last: "" };
+      const offset = { first: 0, last: 0 };
+      const pools = {
+        first: shuffle(lists.first),
+        last: shuffle(lists.last)
+      };
+      const input = $("nameInput");
+      input.maxLength = PlayerName.MAX;
+
+      function shuffle(a) {
+        a = a.slice();
+        for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+        return a;
+      }
+
+      function renderWords(part) {
+        const box = $(part + "Words");
+        const pool = pools[part];
+        const shown = [];
+        for (let i = 0; i < Math.min(SHOW, pool.length); i++) shown.push(pool[(offset[part] + i) % pool.length]);
+        if (picked[part] && !shown.includes(picked[part])) shown[0] = picked[part];
+        box.innerHTML = "";
+        shown.forEach((w) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "word" + (w === picked[part] ? " on" : "");
+          b.textContent = w;
+          b.setAttribute("aria-pressed", String(w === picked[part]));
+          b.addEventListener("click", () => {
+            picked[part] = picked[part] === w ? "" : w;
+            input.value = [picked.first, picked.last].filter(Boolean).join(" ");
+            renderWords(part);
+            updateSave();
+          });
+          box.appendChild(b);
+        });
+      }
+
+      document.querySelectorAll(".more").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const part = btn.dataset.more;
+          offset[part] = (offset[part] + SHOW) % Math.max(1, pools[part].length);
+          renderWords(part);
+        });
+      });
+
+      $("surprise").addEventListener("click", () => {
+        const pick = (a) => a[Math.floor(Math.random() * a.length)];
+        picked.first = pick(lists.first);
+        picked.last = pick(lists.last);
+        input.value = picked.first + " " + picked.last;
+        renderWords("first");
+        renderWords("last");
+        updateSave();
+      });
+
+      input.addEventListener("input", () => {
+        // typing your own name clears the silly-name picks
+        if (input.value !== [picked.first, picked.last].filter(Boolean).join(" ")) {
+          picked.first = picked.last = "";
+          renderWords("first");
+          renderWords("last");
+        }
+        updateSave();
+      });
+      input.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        e.preventDefault(); // stop the same key press from re-opening the dialog
+        if (!$("saveName").disabled) save();
+      });
+
+      function updateSave() { $("saveName").disabled = !input.value.trim(); }
+
+      function open() {
+        const current = PlayerName.get();
+        input.value = current;
+        picked.first = picked.last = "";
+        renderWords("first");
+        renderWords("last");
+        updateSave();
+        $("nameClose").hidden = !current; // first visit: a name is needed
+        $("nameOverlay").hidden = false;
+        document.body.style.overflow = "hidden";
+      }
+      function close() {
+        $("nameOverlay").hidden = true;
+        document.body.style.overflow = "";
+        $("changeName").focus();
+      }
+      function save() {
+        const name = PlayerName.set(input.value);
+        if (!name) return;
+        showHello(name);
+        close();
+      }
+      function showHello(name) {
+        $("helloName").textContent = name;
+        $("hello").hidden = false;
+      }
+
+      $("saveName").addEventListener("click", save);
+      $("nameClose").addEventListener("click", close);
+      $("changeName").addEventListener("click", open);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !$("nameOverlay").hidden && !$("nameClose").hidden) close();
+      });
+
+      const saved = PlayerName.get();
+      if (saved) showHello(saved); else open();
     })();
   </script>
 </body>

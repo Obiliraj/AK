@@ -30,6 +30,9 @@
     history: [] // [{card, picks}]
   };
 
+  // Use the name saved on the landing page for Player 1
+  if (window.PlayerName && PlayerName.get()) state.setup[0].name = PlayerName.get();
+
   /* ---------------- Setup screen ---------------- */
   function renderCountPicker() {
     document.querySelectorAll(".count").forEach((btn) => {
@@ -47,7 +50,7 @@
       html += `
         <div class="player-input" style="--pcolor:${COLORS[i].c};--pcolor-soft:${COLORS[i].soft}">
           <button type="button" class="avatar-btn" data-i="${i}" aria-label="Change picture for player ${i + 1}">${AVATARS[p.avatar]}</button>
-          <input type="text" maxlength="14" data-i="${i}" placeholder="Player ${i + 1}" value="${esc(p.name)}" aria-label="Name for player ${i + 1}" autocomplete="off" />
+          <input type="text" maxlength="30" data-i="${i}" placeholder="Player ${i + 1}" value="${esc(p.name)}" aria-label="Name for player ${i + 1}" autocomplete="off" />
         </div>`;
     }
     wrap.innerHTML = html;

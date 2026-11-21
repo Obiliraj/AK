@@ -18,6 +18,12 @@ Open **`games/would-you-rather/cards.js`** and edit the list. Each card looks li
 
 The game adds "Would you rather…" in front of every card. You can add or remove as many cards as you like.
 
+## Player name
+
+The first time someone opens the landing page, it asks for their name. They can type one, or build a silly name like "Curious Cucumber" from two word lists. The name is saved in that browser and used again next time. The **✏️ Change name** button lets them change it, and the game fills it in as Player 1.
+
+To change the silly name words, edit **`assets/names.js`**.
+
 ## Add a new game
 
 1. Create a folder in `games/your-game/` with an `index.html`.
