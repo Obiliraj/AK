@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff7e8" />
+  <title>Would You Rather?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/portal.css" />
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <div class="wrap app">
+    <nav class="topbar">
+      <a class="btn ghost small" href="../../">🏠 Games</a>
+      <div class="title">🤔 Would You Rather?</div>
+      <button class="btn ghost small hidden" id="endBtn" type="button">🏁 End</button>
+    </nav>
+
+    <!-- ============ SETUP SCREEN ============ -->
+    <section id="setup" class="screen">
+      <div class="panel">
+        <h1>How many players?</h1>
+        <div class="count-picker" role="radiogroup" aria-label="Number of players">
+          <button type="button" class="count" data-count="2" role="radio">2</button>
+          <button type="button" class="count" data-count="3" role="radio">3</button>
+          <button type="button" class="count" data-count="4" role="radio">4</button>
+        </div>
+        <p class="hint">Tap your picture to change it, and type your name.</p>
+        <div id="playerInputs" class="player-inputs"></div>
+        <button class="btn pink big" id="startBtn" type="button">🃏 Shuffle &amp; Start!</button>
+
+        <details class="rules">
+          <summary>📜 How to play</summary>
+          <ol>
+            <li><b>Shuffle and place:</b> The cards are shuffled and the deck goes face down in the middle.</li>
+            <li><b>Ask the question:</b> Draw a card and read the two choices out loud.</li>
+            <li><b>Choose and share:</b> Every player picks Option A or Option B and explains why. There are no right or wrong answers!</li>
+            <li><b>Pass the turn:</b> Pass the deck to the next player and play again.</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ GAME SCREEN ============ -->
+    <section id="game" class="screen hidden">
+      <div class="players-strip" id="playersStrip"></div>
+
+      <p class="turn-msg" id="turnMsg" aria-live="polite"></p>
+
+      <div class="table">
+        <div class="deck-area">
+          <button type="button" class="deck" id="deck" aria-label="Draw a card">
+            <span class="deck-card c3"></span>
+            <span class="deck-card c2"></span>
+            <span class="deck-card c1"><span class="deck-face">?</span></span>
+          </button>
+          <div class="deck-count" id="deckCount"></div>
+        </div>
+
+        <div class="card-area hidden" id="cardArea">
+          <div class="flip" id="flip">
+            <div class="flip-inner">
+              <div class="flip-back"><span>?</span></div>
+              <div class="flip-front">
+                <div class="wyr">Would you rather…</div>
+                <div class="options">
+                  <div class="option a">
+                    <div class="opt-label">A</div>
+                    <div class="opt-text" id="optA"></div>
+                    <div class="voters" id="votersA"></div>
+                  </div>
+                  <div class="or">or</div>
+                  <div class="option b">
+                    <div class="opt-label">B</div>
+                    <div class="opt-text" id="optB"></div>
+                    <div class="voters" id="votersB"></div>
+                  </div>
+                </div>
+                <button type="button" class="btn ghost small speak" id="speakBtn">🔊 Read it to me</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="choose hidden" id="choose">
+        <h2>Everyone pick A or B!</h2>
+        <div class="choose-list" id="chooseList"></div>
+        <p class="explain hidden" id="explain">🗣️ Now take turns telling everyone <b>why</b> you picked it!</p>
+        <button class="btn teal big" id="nextBtn" type="button" disabled>Pass the deck ➜</button>
+      </div>
+    </section>
+
+    <!-- ============ END SCREEN ============ -->
+    <section id="end" class="screen hidden">
+      <div class="panel">
+        <div class="trophy">🎉</div>
+        <h1>Great game!</h1>
+        <p class="hint" id="endSummary"></p>
+        <div id="endStats" class="end-stats"></div>
+        <div class="end-actions">
+          <button class="btn pink big" id="againBtn" type="button">🔁 Play again</button>
+          <a class="btn ghost big" href="../../">🏠 All games</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="cards.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
