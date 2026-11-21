@@ -23,6 +23,15 @@ games/quiz/                "Quiz Champs": 1–4 player quiz
 tools/validate-questions.mjs   Checks all quiz JSON (run before committing question changes)
 ```
 
+## Game logic lives with each game
+
+Each game folder has a `README.md` describing its full game logic: rules, flow, scoring, state and data format.
+**Read it before changing a game, and update it in the same commit whenever the game's behaviour changes.**
+- `games/would-you-rather/README.md`
+- `games/quiz/README.md`
+
+New games must get their own `README.md` in the same style.
+
 ## Conventions
 
 - **Colors:** never hard-code colors in game CSS. Use the role variables from `assets/portal.css`:
@@ -70,7 +79,7 @@ Every theme file is a JSON array. Image and non-image questions use the **same s
   Test locally with `python3 -m http.server` from the repo root.
 
 Themes: Countries, Guess the Flag, Guess the Logo, Roblox, Minecraft, Science, Space & Beyond, Planets,
-Myths: True or False?, Human Body, Animal Superpowers (about 1,800 questions).
+Myths: True or False?, Human Body, Animal Superpowers (1,790 questions).
 
 ### Picture sources
 - Flags: `flag-icons@7.6.0` via jsDelivr, `…/flags/4x3/<iso2>.svg`. All 193 UN members.

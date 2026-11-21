@@ -9,6 +9,8 @@ A small collection of browser games for kids. It works on iPad, phones and lapto
 | 🤔 Would You Rather? | 2–4 | `games/would-you-rather/` |
 | 🏆 Quiz Champs | 1–4 | `games/quiz/` |
 
+Each game folder has its own `README.md` explaining exactly how that game works.
+
 ## Change the Would You Rather cards
 
 Open **`games/would-you-rather/cards.js`** and edit the list. Each card looks like this:
