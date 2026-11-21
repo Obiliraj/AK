@@ -1,0 +1,1662 @@
+[
+  {
+    "Question": "Which green mob sneaks up on you and explodes?",
+    "Image": "",
+    "Answer": "Creeper",
+    "Choices": [
+      "Creeper",
+      "Zombie",
+      "Slime",
+      "Enderman"
+    ]
+  },
+  {
+    "Question": "What happens to a Creeper that is struck by lightning?",
+    "Image": "",
+    "Answer": "It becomes a charged Creeper",
+    "Choices": [
+      "It becomes a charged Creeper",
+      "It turns into a Pig",
+      "It disappears",
+      "It becomes a Zombie"
+    ]
+  },
+  {
+    "Question": "Which tall, dark mob teleports and gets angry if you look at it?",
+    "Image": "",
+    "Answer": "Enderman",
+    "Choices": [
+      "Enderman",
+      "Wither",
+      "Phantom",
+      "Witch"
+    ]
+  },
+  {
+    "Question": "Which mob shoots arrows at you?",
+    "Image": "",
+    "Answer": "Skeleton",
+    "Choices": [
+      "Skeleton",
+      "Zombie",
+      "Spider",
+      "Creeper"
+    ]
+  },
+  {
+    "Question": "Which mob drops string when defeated?",
+    "Image": "",
+    "Answer": "Spider",
+    "Choices": [
+      "Spider",
+      "Skeleton",
+      "Creeper",
+      "Cow"
+    ]
+  },
+  {
+    "Question": "Which mob drops gunpowder?",
+    "Image": "",
+    "Answer": "Creeper",
+    "Choices": [
+      "Creeper",
+      "Spider",
+      "Pig",
+      "Squid"
+    ]
+  },
+  {
+    "Question": "Which mob drops bones?",
+    "Image": "",
+    "Answer": "Skeleton",
+    "Choices": [
+      "Skeleton",
+      "Zombie",
+      "Chicken",
+      "Blaze"
+    ]
+  },
+  {
+    "Question": "Which mob drops ink sacs?",
+    "Image": "",
+    "Answer": "Squid",
+    "Choices": [
+      "Squid",
+      "Cow",
+      "Spider",
+      "Bat"
+    ]
+  },
+  {
+    "Question": "What is the final boss dragon in Minecraft called?",
+    "Image": "",
+    "Answer": "Ender Dragon",
+    "Choices": [
+      "Ender Dragon",
+      "Nether Dragon",
+      "Sky Dragon",
+      "Fire Drake"
+    ]
+  },
+  {
+    "Question": "Which three-headed boss do players build out of soul sand and skulls?",
+    "Image": "",
+    "Answer": "Wither",
+    "Choices": [
+      "Wither",
+      "Ender Dragon",
+      "Warden",
+      "Ghast"
+    ]
+  },
+  {
+    "Question": "Which blind mob lives in the Deep Dark and finds you by sound?",
+    "Image": "",
+    "Answer": "Warden",
+    "Choices": [
+      "Warden",
+      "Enderman",
+      "Ghast",
+      "Vex"
+    ]
+  },
+  {
+    "Question": "Which big white floating mob in the Nether shoots fireballs?",
+    "Image": "",
+    "Answer": "Ghast",
+    "Choices": [
+      "Ghast",
+      "Blaze",
+      "Phantom",
+      "Allay"
+    ]
+  },
+  {
+    "Question": "Which Nether mob drops blaze rods?",
+    "Image": "",
+    "Answer": "Blaze",
+    "Choices": [
+      "Blaze",
+      "Ghast",
+      "Piglin",
+      "Strider"
+    ]
+  },
+  {
+    "Question": "Which mob loves gold and lives in the Nether?",
+    "Image": "",
+    "Answer": "Piglin",
+    "Choices": [
+      "Piglin",
+      "Zombie",
+      "Villager",
+      "Wolf"
+    ]
+  },
+  {
+    "Question": "Which mob walks on lava in the Nether?",
+    "Image": "",
+    "Answer": "Strider",
+    "Choices": [
+      "Strider",
+      "Hoglin",
+      "Ghast",
+      "Magma Cube"
+    ]
+  },
+  {
+    "Question": "Which flying mob attacks players who haven't slept for a few days?",
+    "Image": "",
+    "Answer": "Phantom",
+    "Choices": [
+      "Phantom",
+      "Bat",
+      "Vex",
+      "Parrot"
+    ]
+  },
+  {
+    "Question": "Which mob can you tame with bones?",
+    "Image": "",
+    "Answer": "Wolf",
+    "Choices": [
+      "Wolf",
+      "Cat",
+      "Horse",
+      "Parrot"
+    ]
+  },
+  {
+    "Question": "Which mob can you tame with raw fish?",
+    "Image": "",
+    "Answer": "Cat",
+    "Choices": [
+      "Cat",
+      "Wolf",
+      "Horse",
+      "Llama"
+    ]
+  },
+  {
+    "Question": "Which mob can you tame with seeds?",
+    "Image": "",
+    "Answer": "Parrot",
+    "Choices": [
+      "Parrot",
+      "Wolf",
+      "Cat",
+      "Fox"
+    ]
+  },
+  {
+    "Question": "Which mob gives you milk when you use a bucket on it?",
+    "Image": "",
+    "Answer": "Cow",
+    "Choices": [
+      "Cow",
+      "Pig",
+      "Sheep",
+      "Chicken"
+    ]
+  },
+  {
+    "Question": "Which mob gives wool when you shear it?",
+    "Image": "",
+    "Answer": "Sheep",
+    "Choices": [
+      "Sheep",
+      "Cow",
+      "Goat",
+      "Llama"
+    ]
+  },
+  {
+    "Question": "Which farm mob lays eggs?",
+    "Image": "",
+    "Answer": "Chicken",
+    "Choices": [
+      "Chicken",
+      "Cow",
+      "Pig",
+      "Sheep"
+    ]
+  },
+  {
+    "Question": "Which mob can you ride using a saddle and a carrot on a stick?",
+    "Image": "",
+    "Answer": "Pig",
+    "Choices": [
+      "Pig",
+      "Cow",
+      "Sheep",
+      "Chicken"
+    ]
+  },
+  {
+    "Question": "Which mob trades items with you for emeralds?",
+    "Image": "",
+    "Answer": "Villager",
+    "Choices": [
+      "Villager",
+      "Piglin",
+      "Pillager",
+      "Witch"
+    ]
+  },
+  {
+    "Question": "Which mob protects villages and has iron arms?",
+    "Image": "",
+    "Answer": "Iron Golem",
+    "Choices": [
+      "Iron Golem",
+      "Snow Golem",
+      "Warden",
+      "Ravager"
+    ]
+  },
+  {
+    "Question": "What do you make a Snow Golem from?",
+    "Image": "",
+    "Answer": "Snow blocks and a carved pumpkin",
+    "Choices": [
+      "Snow blocks and a carved pumpkin",
+      "Iron blocks and a pumpkin",
+      "Ice and a melon",
+      "Wool and a skull"
+    ]
+  },
+  {
+    "Question": "Which mob spits at you when you annoy it?",
+    "Image": "",
+    "Answer": "Llama",
+    "Choices": [
+      "Llama",
+      "Horse",
+      "Goat",
+      "Camel"
+    ]
+  },
+  {
+    "Question": "Which small blue mob collects items for you if you give it one?",
+    "Image": "",
+    "Answer": "Allay",
+    "Choices": [
+      "Allay",
+      "Vex",
+      "Bat",
+      "Axolotl"
+    ]
+  },
+  {
+    "Question": "Which cute pink or blue water mob helps you fight underwater?",
+    "Image": "",
+    "Answer": "Axolotl",
+    "Choices": [
+      "Axolotl",
+      "Squid",
+      "Dolphin",
+      "Turtle"
+    ]
+  },
+  {
+    "Question": "Which mob turns villagers into zombies?",
+    "Image": "",
+    "Answer": "Zombie",
+    "Choices": [
+      "Zombie",
+      "Skeleton",
+      "Witch",
+      "Spider"
+    ]
+  },
+  {
+    "Question": "Which mob throws potions at players?",
+    "Image": "",
+    "Answer": "Witch",
+    "Choices": [
+      "Witch",
+      "Villager",
+      "Evoker",
+      "Pillager"
+    ]
+  },
+  {
+    "Question": "Which mob stays in the desert and makes you hungry when it hits you?",
+    "Image": "",
+    "Answer": "Husk",
+    "Choices": [
+      "Husk",
+      "Stray",
+      "Drowned",
+      "Zombie"
+    ]
+  },
+  {
+    "Question": "Which underwater zombie can carry a trident?",
+    "Image": "",
+    "Answer": "Drowned",
+    "Choices": [
+      "Drowned",
+      "Husk",
+      "Guardian",
+      "Stray"
+    ]
+  },
+  {
+    "Question": "Which mob splits into smaller copies when hit?",
+    "Image": "",
+    "Answer": "Slime",
+    "Choices": [
+      "Slime",
+      "Zombie",
+      "Blaze",
+      "Spider"
+    ]
+  },
+  {
+    "Question": "Which mob hides in stone blocks and swarms you?",
+    "Image": "",
+    "Answer": "Silverfish",
+    "Choices": [
+      "Silverfish",
+      "Endermite",
+      "Bat",
+      "Spider"
+    ]
+  },
+  {
+    "Question": "Which big, tusked, pig-like mob lives in the Nether's crimson forests?",
+    "Image": "",
+    "Answer": "Hoglin",
+    "Choices": [
+      "Hoglin",
+      "Piglin",
+      "Strider",
+      "Ghast"
+    ]
+  },
+  {
+    "Question": "Which one-eyed fish mob shoots lasers and guards ocean monuments?",
+    "Image": "",
+    "Answer": "Guardian",
+    "Choices": [
+      "Guardian",
+      "Pufferfish",
+      "Squid",
+      "Drowned"
+    ]
+  },
+  {
+    "Question": "Which mob can climb walls?",
+    "Image": "",
+    "Answer": "Spider",
+    "Choices": [
+      "Spider",
+      "Zombie",
+      "Creeper",
+      "Skeleton"
+    ]
+  },
+  {
+    "Question": "Which mob sleeps during the day and loves sweet berries?",
+    "Image": "",
+    "Answer": "Fox",
+    "Choices": [
+      "Fox",
+      "Wolf",
+      "Rabbit",
+      "Goat"
+    ]
+  },
+  {
+    "Question": "Which mob rams into players and can drop horns?",
+    "Image": "",
+    "Answer": "Goat",
+    "Choices": [
+      "Goat",
+      "Sheep",
+      "Cow",
+      "Llama"
+    ]
+  },
+  {
+    "Question": "Which mob makes honey in its nest?",
+    "Image": "",
+    "Answer": "Bee",
+    "Choices": [
+      "Bee",
+      "Parrot",
+      "Bat",
+      "Chicken"
+    ]
+  },
+  {
+    "Question": "Swimming near which mob gives you a speed boost underwater?",
+    "Image": "",
+    "Answer": "Dolphin",
+    "Choices": [
+      "Dolphin",
+      "Turtle",
+      "Squid",
+      "Axolotl"
+    ]
+  },
+  {
+    "Question": "What do you need to mine diamonds?",
+    "Image": "",
+    "Answer": "An iron pickaxe or better",
+    "Choices": [
+      "An iron pickaxe or better",
+      "A wooden pickaxe",
+      "A stone shovel",
+      "Your hand"
+    ]
+  },
+  {
+    "Question": "What is the strongest material for tools and armor?",
+    "Image": "",
+    "Answer": "Netherite",
+    "Choices": [
+      "Netherite",
+      "Diamond",
+      "Gold",
+      "Iron"
+    ]
+  },
+  {
+    "Question": "Where do you find Ancient Debris to make Netherite?",
+    "Image": "",
+    "Answer": "The Nether",
+    "Choices": [
+      "The Nether",
+      "The End",
+      "Ocean",
+      "Desert"
+    ]
+  },
+  {
+    "Question": "What do you use to craft a crafting table?",
+    "Image": "",
+    "Answer": "4 wooden planks",
+    "Choices": [
+      "4 wooden planks",
+      "4 cobblestone",
+      "2 sticks",
+      "1 log and 1 coal"
+    ]
+  },
+  {
+    "Question": "What do you need to make a torch?",
+    "Image": "",
+    "Answer": "A stick and coal",
+    "Choices": [
+      "A stick and coal",
+      "A stick and stone",
+      "Wool and fire",
+      "Glass and coal"
+    ]
+  },
+  {
+    "Question": "What do you put in a furnace to smelt iron ore?",
+    "Image": "",
+    "Answer": "Fuel like coal",
+    "Choices": [
+      "Fuel like coal",
+      "Water",
+      "Sand",
+      "Snow"
+    ]
+  },
+  {
+    "Question": "What do you get when you smelt sand?",
+    "Image": "",
+    "Answer": "Glass",
+    "Choices": [
+      "Glass",
+      "Stone",
+      "Brick",
+      "Clay"
+    ]
+  },
+  {
+    "Question": "What do you get when you smelt cobblestone?",
+    "Image": "",
+    "Answer": "Stone",
+    "Choices": [
+      "Stone",
+      "Glass",
+      "Gravel",
+      "Brick"
+    ]
+  },
+  {
+    "Question": "What block do you need to make a Nether portal frame?",
+    "Image": "",
+    "Answer": "Obsidian",
+    "Choices": [
+      "Obsidian",
+      "Bedrock",
+      "Netherrack",
+      "Stone"
+    ]
+  },
+  {
+    "Question": "How do you make obsidian?",
+    "Image": "",
+    "Answer": "Pour water onto lava",
+    "Choices": [
+      "Pour water onto lava",
+      "Smelt stone",
+      "Mine bedrock",
+      "Mix sand and gravel"
+    ]
+  },
+  {
+    "Question": "What do you use to light a Nether portal?",
+    "Image": "",
+    "Answer": "Flint and steel",
+    "Choices": [
+      "Flint and steel",
+      "A torch",
+      "A lava bucket",
+      "A bow"
+    ]
+  },
+  {
+    "Question": "Which block can NOT be broken in Survival mode?",
+    "Image": "",
+    "Answer": "Bedrock",
+    "Choices": [
+      "Bedrock",
+      "Obsidian",
+      "Diamond block",
+      "Netherite block"
+    ]
+  },
+  {
+    "Question": "What do you need to find and enter the End portal?",
+    "Image": "",
+    "Answer": "Eyes of Ender",
+    "Choices": [
+      "Eyes of Ender",
+      "Gold ingots",
+      "Diamonds",
+      "Emeralds"
+    ]
+  },
+  {
+    "Question": "What two items make an Eye of Ender?",
+    "Image": "",
+    "Answer": "Ender pearl and blaze powder",
+    "Choices": [
+      "Ender pearl and blaze powder",
+      "Diamond and gold",
+      "Iron and coal",
+      "Bone and string"
+    ]
+  },
+  {
+    "Question": "What do you use to make paper?",
+    "Image": "",
+    "Answer": "Sugar cane",
+    "Choices": [
+      "Sugar cane",
+      "Wheat",
+      "Wood",
+      "Leaves"
+    ]
+  },
+  {
+    "Question": "What is a book made of?",
+    "Image": "",
+    "Answer": "Paper and leather",
+    "Choices": [
+      "Paper and leather",
+      "Wood and string",
+      "Wool and ink",
+      "Paper and gold"
+    ]
+  },
+  {
+    "Question": "What crop do you need to make bread?",
+    "Image": "",
+    "Answer": "Wheat",
+    "Choices": [
+      "Wheat",
+      "Carrots",
+      "Potatoes",
+      "Beetroot"
+    ]
+  },
+  {
+    "Question": "How many wheat do you need to craft one bread?",
+    "Image": "",
+    "Answer": "3",
+    "Choices": [
+      "3",
+      "1",
+      "2",
+      "5"
+    ]
+  },
+  {
+    "Question": "What do you craft from a pumpkin and a torch?",
+    "Image": "",
+    "Answer": "Jack o'Lantern",
+    "Choices": [
+      "Jack o'Lantern",
+      "Pumpkin pie",
+      "Lantern",
+      "Campfire"
+    ]
+  },
+  {
+    "Question": "Which ore is used to make redstone circuits?",
+    "Image": "",
+    "Answer": "Redstone",
+    "Choices": [
+      "Redstone",
+      "Lapis lazuli",
+      "Copper",
+      "Coal"
+    ]
+  },
+  {
+    "Question": "What is lapis lazuli mostly used for?",
+    "Image": "",
+    "Answer": "Enchanting",
+    "Choices": [
+      "Enchanting",
+      "Making tools",
+      "Cooking",
+      "Building portals"
+    ]
+  },
+  {
+    "Question": "What do you use to enchant items?",
+    "Image": "",
+    "Answer": "An enchanting table",
+    "Choices": [
+      "An enchanting table",
+      "A furnace",
+      "A crafting table",
+      "A smoker"
+    ]
+  },
+  {
+    "Question": "What do you use to fix and rename tools?",
+    "Image": "",
+    "Answer": "An anvil",
+    "Choices": [
+      "An anvil",
+      "A furnace",
+      "A loom",
+      "A barrel"
+    ]
+  },
+  {
+    "Question": "What do you use to make potions?",
+    "Image": "",
+    "Answer": "A brewing stand",
+    "Choices": [
+      "A brewing stand",
+      "A cauldron only",
+      "A furnace",
+      "A crafting table"
+    ]
+  },
+  {
+    "Question": "What do you add to a water bottle first to make most potions?",
+    "Image": "",
+    "Answer": "Nether wart",
+    "Choices": [
+      "Nether wart",
+      "Sugar",
+      "Gold",
+      "Bone meal"
+    ]
+  },
+  {
+    "Question": "What does bone meal do to plants?",
+    "Image": "",
+    "Answer": "Makes them grow faster",
+    "Choices": [
+      "Makes them grow faster",
+      "Kills them",
+      "Changes their color",
+      "Makes them glow"
+    ]
+  },
+  {
+    "Question": "What do you sleep in to skip the night?",
+    "Image": "",
+    "Answer": "A bed",
+    "Choices": [
+      "A bed",
+      "A hammock",
+      "A chest",
+      "A boat"
+    ]
+  },
+  {
+    "Question": "What do you store items in?",
+    "Image": "",
+    "Answer": "A chest",
+    "Choices": [
+      "A chest",
+      "A furnace",
+      "A bed",
+      "A sign"
+    ]
+  },
+  {
+    "Question": "Which special chest shares the same items wherever you place it?",
+    "Image": "",
+    "Answer": "Ender chest",
+    "Choices": [
+      "Ender chest",
+      "Trapped chest",
+      "Barrel",
+      "Shulker box"
+    ]
+  },
+  {
+    "Question": "Which box keeps its items inside when you break it and carry it?",
+    "Image": "",
+    "Answer": "Shulker box",
+    "Choices": [
+      "Shulker box",
+      "Chest",
+      "Barrel",
+      "Hopper"
+    ]
+  },
+  {
+    "Question": "Which item lets you glide through the air?",
+    "Image": "",
+    "Answer": "Elytra",
+    "Choices": [
+      "Elytra",
+      "Saddle",
+      "Feather",
+      "Banner"
+    ]
+  },
+  {
+    "Question": "Where do you find Elytra?",
+    "Image": "",
+    "Answer": "End ships",
+    "Choices": [
+      "End ships",
+      "Desert temples",
+      "Villages",
+      "Shipwrecks"
+    ]
+  },
+  {
+    "Question": "Which item teleports you when you throw it?",
+    "Image": "",
+    "Answer": "Ender pearl",
+    "Choices": [
+      "Ender pearl",
+      "Snowball",
+      "Egg",
+      "Slimeball"
+    ]
+  },
+  {
+    "Question": "Which tool is best for digging dirt and sand?",
+    "Image": "",
+    "Answer": "Shovel",
+    "Choices": [
+      "Shovel",
+      "Pickaxe",
+      "Axe",
+      "Hoe"
+    ]
+  },
+  {
+    "Question": "Which tool is best for chopping wood?",
+    "Image": "",
+    "Answer": "Axe",
+    "Choices": [
+      "Axe",
+      "Pickaxe",
+      "Shovel",
+      "Sword"
+    ]
+  },
+  {
+    "Question": "Which tool turns dirt into farmland?",
+    "Image": "",
+    "Answer": "Hoe",
+    "Choices": [
+      "Hoe",
+      "Shovel",
+      "Axe",
+      "Shears"
+    ]
+  },
+  {
+    "Question": "What tool do you use to collect wool without hurting a sheep?",
+    "Image": "",
+    "Answer": "Shears",
+    "Choices": [
+      "Shears",
+      "Sword",
+      "Axe",
+      "Bucket"
+    ]
+  },
+  {
+    "Question": "What does a compass point to?",
+    "Image": "",
+    "Answer": "Your world spawn point",
+    "Choices": [
+      "Your world spawn point",
+      "The nearest diamond",
+      "The End",
+      "North only"
+    ]
+  },
+  {
+    "Question": "Which item tells you the time of day?",
+    "Image": "",
+    "Answer": "Clock",
+    "Choices": [
+      "Clock",
+      "Compass",
+      "Map",
+      "Spyglass"
+    ]
+  },
+  {
+    "Question": "What do you make from copper and amethyst?",
+    "Image": "",
+    "Answer": "Spyglass",
+    "Choices": [
+      "Spyglass",
+      "Compass",
+      "Lantern",
+      "Clock"
+    ]
+  },
+  {
+    "Question": "What color are emeralds in Minecraft?",
+    "Image": "",
+    "Answer": "Green",
+    "Choices": [
+      "Green",
+      "Blue",
+      "Red",
+      "Purple"
+    ]
+  },
+  {
+    "Question": "What do you get when you mine a diamond ore block without Silk Touch?",
+    "Image": "",
+    "Answer": "A diamond",
+    "Choices": [
+      "A diamond",
+      "Diamond ore",
+      "Coal",
+      "Nothing"
+    ]
+  },
+  {
+    "Question": "Which block makes you bounce when you jump on it?",
+    "Image": "",
+    "Answer": "Slime block",
+    "Choices": [
+      "Slime block",
+      "Wool",
+      "Hay bale",
+      "Sponge"
+    ]
+  },
+  {
+    "Question": "Which block soaks up water?",
+    "Image": "",
+    "Answer": "Sponge",
+    "Choices": [
+      "Sponge",
+      "Sand",
+      "Wool",
+      "Ice"
+    ]
+  },
+  {
+    "Question": "Which block slows you down and is found in the Nether?",
+    "Image": "",
+    "Answer": "Soul sand",
+    "Choices": [
+      "Soul sand",
+      "Netherrack",
+      "Glowstone",
+      "Magma block"
+    ]
+  },
+  {
+    "Question": "Which block gives off light and is found on the Nether ceiling?",
+    "Image": "",
+    "Answer": "Glowstone",
+    "Choices": [
+      "Glowstone",
+      "Netherrack",
+      "Obsidian",
+      "Quartz"
+    ]
+  },
+  {
+    "Question": "Which block falls down if there is nothing under it?",
+    "Image": "",
+    "Answer": "Sand",
+    "Choices": [
+      "Sand",
+      "Dirt",
+      "Stone",
+      "Wood"
+    ]
+  },
+  {
+    "Question": "What do you use to make TNT?",
+    "Image": "",
+    "Answer": "Gunpowder and sand",
+    "Choices": [
+      "Gunpowder and sand",
+      "Coal and stone",
+      "Redstone and iron",
+      "Wool and string"
+    ]
+  },
+  {
+    "Question": "Which food can you eat even when you are full?",
+    "Image": "",
+    "Answer": "Golden apple",
+    "Choices": [
+      "Golden apple",
+      "Bread",
+      "Steak",
+      "Cookie"
+    ]
+  },
+  {
+    "Question": "Which food gives you the most hunger points?",
+    "Image": "",
+    "Answer": "Rabbit stew",
+    "Choices": [
+      "Rabbit stew",
+      "Cookie",
+      "Apple",
+      "Melon slice"
+    ]
+  },
+  {
+    "Question": "Eating which item can poison you?",
+    "Image": "",
+    "Answer": "Spider eye",
+    "Choices": [
+      "Spider eye",
+      "Bread",
+      "Carrot",
+      "Baked potato"
+    ]
+  },
+  {
+    "Question": "Which item can you put on your head to stop Endermen getting angry when you look at them?",
+    "Image": "",
+    "Answer": "Carved pumpkin",
+    "Choices": [
+      "Carved pumpkin",
+      "Iron helmet",
+      "Leather cap",
+      "Turtle shell"
+    ]
+  },
+  {
+    "Question": "What does the Mending enchantment do?",
+    "Image": "",
+    "Answer": "Repairs items using XP",
+    "Choices": [
+      "Repairs items using XP",
+      "Makes items unbreakable",
+      "Makes you faster",
+      "Adds fire"
+    ]
+  },
+  {
+    "Question": "What does the Silk Touch enchantment do?",
+    "Image": "",
+    "Answer": "Mines blocks exactly as they are",
+    "Choices": [
+      "Mines blocks exactly as they are",
+      "Makes tools faster",
+      "Sets mobs on fire",
+      "Doubles drops"
+    ]
+  },
+  {
+    "Question": "What does the Fortune enchantment do?",
+    "Image": "",
+    "Answer": "Gives more drops from ores",
+    "Choices": [
+      "Gives more drops from ores",
+      "Makes you lucky in fishing",
+      "Repairs tools",
+      "Makes you glow"
+    ]
+  },
+  {
+    "Question": "What do you trade with Piglins to get items?",
+    "Image": "",
+    "Answer": "Gold ingots",
+    "Choices": [
+      "Gold ingots",
+      "Emeralds",
+      "Diamonds",
+      "Iron"
+    ]
+  },
+  {
+    "Question": "What are the three dimensions in Minecraft?",
+    "Image": "",
+    "Answer": "Overworld, Nether and End",
+    "Choices": [
+      "Overworld, Nether and End",
+      "Sky, Sea and Land",
+      "Day, Night and Dusk",
+      "Earth, Fire and Water"
+    ]
+  },
+  {
+    "Question": "In which game mode can you fly and have unlimited blocks?",
+    "Image": "",
+    "Answer": "Creative",
+    "Choices": [
+      "Creative",
+      "Survival",
+      "Adventure",
+      "Hardcore"
+    ]
+  },
+  {
+    "Question": "In which game mode must you collect resources and stay alive?",
+    "Image": "",
+    "Answer": "Survival",
+    "Choices": [
+      "Survival",
+      "Creative",
+      "Spectator",
+      "Peaceful"
+    ]
+  },
+  {
+    "Question": "In Hardcore mode, what happens when you die?",
+    "Image": "",
+    "Answer": "You can't respawn",
+    "Choices": [
+      "You can't respawn",
+      "You lose 1 heart",
+      "You become a ghost",
+      "Nothing happens"
+    ]
+  },
+  {
+    "Question": "Which difficulty setting has no hostile mobs?",
+    "Image": "",
+    "Answer": "Peaceful",
+    "Choices": [
+      "Peaceful",
+      "Easy",
+      "Normal",
+      "Hard"
+    ]
+  },
+  {
+    "Question": "Which game mode lets you fly through blocks and watch without touching anything?",
+    "Image": "",
+    "Answer": "Spectator",
+    "Choices": [
+      "Spectator",
+      "Creative",
+      "Adventure",
+      "Survival"
+    ]
+  },
+  {
+    "Question": "Which biome is covered in sand and has cactus?",
+    "Image": "",
+    "Answer": "Desert",
+    "Choices": [
+      "Desert",
+      "Taiga",
+      "Jungle",
+      "Plains"
+    ]
+  },
+  {
+    "Question": "Which biome has giant mushrooms and Mooshrooms?",
+    "Image": "",
+    "Answer": "Mushroom Fields",
+    "Choices": [
+      "Mushroom Fields",
+      "Swamp",
+      "Jungle",
+      "Badlands"
+    ]
+  },
+  {
+    "Question": "In which biome do pandas live?",
+    "Image": "",
+    "Answer": "Bamboo jungle",
+    "Choices": [
+      "Bamboo jungle",
+      "Desert",
+      "Ice spikes",
+      "Savanna"
+    ]
+  },
+  {
+    "Question": "Which biome has orange and red layers of terracotta?",
+    "Image": "",
+    "Answer": "Badlands",
+    "Choices": [
+      "Badlands",
+      "Desert",
+      "Savanna",
+      "Taiga"
+    ]
+  },
+  {
+    "Question": "Which cave biome has glowing berries and moss?",
+    "Image": "",
+    "Answer": "Lush caves",
+    "Choices": [
+      "Lush caves",
+      "Deep Dark",
+      "Dripstone caves",
+      "Ice caves"
+    ]
+  },
+  {
+    "Question": "What is the name of the dark underground biome with sculk blocks?",
+    "Image": "",
+    "Answer": "Deep Dark",
+    "Choices": [
+      "Deep Dark",
+      "Lush caves",
+      "The Void",
+      "Soul Valley"
+    ]
+  },
+  {
+    "Question": "What do you find in an ocean monument?",
+    "Image": "",
+    "Answer": "Guardians and sponges",
+    "Choices": [
+      "Guardians and sponges",
+      "Villagers",
+      "Blazes",
+      "Endermen"
+    ]
+  },
+  {
+    "Question": "Where do Blazes spawn?",
+    "Image": "",
+    "Answer": "Nether fortresses",
+    "Choices": [
+      "Nether fortresses",
+      "Desert temples",
+      "Villages",
+      "Ocean ruins"
+    ]
+  },
+  {
+    "Question": "What is the bottom of the world made of?",
+    "Image": "",
+    "Answer": "Bedrock",
+    "Choices": [
+      "Bedrock",
+      "Lava",
+      "Obsidian",
+      "Water"
+    ]
+  },
+  {
+    "Question": "How long is a full Minecraft day in real time?",
+    "Image": "",
+    "Answer": "20 minutes",
+    "Choices": [
+      "20 minutes",
+      "5 minutes",
+      "1 hour",
+      "24 hours"
+    ]
+  },
+  {
+    "Question": "What do you call the starting place where you appear in a new world?",
+    "Image": "",
+    "Answer": "Spawn point",
+    "Choices": [
+      "Spawn point",
+      "Home base",
+      "Checkpoint",
+      "Portal"
+    ]
+  },
+  {
+    "Question": "What is a group of villagers' houses called?",
+    "Image": "",
+    "Answer": "A village",
+    "Choices": [
+      "A village",
+      "A town hall",
+      "A fortress",
+      "A stronghold"
+    ]
+  },
+  {
+    "Question": "Where is the End portal found?",
+    "Image": "",
+    "Answer": "In a stronghold",
+    "Choices": [
+      "In a stronghold",
+      "In a village",
+      "In the Nether",
+      "In a desert temple"
+    ]
+  },
+  {
+    "Question": "What is the name of the tiny cube shapes that make up everything in Minecraft?",
+    "Image": "",
+    "Answer": "Blocks",
+    "Choices": [
+      "Blocks",
+      "Bricks",
+      "Cubes",
+      "Tiles"
+    ]
+  },
+  {
+    "Question": "Which block gives a constant redstone signal?",
+    "Image": "",
+    "Answer": "Redstone block",
+    "Choices": [
+      "Redstone block",
+      "Redstone dust",
+      "Lever",
+      "Button"
+    ]
+  },
+  {
+    "Question": "Which block pushes other blocks when powered?",
+    "Image": "",
+    "Answer": "Piston",
+    "Choices": [
+      "Piston",
+      "Hopper",
+      "Dispenser",
+      "Observer"
+    ]
+  },
+  {
+    "Question": "Which piston can pull blocks back?",
+    "Image": "",
+    "Answer": "Sticky piston",
+    "Choices": [
+      "Sticky piston",
+      "Iron piston",
+      "Slime piston",
+      "Super piston"
+    ]
+  },
+  {
+    "Question": "Which block moves items from one container to another?",
+    "Image": "",
+    "Answer": "Hopper",
+    "Choices": [
+      "Hopper",
+      "Piston",
+      "Dropper",
+      "Observer"
+    ]
+  },
+  {
+    "Question": "Which block detects a change in front of it and sends a pulse?",
+    "Image": "",
+    "Answer": "Observer",
+    "Choices": [
+      "Observer",
+      "Repeater",
+      "Comparator",
+      "Lever"
+    ]
+  },
+  {
+    "Question": "Which redstone item can delay a signal?",
+    "Image": "",
+    "Answer": "Repeater",
+    "Choices": [
+      "Repeater",
+      "Lever",
+      "Torch",
+      "Button"
+    ]
+  },
+  {
+    "Question": "Which item can you flip on and off to power redstone?",
+    "Image": "",
+    "Answer": "Lever",
+    "Choices": [
+      "Lever",
+      "Pressure plate",
+      "Button",
+      "Tripwire"
+    ]
+  },
+  {
+    "Question": "Who first created Minecraft?",
+    "Image": "",
+    "Answer": "Markus \"Notch\" Persson",
+    "Choices": [
+      "Markus \"Notch\" Persson",
+      "Steve Jobs",
+      "Bill Gates",
+      "Shigeru Miyamoto"
+    ]
+  },
+  {
+    "Question": "Which company makes Minecraft?",
+    "Image": "",
+    "Answer": "Mojang",
+    "Choices": [
+      "Mojang",
+      "Nintendo",
+      "Roblox",
+      "Epic Games"
+    ]
+  },
+  {
+    "Question": "Which big company bought Mojang in 2014?",
+    "Image": "",
+    "Answer": "Microsoft",
+    "Choices": [
+      "Microsoft",
+      "Apple",
+      "Google",
+      "Sony"
+    ]
+  },
+  {
+    "Question": "What is the name of the default player character with a blue shirt?",
+    "Image": "",
+    "Answer": "Steve",
+    "Choices": [
+      "Steve",
+      "Alex",
+      "Herobrine",
+      "Notch"
+    ]
+  },
+  {
+    "Question": "What is the name of the default player character with orange hair?",
+    "Image": "",
+    "Answer": "Alex",
+    "Choices": [
+      "Alex",
+      "Steve",
+      "Herobrine",
+      "Notch"
+    ]
+  },
+  {
+    "Question": "How many hearts of health does a player have?",
+    "Image": "",
+    "Answer": "10",
+    "Choices": [
+      "10",
+      "5",
+      "8",
+      "20"
+    ]
+  },
+  {
+    "Question": "How many slots are in your hotbar?",
+    "Image": "",
+    "Answer": "9",
+    "Choices": [
+      "9",
+      "5",
+      "10",
+      "12"
+    ]
+  },
+  {
+    "Question": "What is the most of one item you can usually stack in a single slot?",
+    "Image": "",
+    "Answer": "64",
+    "Choices": [
+      "64",
+      "16",
+      "32",
+      "100"
+    ]
+  },
+  {
+    "Question": "How many ender pearls can you stack in one slot?",
+    "Image": "",
+    "Answer": "16",
+    "Choices": [
+      "16",
+      "1",
+      "64",
+      "8"
+    ]
+  },
+  {
+    "Question": "What color is redstone dust?",
+    "Image": "",
+    "Answer": "Red",
+    "Choices": [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ]
+  },
+  {
+    "Question": "Which version of Minecraft works on phones, consoles and Windows together?",
+    "Image": "",
+    "Answer": "Bedrock Edition",
+    "Choices": [
+      "Bedrock Edition",
+      "Java Edition",
+      "Pocket Classic",
+      "Legacy Edition"
+    ]
+  },
+  {
+    "Question": "Which Minecraft spin-off is a dungeon adventure game?",
+    "Image": "",
+    "Answer": "Minecraft Dungeons",
+    "Choices": [
+      "Minecraft Dungeons",
+      "Minecraft Racing",
+      "Minecraft Kart",
+      "Minecraft Party"
+    ]
+  },
+  {
+    "Question": "Creepers are scared of cats.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can mine diamonds with a wooden pickaxe.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Endermen get hurt by water.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Skeletons and Zombies burn in sunlight.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Beds explode if you try to sleep in them in the Nether.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can sleep in a bed during the day to skip it.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Water flows downward in Minecraft.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Gold tools are the strongest tools in Minecraft.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can ride horses in Minecraft.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Chickens can lay diamonds.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Iron Golems protect villagers.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can tame a wolf with fish.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The Ender Dragon lives in the Nether.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can milk a Mooshroom with a bowl to get mushroom stew.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Netherite does not burn in lava.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Villagers trade with diamonds as money.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Baby zombies are faster than adult zombies.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  }
+]

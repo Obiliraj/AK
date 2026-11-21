@@ -40,7 +40,7 @@
           <button type="button" class="btn yellow small" id="mixAll">🎲 Random mix of all</button>
           <button type="button" class="btn ghost small" id="clearThemes">Clear</button>
         </div>
-        <div class="themes" id="themeGrid"></div>
+        <div class="themes" id="themeGrid"><p class="hint">Loading themes…</p></div>
       </div>
 
       <div class="panel">
@@ -80,7 +80,8 @@
         <p class="turn" id="turnMsg"></p>
         <h2 class="question" id="questionText"></h2>
         <div class="qimage hidden" id="qImageWrap">
-          <img id="qImage" alt="" />
+          <!-- Shown only when the question has an Image link -->
+          <img id="qImage" alt="" hidden />
           <div class="img-error hidden" id="imgError">
             <p>😕 This picture didn't load. Are you online?</p>
             <button type="button" class="btn ghost small" id="skipBtn">⏭️ Skip this question</button>
@@ -110,21 +111,10 @@
   </div>
 
   <!--
-    QUESTION THEMES
-    Each file in /themes adds one theme. To add a new theme, copy a file,
-    change it, and add a <script> line for it here.
+    QUESTION THEMES are JSON files in /themes, listed in themes/themes.json.
+    Each question looks like this:
+      { "Question": "...", "Image": "picture link or empty", "Answer": "...", "Choices": ["...", "...", "...", "..."] }
   -->
-  <script src="themes/countries.js"></script>
-  <script src="themes/flags.js"></script>
-  <script src="themes/logos.js"></script>
-  <script src="themes/roblox.js"></script>
-  <script src="themes/minecraft.js"></script>
-  <script src="themes/science.js"></script>
-  <script src="themes/space.js"></script>
-  <script src="themes/planets.js"></script>
-  <script src="themes/myths.js"></script>
-  <script src="themes/human-body.js"></script>
-  <script src="themes/animal-superpowers.js"></script>
 
   <script src="../../assets/player.js"></script>
   <script src="quiz.js"></script>

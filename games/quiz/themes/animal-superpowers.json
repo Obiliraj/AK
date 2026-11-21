@@ -1,0 +1,1629 @@
+[
+  {
+    "Question": "Which is the fastest land animal?",
+    "Image": "",
+    "Answer": "Cheetah",
+    "Choices": [
+      "Cheetah",
+      "Lion",
+      "Horse",
+      "Greyhound"
+    ]
+  },
+  {
+    "Question": "Which bird is the fastest animal on Earth when it dives?",
+    "Image": "",
+    "Answer": "Peregrine falcon",
+    "Choices": [
+      "Peregrine falcon",
+      "Ostrich",
+      "Eagle owl",
+      "Hummingbird"
+    ]
+  },
+  {
+    "Question": "Which is the fastest-running bird?",
+    "Image": "",
+    "Answer": "Ostrich",
+    "Choices": [
+      "Ostrich",
+      "Penguin",
+      "Peacock",
+      "Turkey"
+    ]
+  },
+  {
+    "Question": "Which tiny bird can fly backwards?",
+    "Image": "",
+    "Answer": "Hummingbird",
+    "Choices": [
+      "Hummingbird",
+      "Sparrow",
+      "Robin",
+      "Pigeon"
+    ]
+  },
+  {
+    "Question": "A hummingbird's heart can beat more than how many times a minute?",
+    "Image": "",
+    "Answer": "1,000",
+    "Choices": [
+      "1,000",
+      "10",
+      "60",
+      "100"
+    ]
+  },
+  {
+    "Question": "Which lizard can run across water on its back legs?",
+    "Image": "",
+    "Answer": "Basilisk lizard",
+    "Choices": [
+      "Basilisk lizard",
+      "Komodo dragon",
+      "Iguana",
+      "Gecko"
+    ]
+  },
+  {
+    "Question": "Which insect can walk on the surface of ponds?",
+    "Image": "",
+    "Answer": "Water strider",
+    "Choices": [
+      "Water strider",
+      "Ladybug",
+      "Ant",
+      "Grasshopper"
+    ]
+  },
+  {
+    "Question": "Which animal's tongue shoots out super fast to catch insects, faster than you can blink?",
+    "Image": "",
+    "Answer": "Chameleon",
+    "Choices": [
+      "Chameleon",
+      "Giraffe",
+      "Anteater",
+      "Dog"
+    ]
+  },
+  {
+    "Question": "Which tiny star-nosed animal can find and gobble food in less than a second?",
+    "Image": "",
+    "Answer": "Star-nosed mole",
+    "Choices": [
+      "Star-nosed mole",
+      "Hamster",
+      "Mouse",
+      "Squirrel"
+    ]
+  },
+  {
+    "Question": "Which bird can stay flying for about 10 months without landing?",
+    "Image": "",
+    "Answer": "Common swift",
+    "Choices": [
+      "Common swift",
+      "Chicken",
+      "Penguin",
+      "Ostrich"
+    ]
+  },
+  {
+    "Question": "Which bird flies nonstop for more than 11,000 km across the Pacific Ocean?",
+    "Image": "",
+    "Answer": "Bar-tailed godwit",
+    "Choices": [
+      "Bar-tailed godwit",
+      "Pigeon",
+      "Parrot",
+      "Peacock"
+    ]
+  },
+  {
+    "Question": "Which insect can pull more than 1,000 times its own body weight?",
+    "Image": "",
+    "Answer": "Horned dung beetle",
+    "Choices": [
+      "Horned dung beetle",
+      "Butterfly",
+      "Mosquito",
+      "Ladybug"
+    ]
+  },
+  {
+    "Question": "Which animal has the strongest bite ever measured?",
+    "Image": "",
+    "Answer": "Saltwater crocodile",
+    "Choices": [
+      "Saltwater crocodile",
+      "Lion",
+      "Great white shark",
+      "Wolf"
+    ]
+  },
+  {
+    "Question": "Which big cat has the strongest bite for its size?",
+    "Image": "",
+    "Answer": "Jaguar",
+    "Choices": [
+      "Jaguar",
+      "Lion",
+      "Cheetah",
+      "House cat"
+    ]
+  },
+  {
+    "Question": "Which tiny shrimp packs one of the fastest punches in the animal kingdom?",
+    "Image": "",
+    "Answer": "Mantis shrimp",
+    "Choices": [
+      "Mantis shrimp",
+      "Pistol shrimp",
+      "Krill",
+      "Lobster"
+    ]
+  },
+  {
+    "Question": "About how many muscles does an elephant's trunk have?",
+    "Image": "",
+    "Answer": "About 40,000",
+    "Choices": [
+      "About 40,000",
+      "About 10",
+      "About 100",
+      "About 600"
+    ]
+  },
+  {
+    "Question": "Which animal is the largest that has ever lived?",
+    "Image": "",
+    "Answer": "Blue whale",
+    "Choices": [
+      "Blue whale",
+      "T. rex",
+      "African elephant",
+      "Giraffe"
+    ]
+  },
+  {
+    "Question": "Which tiny jumper can leap many times its own body length?",
+    "Image": "",
+    "Answer": "Flea",
+    "Choices": [
+      "Flea",
+      "Snail",
+      "Slug",
+      "Worm"
+    ]
+  },
+  {
+    "Question": "Which animal can leap about 8 meters in one hop?",
+    "Image": "",
+    "Answer": "Red kangaroo",
+    "Choices": [
+      "Red kangaroo",
+      "Rabbit",
+      "Frog",
+      "Deer"
+    ]
+  },
+  {
+    "Question": "Ants can carry objects how much heavier than themselves?",
+    "Image": "",
+    "Answer": "Many times heavier",
+    "Choices": [
+      "Many times heavier",
+      "Only half their weight",
+      "Nothing at all",
+      "Exactly their weight"
+    ]
+  },
+  {
+    "Question": "Which animal uses echoes from its squeaks to find its way in the dark?",
+    "Image": "",
+    "Answer": "Bat",
+    "Choices": [
+      "Bat",
+      "Owl",
+      "Cat",
+      "Mole"
+    ]
+  },
+  {
+    "Question": "Which sea animal also uses echoes to find food?",
+    "Image": "",
+    "Answer": "Dolphin",
+    "Choices": [
+      "Dolphin",
+      "Jellyfish",
+      "Starfish",
+      "Crab"
+    ]
+  },
+  {
+    "Question": "What do we call finding things by listening to echoes?",
+    "Image": "",
+    "Answer": "Echolocation",
+    "Choices": [
+      "Echolocation",
+      "Camouflage",
+      "Hibernation",
+      "Migration"
+    ]
+  },
+  {
+    "Question": "Which bird can hear a mouse moving under the snow?",
+    "Image": "",
+    "Answer": "Owl",
+    "Choices": [
+      "Owl",
+      "Duck",
+      "Pigeon",
+      "Parrot"
+    ]
+  },
+  {
+    "Question": "Which shrimp-like animal can see many more colors than humans?",
+    "Image": "",
+    "Answer": "Mantis shrimp",
+    "Choices": [
+      "Mantis shrimp",
+      "Krill",
+      "Lobster",
+      "Crab"
+    ]
+  },
+  {
+    "Question": "Which insect has huge eyes that see almost all the way around it?",
+    "Image": "",
+    "Answer": "Dragonfly",
+    "Choices": [
+      "Dragonfly",
+      "Ant",
+      "Flea",
+      "Moth"
+    ]
+  },
+  {
+    "Question": "Which animal can feel the electricity from other animals' muscles?",
+    "Image": "",
+    "Answer": "Shark",
+    "Choices": [
+      "Shark",
+      "Cow",
+      "Parrot",
+      "Rabbit"
+    ]
+  },
+  {
+    "Question": "Which egg-laying mammal finds food by sensing electricity with its bill?",
+    "Image": "",
+    "Answer": "Platypus",
+    "Choices": [
+      "Platypus",
+      "Duck",
+      "Echidna",
+      "Otter"
+    ]
+  },
+  {
+    "Question": "Which snakes can sense the heat of animals in the dark?",
+    "Image": "",
+    "Answer": "Pit vipers",
+    "Choices": [
+      "Pit vipers",
+      "Garter snakes",
+      "Sea snakes",
+      "Grass snakes"
+    ]
+  },
+  {
+    "Question": "Which animal has the best sense of smell of all, with the most smell genes?",
+    "Image": "",
+    "Answer": "African elephant",
+    "Choices": [
+      "African elephant",
+      "Dog",
+      "Cat",
+      "Human"
+    ]
+  },
+  {
+    "Question": "About how much better is a dog's sense of smell than a human's?",
+    "Image": "",
+    "Answer": "Thousands of times better",
+    "Choices": [
+      "Thousands of times better",
+      "Exactly the same",
+      "Twice as good",
+      "Worse"
+    ]
+  },
+  {
+    "Question": "Which dog breed is famous for tracking smells across long distances?",
+    "Image": "",
+    "Answer": "Bloodhound",
+    "Choices": [
+      "Bloodhound",
+      "Poodle",
+      "Chihuahua",
+      "Pug"
+    ]
+  },
+  {
+    "Question": "Which animal can smell a seal from far away, even under the ice?",
+    "Image": "",
+    "Answer": "Polar bear",
+    "Choices": [
+      "Polar bear",
+      "Penguin",
+      "Walrus",
+      "Arctic fox"
+    ]
+  },
+  {
+    "Question": "Elephants can hear rumbles from far away through their…?",
+    "Image": "",
+    "Answer": "Feet",
+    "Choices": [
+      "Feet",
+      "Tails",
+      "Tusks",
+      "Ears only"
+    ]
+  },
+  {
+    "Question": "Which insect can see ultraviolet patterns on flowers?",
+    "Image": "",
+    "Answer": "Bee",
+    "Choices": [
+      "Bee",
+      "Ant",
+      "Cricket",
+      "Flea"
+    ]
+  },
+  {
+    "Question": "Which bird of prey can spot a rabbit from more than a kilometer away?",
+    "Image": "",
+    "Answer": "Eagle",
+    "Choices": [
+      "Eagle",
+      "Chicken",
+      "Penguin",
+      "Duck"
+    ]
+  },
+  {
+    "Question": "Whose eyes change from gold in summer to blue in winter?",
+    "Image": "",
+    "Answer": "Reindeer",
+    "Choices": [
+      "Reindeer",
+      "Polar bear",
+      "Wolf",
+      "Arctic hare"
+    ]
+  },
+  {
+    "Question": "Which tiny primate has eyes as big as its brain?",
+    "Image": "",
+    "Answer": "Tarsier",
+    "Choices": [
+      "Tarsier",
+      "Gorilla",
+      "Chimpanzee",
+      "Lemur"
+    ]
+  },
+  {
+    "Question": "Which animal has the biggest eyes of any animal, as big as dinner plates?",
+    "Image": "",
+    "Answer": "Colossal squid",
+    "Choices": [
+      "Colossal squid",
+      "Blue whale",
+      "Elephant",
+      "Ostrich"
+    ]
+  },
+  {
+    "Question": "Which insect can turn its head around to look over its shoulder?",
+    "Image": "",
+    "Answer": "Praying mantis",
+    "Choices": [
+      "Praying mantis",
+      "Ant",
+      "Bee",
+      "Beetle"
+    ]
+  },
+  {
+    "Question": "Which animal's eyes can each move in a different direction at the same time?",
+    "Image": "",
+    "Answer": "Chameleon",
+    "Choices": [
+      "Chameleon",
+      "Cat",
+      "Dog",
+      "Rabbit"
+    ]
+  },
+  {
+    "Question": "Which insects taste with their feet?",
+    "Image": "",
+    "Answer": "Butterflies",
+    "Choices": [
+      "Butterflies",
+      "Ants",
+      "Bees",
+      "Fleas"
+    ]
+  },
+  {
+    "Question": "Which fish find their way back to the river where they were born using smell?",
+    "Image": "",
+    "Answer": "Salmon",
+    "Choices": [
+      "Salmon",
+      "Goldfish",
+      "Clownfish",
+      "Tuna"
+    ]
+  },
+  {
+    "Question": "Which animals use Earth's magnetic field like a compass to cross oceans?",
+    "Image": "",
+    "Answer": "Sea turtles",
+    "Choices": [
+      "Sea turtles",
+      "Hamsters",
+      "Snails",
+      "Frogs"
+    ]
+  },
+  {
+    "Question": "Which beetle uses the Milky Way in the night sky to find its way?",
+    "Image": "",
+    "Answer": "Dung beetle",
+    "Choices": [
+      "Dung beetle",
+      "Ladybug",
+      "Firefly",
+      "Stag beetle"
+    ]
+  },
+  {
+    "Question": "Which fish puffs up into a spiky ball when it's in danger?",
+    "Image": "",
+    "Answer": "Pufferfish",
+    "Choices": [
+      "Pufferfish",
+      "Goldfish",
+      "Shark",
+      "Tuna"
+    ]
+  },
+  {
+    "Question": "Which sea animal squirts ink to escape?",
+    "Image": "",
+    "Answer": "Octopus",
+    "Choices": [
+      "Octopus",
+      "Crab",
+      "Shark",
+      "Seal"
+    ]
+  },
+  {
+    "Question": "Which animal sprays a very stinky liquid to protect itself?",
+    "Image": "",
+    "Answer": "Skunk",
+    "Choices": [
+      "Skunk",
+      "Rabbit",
+      "Squirrel",
+      "Deer"
+    ]
+  },
+  {
+    "Question": "Which beetle sprays boiling hot chemicals at attackers?",
+    "Image": "",
+    "Answer": "Bombardier beetle",
+    "Choices": [
+      "Bombardier beetle",
+      "Ladybug",
+      "Dung beetle",
+      "Firefly"
+    ]
+  },
+  {
+    "Question": "Which lizard can squirt blood from its eyes to scare predators?",
+    "Image": "",
+    "Answer": "Horned lizard",
+    "Choices": [
+      "Horned lizard",
+      "Gecko",
+      "Iguana",
+      "Komodo dragon"
+    ]
+  },
+  {
+    "Question": "Which sea creature makes buckets of slime to escape predators?",
+    "Image": "",
+    "Answer": "Hagfish",
+    "Choices": [
+      "Hagfish",
+      "Dolphin",
+      "Clownfish",
+      "Seahorse"
+    ]
+  },
+  {
+    "Question": "Which animal pretends to be dead when it's scared?",
+    "Image": "",
+    "Answer": "Opossum",
+    "Choices": [
+      "Opossum",
+      "Lion",
+      "Eagle",
+      "Horse"
+    ]
+  },
+  {
+    "Question": "Which scaly mammal rolls into a tight ball to stay safe?",
+    "Image": "",
+    "Answer": "Pangolin",
+    "Choices": [
+      "Pangolin",
+      "Squirrel",
+      "Dog",
+      "Monkey"
+    ]
+  },
+  {
+    "Question": "Which armored animal can roll up into a ball?",
+    "Image": "",
+    "Answer": "Three-banded armadillo",
+    "Choices": [
+      "Three-banded armadillo",
+      "Turtle",
+      "Crab",
+      "Porcupine"
+    ]
+  },
+  {
+    "Question": "Which animal has sharp quills to keep attackers away?",
+    "Image": "",
+    "Answer": "Porcupine",
+    "Choices": [
+      "Porcupine",
+      "Beaver",
+      "Otter",
+      "Rabbit"
+    ]
+  },
+  {
+    "Question": "Which lizards can drop their tails to escape and then grow new ones?",
+    "Image": "",
+    "Answer": "Geckos and skinks",
+    "Choices": [
+      "Geckos and skinks",
+      "Crocodiles",
+      "Komodo dragons",
+      "Chameleons"
+    ]
+  },
+  {
+    "Question": "Which brightly colored frog has skin poisonous enough to protect it from predators?",
+    "Image": "",
+    "Answer": "Poison dart frog",
+    "Choices": [
+      "Poison dart frog",
+      "Bullfrog",
+      "Tree frog",
+      "Toad"
+    ]
+  },
+  {
+    "Question": "Which butterfly tastes bad to birds because of the milkweed it ate as a caterpillar?",
+    "Image": "",
+    "Answer": "Monarch butterfly",
+    "Choices": [
+      "Monarch butterfly",
+      "Cabbage white",
+      "Blue morpho",
+      "Swallowtail"
+    ]
+  },
+  {
+    "Question": "Which butterfly has big spots on its wings that look like the eyes of an owl?",
+    "Image": "",
+    "Answer": "Owl butterfly",
+    "Choices": [
+      "Owl butterfly",
+      "Monarch butterfly",
+      "Cabbage white",
+      "Painted lady"
+    ]
+  },
+  {
+    "Question": "Which sea creature can push out some of its insides to scare predators, then grow them back?",
+    "Image": "",
+    "Answer": "Sea cucumber",
+    "Choices": [
+      "Sea cucumber",
+      "Starfish",
+      "Jellyfish",
+      "Crab"
+    ]
+  },
+  {
+    "Question": "Which small mammal can fight cobras because snake venom hardly affects it?",
+    "Image": "",
+    "Answer": "Mongoose",
+    "Choices": [
+      "Mongoose",
+      "Rabbit",
+      "Hamster",
+      "Squirrel"
+    ]
+  },
+  {
+    "Question": "Which fearless animal can survive some snake bites that would harm others?",
+    "Image": "",
+    "Answer": "Honey badger",
+    "Choices": [
+      "Honey badger",
+      "Raccoon",
+      "Fox",
+      "Skunk"
+    ]
+  },
+  {
+    "Question": "Which sea animal can change both its color and its skin texture in a blink?",
+    "Image": "",
+    "Answer": "Octopus",
+    "Choices": [
+      "Octopus",
+      "Dolphin",
+      "Whale",
+      "Seal"
+    ]
+  },
+  {
+    "Question": "Which relative of the octopus flashes colors and patterns on its skin?",
+    "Image": "",
+    "Answer": "Cuttlefish",
+    "Choices": [
+      "Cuttlefish",
+      "Jellyfish",
+      "Starfish",
+      "Sea urchin"
+    ]
+  },
+  {
+    "Question": "Which octopus can copy the shapes of other animals like lionfish and sea snakes?",
+    "Image": "",
+    "Answer": "Mimic octopus",
+    "Choices": [
+      "Mimic octopus",
+      "Giant Pacific octopus",
+      "Blue-ringed octopus",
+      "Dumbo octopus"
+    ]
+  },
+  {
+    "Question": "Which insect looks just like a twig?",
+    "Image": "",
+    "Answer": "Stick insect",
+    "Choices": [
+      "Stick insect",
+      "Ladybug",
+      "Bee",
+      "Fly"
+    ]
+  },
+  {
+    "Question": "Which insect looks just like a leaf?",
+    "Image": "",
+    "Answer": "Leaf insect",
+    "Choices": [
+      "Leaf insect",
+      "Mosquito",
+      "Dragonfly",
+      "Wasp"
+    ]
+  },
+  {
+    "Question": "Which fox turns white in winter to hide in the snow?",
+    "Image": "",
+    "Answer": "Arctic fox",
+    "Choices": [
+      "Arctic fox",
+      "Red fox",
+      "Fennec fox",
+      "Grey fox"
+    ]
+  },
+  {
+    "Question": "What do we call it when an animal blends into its surroundings?",
+    "Image": "",
+    "Answer": "Camouflage",
+    "Choices": [
+      "Camouflage",
+      "Hibernation",
+      "Migration",
+      "Echolocation"
+    ]
+  },
+  {
+    "Question": "Which frog has see-through skin on its belly?",
+    "Image": "",
+    "Answer": "Glass frog",
+    "Choices": [
+      "Glass frog",
+      "Bullfrog",
+      "Toad",
+      "Poison dart frog"
+    ]
+  },
+  {
+    "Question": "Which bird can copy almost any sound, even camera clicks and chainsaws?",
+    "Image": "",
+    "Answer": "Lyrebird",
+    "Choices": [
+      "Lyrebird",
+      "Ostrich",
+      "Penguin",
+      "Pigeon"
+    ]
+  },
+  {
+    "Question": "Which bird is famous for copying human words?",
+    "Image": "",
+    "Answer": "Parrot",
+    "Choices": [
+      "Parrot",
+      "Owl",
+      "Eagle",
+      "Duck"
+    ]
+  },
+  {
+    "Question": "Which salamander can regrow its legs, tail and even parts of its heart?",
+    "Image": "",
+    "Answer": "Axolotl",
+    "Choices": [
+      "Axolotl",
+      "Frog",
+      "Lizard",
+      "Snake"
+    ]
+  },
+  {
+    "Question": "Which sea animal can regrow lost arms?",
+    "Image": "",
+    "Answer": "Starfish",
+    "Choices": [
+      "Starfish",
+      "Fish",
+      "Seal",
+      "Dolphin"
+    ]
+  },
+  {
+    "Question": "Which animals can regrow a lost claw?",
+    "Image": "",
+    "Answer": "Crabs and lobsters",
+    "Choices": [
+      "Crabs and lobsters",
+      "Cats",
+      "Eagles",
+      "Bears"
+    ]
+  },
+  {
+    "Question": "Which tiny water animal can survive freezing, boiling and even outer space?",
+    "Image": "",
+    "Answer": "Tardigrade (water bear)",
+    "Choices": [
+      "Tardigrade (water bear)",
+      "Ant",
+      "Goldfish",
+      "Snail"
+    ]
+  },
+  {
+    "Question": "Which jellyfish can turn back into a baby again, so it's called 'immortal'?",
+    "Image": "",
+    "Answer": "Turritopsis (immortal jellyfish)",
+    "Choices": [
+      "Turritopsis (immortal jellyfish)",
+      "Box jellyfish",
+      "Moon jellyfish",
+      "Lion's mane jellyfish"
+    ]
+  },
+  {
+    "Question": "Which frog can freeze solid in winter and come back to life in spring?",
+    "Image": "",
+    "Answer": "Wood frog",
+    "Choices": [
+      "Wood frog",
+      "Bullfrog",
+      "Tree frog",
+      "Poison dart frog"
+    ]
+  },
+  {
+    "Question": "Which fish can breathe air and survive dry seasons buried in mud?",
+    "Image": "",
+    "Answer": "Lungfish",
+    "Choices": [
+      "Lungfish",
+      "Goldfish",
+      "Tuna",
+      "Salmon"
+    ]
+  },
+  {
+    "Question": "Which desert animal can live without ever drinking water?",
+    "Image": "",
+    "Answer": "Kangaroo rat",
+    "Choices": [
+      "Kangaroo rat",
+      "Elephant",
+      "Horse",
+      "Lion"
+    ]
+  },
+  {
+    "Question": "Which desert animal can close its nostrils to keep sand out?",
+    "Image": "",
+    "Answer": "Camel",
+    "Choices": [
+      "Camel",
+      "Lion",
+      "Zebra",
+      "Horse"
+    ]
+  },
+  {
+    "Question": "What do a camel's humps store?",
+    "Image": "",
+    "Answer": "Fat",
+    "Choices": [
+      "Fat",
+      "Water",
+      "Air",
+      "Milk"
+    ]
+  },
+  {
+    "Question": "Which insect can live for a week without its head?",
+    "Image": "",
+    "Answer": "Cockroach",
+    "Choices": [
+      "Cockroach",
+      "Butterfly",
+      "Bee",
+      "Dragonfly"
+    ]
+  },
+  {
+    "Question": "Which rodent almost never gets cancer and hardly feels some kinds of pain?",
+    "Image": "",
+    "Answer": "Naked mole-rat",
+    "Choices": [
+      "Naked mole-rat",
+      "Hamster",
+      "Guinea pig",
+      "Squirrel"
+    ]
+  },
+  {
+    "Question": "Which shark can live for around 400 years?",
+    "Image": "",
+    "Answer": "Greenland shark",
+    "Choices": [
+      "Greenland shark",
+      "Great white shark",
+      "Hammerhead shark",
+      "Tiger shark"
+    ]
+  },
+  {
+    "Question": "Which whale can live for more than 200 years?",
+    "Image": "",
+    "Answer": "Bowhead whale",
+    "Choices": [
+      "Bowhead whale",
+      "Blue whale",
+      "Orca",
+      "Humpback whale"
+    ]
+  },
+  {
+    "Question": "Which animal is famous for living over 150 years?",
+    "Image": "",
+    "Answer": "Giant tortoise",
+    "Choices": [
+      "Giant tortoise",
+      "Dog",
+      "Hamster",
+      "Rabbit"
+    ]
+  },
+  {
+    "Question": "Which animal keeps growing new teeth throughout its life, losing thousands?",
+    "Image": "",
+    "Answer": "Shark",
+    "Choices": [
+      "Shark",
+      "Human",
+      "Cow",
+      "Horse"
+    ]
+  },
+  {
+    "Question": "Whose front teeth never stop growing?",
+    "Image": "",
+    "Answer": "Rodents like beavers",
+    "Choices": [
+      "Rodents like beavers",
+      "Humans",
+      "Lions",
+      "Snakes"
+    ]
+  },
+  {
+    "Question": "Emperor penguin dads keep their egg warm by holding it on their…?",
+    "Image": "",
+    "Answer": "Feet",
+    "Choices": [
+      "Feet",
+      "Backs",
+      "Heads",
+      "Wings"
+    ]
+  },
+  {
+    "Question": "How do emperor penguins stay warm in freezing Antarctic storms?",
+    "Image": "",
+    "Answer": "Huddling together",
+    "Choices": [
+      "Huddling together",
+      "Building fires",
+      "Digging tunnels",
+      "Flying north"
+    ]
+  },
+  {
+    "Question": "Which whale can dive deeper than any other mammal, nearly 3,000 meters?",
+    "Image": "",
+    "Answer": "Cuvier's beaked whale",
+    "Choices": [
+      "Cuvier's beaked whale",
+      "Blue whale",
+      "Orca",
+      "Humpback whale"
+    ]
+  },
+  {
+    "Question": "Which animal makes the loudest sound of any animal?",
+    "Image": "",
+    "Answer": "Sperm whale",
+    "Choices": [
+      "Sperm whale",
+      "Lion",
+      "Elephant",
+      "Howler monkey"
+    ]
+  },
+  {
+    "Question": "Which monkey is one of the loudest land animals?",
+    "Image": "",
+    "Answer": "Howler monkey",
+    "Choices": [
+      "Howler monkey",
+      "Spider monkey",
+      "Capuchin",
+      "Marmoset"
+    ]
+  },
+  {
+    "Question": "Which fish can give an electric shock of hundreds of volts?",
+    "Image": "",
+    "Answer": "Electric eel",
+    "Choices": [
+      "Electric eel",
+      "Goldfish",
+      "Catfish",
+      "Clownfish"
+    ]
+  },
+  {
+    "Question": "What do we call it when living things make their own light?",
+    "Image": "",
+    "Answer": "Bioluminescence",
+    "Choices": [
+      "Bioluminescence",
+      "Photosynthesis",
+      "Reflection",
+      "Echolocation"
+    ]
+  },
+  {
+    "Question": "Which insect lights up to signal to others at night?",
+    "Image": "",
+    "Answer": "Firefly",
+    "Choices": [
+      "Firefly",
+      "Bee",
+      "Grasshopper",
+      "Moth"
+    ]
+  },
+  {
+    "Question": "Which deep-sea fish has a glowing lure on its head to catch prey?",
+    "Image": "",
+    "Answer": "Anglerfish",
+    "Choices": [
+      "Anglerfish",
+      "Clownfish",
+      "Tuna",
+      "Salmon"
+    ]
+  },
+  {
+    "Question": "Which fish can leap out of the sea and glide through the air?",
+    "Image": "",
+    "Answer": "Flying fish",
+    "Choices": [
+      "Flying fish",
+      "Goldfish",
+      "Catfish",
+      "Pufferfish"
+    ]
+  },
+  {
+    "Question": "Which squirrel can glide from tree to tree?",
+    "Image": "",
+    "Answer": "Flying squirrel",
+    "Choices": [
+      "Flying squirrel",
+      "Red squirrel",
+      "Grey squirrel",
+      "Ground squirrel"
+    ]
+  },
+  {
+    "Question": "Which snake can flatten its body and glide between trees?",
+    "Image": "",
+    "Answer": "Paradise tree snake",
+    "Choices": [
+      "Paradise tree snake",
+      "Python",
+      "Cobra",
+      "Rattlesnake"
+    ]
+  },
+  {
+    "Question": "Which bird has the largest wingspan of any living bird?",
+    "Image": "",
+    "Answer": "Wandering albatross",
+    "Choices": [
+      "Wandering albatross",
+      "Bald eagle",
+      "Ostrich",
+      "Pelican"
+    ]
+  },
+  {
+    "Question": "Which tiny shrimp snaps its claw to make a bubble that is hot and loud enough to stun fish?",
+    "Image": "",
+    "Answer": "Pistol shrimp",
+    "Choices": [
+      "Pistol shrimp",
+      "Mantis shrimp",
+      "Krill",
+      "Lobster"
+    ]
+  },
+  {
+    "Question": "Which fish shoots jets of water to knock insects off leaves?",
+    "Image": "",
+    "Answer": "Archerfish",
+    "Choices": [
+      "Archerfish",
+      "Pufferfish",
+      "Clownfish",
+      "Swordfish"
+    ]
+  },
+  {
+    "Question": "Which animal builds dams across rivers?",
+    "Image": "",
+    "Answer": "Beaver",
+    "Choices": [
+      "Beaver",
+      "Otter",
+      "Bear",
+      "Duck"
+    ]
+  },
+  {
+    "Question": "Which insects build tall mounds that stay cool inside like air conditioning?",
+    "Image": "",
+    "Answer": "Termites",
+    "Choices": [
+      "Termites",
+      "Bees",
+      "Butterflies",
+      "Ladybugs"
+    ]
+  },
+  {
+    "Question": "How do honeybees tell each other where to find flowers?",
+    "Image": "",
+    "Answer": "They do a waggle dance",
+    "Choices": [
+      "They do a waggle dance",
+      "They draw maps",
+      "They sing",
+      "They text each other"
+    ]
+  },
+  {
+    "Question": "Spider silk is stronger than what, for its weight?",
+    "Image": "",
+    "Answer": "Steel",
+    "Choices": [
+      "Steel",
+      "Cotton",
+      "Paper",
+      "Rubber"
+    ]
+  },
+  {
+    "Question": "Which bird hits trees thousands of times a day without getting a headache?",
+    "Image": "",
+    "Answer": "Woodpecker",
+    "Choices": [
+      "Woodpecker",
+      "Robin",
+      "Sparrow",
+      "Owl"
+    ]
+  },
+  {
+    "Question": "Which lemur taps on wood with a long finger to find grubs inside?",
+    "Image": "",
+    "Answer": "Aye-aye",
+    "Choices": [
+      "Aye-aye",
+      "Ring-tailed lemur",
+      "Sifaka",
+      "Mouse lemur"
+    ]
+  },
+  {
+    "Question": "Which animals laugh when they are tickled?",
+    "Image": "",
+    "Answer": "Rats",
+    "Choices": [
+      "Rats",
+      "Fish",
+      "Snakes",
+      "Spiders"
+    ]
+  },
+  {
+    "Question": "Which animal has fingerprints very like a human's?",
+    "Image": "",
+    "Answer": "Koala",
+    "Choices": [
+      "Koala",
+      "Kangaroo",
+      "Dog",
+      "Cat"
+    ]
+  },
+  {
+    "Question": "Which mammal uses its long, dark tongue to grab leaves from tall trees?",
+    "Image": "",
+    "Answer": "Giraffe",
+    "Choices": [
+      "Giraffe",
+      "Elephant",
+      "Zebra",
+      "Hippo"
+    ]
+  },
+  {
+    "Question": "Which sea animal holds hands with others while sleeping so they don't float apart?",
+    "Image": "",
+    "Answer": "Sea otter",
+    "Choices": [
+      "Sea otter",
+      "Seal",
+      "Walrus",
+      "Dolphin"
+    ]
+  },
+  {
+    "Question": "Which animal can escape through any gap bigger than its beak?",
+    "Image": "",
+    "Answer": "Octopus",
+    "Choices": [
+      "Octopus",
+      "Crab",
+      "Turtle",
+      "Shark"
+    ]
+  },
+  {
+    "Question": "Which mammal sleeps with half of its brain at a time so it can keep swimming?",
+    "Image": "",
+    "Answer": "Dolphin",
+    "Choices": [
+      "Dolphin",
+      "Cow",
+      "Bat",
+      "Horse"
+    ]
+  },
+  {
+    "Question": "Which bird makes the longest migration of any animal, from the Arctic to the Antarctic and back?",
+    "Image": "",
+    "Answer": "Arctic tern",
+    "Choices": [
+      "Arctic tern",
+      "Penguin",
+      "Chicken",
+      "Ostrich"
+    ]
+  },
+  {
+    "Question": "Which butterfly flies thousands of kilometers each year to Mexico?",
+    "Image": "",
+    "Answer": "Monarch butterfly",
+    "Choices": [
+      "Monarch butterfly",
+      "Cabbage white",
+      "Blue morpho",
+      "Painted lady"
+    ]
+  },
+  {
+    "Question": "Which bird can find its way home from hundreds of kilometers away?",
+    "Image": "",
+    "Answer": "Homing pigeon",
+    "Choices": [
+      "Homing pigeon",
+      "Ostrich",
+      "Penguin",
+      "Peacock"
+    ]
+  },
+  {
+    "Question": "Which algae-covered animal moves so slowly that plants grow in its fur?",
+    "Image": "",
+    "Answer": "Sloth",
+    "Choices": [
+      "Sloth",
+      "Cheetah",
+      "Squirrel",
+      "Monkey"
+    ]
+  },
+  {
+    "Question": "Octopuses have blue blood.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Cheetahs can run as fast as a car on a highway for short bursts.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "A shark can smell a tiny drop of blood in the water.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Bats are the only mammals that can truly fly.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The platypus is a mammal that lays eggs.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Male platypuses have venom in spurs on their back legs.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Starfish have a brain like ours.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Starfish can push their stomachs out of their bodies to eat.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Snakes can unhinge their jaws to swallow big meals.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Elephants can talk to each other with rumbles too low for humans to hear.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Penguins can fly.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Owls fly almost silently.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Geckos have sticky glue on their feet.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Geckos stick to walls using millions of tiny hairs on their toes.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Electric eels are actually a type of eel.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Hummingbirds can hover in one spot like a helicopter.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Tigers' stripes are unique, like fingerprints.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Hippos can't really swim. They walk or bounce along the bottom.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Fireflies make light without making heat.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Chameleons change color mostly because of their mood and temperature.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Honey badgers are scared of everything.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "A group of crows is called a murder.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Bees can recognize patterns and colors.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Dragonflies catch most of the prey they chase.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Mantis shrimp can break aquarium glass with their punch.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Turtles can leave their shells and walk around without them.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Some frogs can survive being frozen.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Sloths are good swimmers.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Which animal can lock its legs so it can doze standing up?",
+    "Image": "",
+    "Answer": "Horse",
+    "Choices": [
+      "Horse",
+      "Cat",
+      "Dog",
+      "Rabbit"
+    ]
+  },
+  {
+    "Question": "Which bird can turn its head about three-quarters of the way around?",
+    "Image": "",
+    "Answer": "Owl",
+    "Choices": [
+      "Owl",
+      "Chicken",
+      "Duck",
+      "Parrot"
+    ]
+  },
+  {
+    "Question": "Which lizard's tongue can be longer than its whole body?",
+    "Image": "",
+    "Answer": "Chameleon",
+    "Choices": [
+      "Chameleon",
+      "Iguana",
+      "Gecko",
+      "Komodo dragon"
+    ]
+  },
+  {
+    "Question": "Which tree-hugging marsupial sleeps for up to 22 hours a day to save energy?",
+    "Image": "",
+    "Answer": "Koala",
+    "Choices": [
+      "Koala",
+      "Kangaroo",
+      "Wombat",
+      "Sugar glider"
+    ]
+  },
+  {
+    "Question": "Which bird can dive more than 500 meters deep to catch fish?",
+    "Image": "",
+    "Answer": "Emperor penguin",
+    "Choices": [
+      "Emperor penguin",
+      "Puffin",
+      "Pelican",
+      "Seagull"
+    ]
+  }
+]

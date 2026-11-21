@@ -1,0 +1,1667 @@
+[
+  {
+    "Question": "What are the three main states of matter?",
+    "Image": "",
+    "Answer": "Solid, liquid and gas",
+    "Choices": [
+      "Solid, liquid and gas",
+      "Hot, warm and cold",
+      "Rock, water and air",
+      "Big, medium and small"
+    ]
+  },
+  {
+    "Question": "What is it called when water turns into a gas?",
+    "Image": "",
+    "Answer": "Evaporation",
+    "Choices": [
+      "Evaporation",
+      "Condensation",
+      "Freezing",
+      "Melting"
+    ]
+  },
+  {
+    "Question": "What is it called when water vapour turns back into liquid?",
+    "Image": "",
+    "Answer": "Condensation",
+    "Choices": [
+      "Condensation",
+      "Evaporation",
+      "Melting",
+      "Boiling"
+    ]
+  },
+  {
+    "Question": "What is it called when a solid turns into a liquid?",
+    "Image": "",
+    "Answer": "Melting",
+    "Choices": [
+      "Melting",
+      "Freezing",
+      "Evaporating",
+      "Condensing"
+    ]
+  },
+  {
+    "Question": "At what temperature does water freeze?",
+    "Image": "",
+    "Answer": "0 °C",
+    "Choices": [
+      "0 °C",
+      "10 °C",
+      "100 °C",
+      "-50 °C"
+    ]
+  },
+  {
+    "Question": "At what temperature does pure water boil at sea level?",
+    "Image": "",
+    "Answer": "100 °C",
+    "Choices": [
+      "100 °C",
+      "50 °C",
+      "0 °C",
+      "200 °C"
+    ]
+  },
+  {
+    "Question": "What is the chemical formula for water?",
+    "Image": "",
+    "Answer": "H₂O",
+    "Choices": [
+      "H₂O",
+      "CO₂",
+      "O₂",
+      "NaCl"
+    ]
+  },
+  {
+    "Question": "Which gas do we need to breathe to stay alive?",
+    "Image": "",
+    "Answer": "Oxygen",
+    "Choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Helium",
+      "Nitrogen"
+    ]
+  },
+  {
+    "Question": "Which gas makes up most of the air we breathe?",
+    "Image": "",
+    "Answer": "Nitrogen",
+    "Choices": [
+      "Nitrogen",
+      "Oxygen",
+      "Carbon dioxide",
+      "Hydrogen"
+    ]
+  },
+  {
+    "Question": "Which gas do plants take in from the air?",
+    "Image": "",
+    "Answer": "Carbon dioxide",
+    "Choices": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Helium",
+      "Neon"
+    ]
+  },
+  {
+    "Question": "Which gas makes balloons float up in the air?",
+    "Image": "",
+    "Answer": "Helium",
+    "Choices": [
+      "Helium",
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen"
+    ]
+  },
+  {
+    "Question": "What is dry ice made from?",
+    "Image": "",
+    "Answer": "Frozen carbon dioxide",
+    "Choices": [
+      "Frozen carbon dioxide",
+      "Frozen water",
+      "Frozen salt",
+      "Frozen milk"
+    ]
+  },
+  {
+    "Question": "What are tiny building blocks that make up everything called?",
+    "Image": "",
+    "Answer": "Atoms",
+    "Choices": [
+      "Atoms",
+      "Cells",
+      "Bricks",
+      "Pixels"
+    ]
+  },
+  {
+    "Question": "What is the center of an atom called?",
+    "Image": "",
+    "Answer": "Nucleus",
+    "Choices": [
+      "Nucleus",
+      "Shell",
+      "Core box",
+      "Middle"
+    ]
+  },
+  {
+    "Question": "Which tiny particles zoom around the outside of an atom?",
+    "Image": "",
+    "Answer": "Electrons",
+    "Choices": [
+      "Electrons",
+      "Protons",
+      "Neutrons",
+      "Photons"
+    ]
+  },
+  {
+    "Question": "What is the chemical symbol for gold?",
+    "Image": "",
+    "Answer": "Au",
+    "Choices": [
+      "Au",
+      "Go",
+      "Gd",
+      "Ag"
+    ]
+  },
+  {
+    "Question": "What is the chemical symbol for oxygen?",
+    "Image": "",
+    "Answer": "O",
+    "Choices": [
+      "O",
+      "Ox",
+      "Og",
+      "On"
+    ]
+  },
+  {
+    "Question": "What is the chemical symbol for iron?",
+    "Image": "",
+    "Answer": "Fe",
+    "Choices": [
+      "Fe",
+      "Ir",
+      "In",
+      "I"
+    ]
+  },
+  {
+    "Question": "What chart lists all the known chemical elements?",
+    "Image": "",
+    "Answer": "The periodic table",
+    "Choices": [
+      "The periodic table",
+      "The times table",
+      "The food pyramid",
+      "The water cycle"
+    ]
+  },
+  {
+    "Question": "Which element is the most common in the whole universe?",
+    "Image": "",
+    "Answer": "Hydrogen",
+    "Choices": [
+      "Hydrogen",
+      "Oxygen",
+      "Carbon",
+      "Iron"
+    ]
+  },
+  {
+    "Question": "Which metal is liquid at room temperature?",
+    "Image": "",
+    "Answer": "Mercury",
+    "Choices": [
+      "Mercury",
+      "Iron",
+      "Gold",
+      "Copper"
+    ]
+  },
+  {
+    "Question": "What do we call a mix where one thing dissolves completely, like sugar in water?",
+    "Image": "",
+    "Answer": "A solution",
+    "Choices": [
+      "A solution",
+      "A suspension",
+      "A solid",
+      "A crystal"
+    ]
+  },
+  {
+    "Question": "What do you get when you mix baking soda and vinegar?",
+    "Image": "",
+    "Answer": "Lots of fizzy bubbles",
+    "Choices": [
+      "Lots of fizzy bubbles",
+      "Ice",
+      "Fire",
+      "Gold"
+    ]
+  },
+  {
+    "Question": "Which of these is an acid?",
+    "Image": "",
+    "Answer": "Lemon juice",
+    "Choices": [
+      "Lemon juice",
+      "Soap",
+      "Baking soda",
+      "Toothpaste"
+    ]
+  },
+  {
+    "Question": "What color does pure water have in a glass?",
+    "Image": "",
+    "Answer": "No color (clear)",
+    "Choices": [
+      "No color (clear)",
+      "Blue",
+      "Green",
+      "White"
+    ]
+  },
+  {
+    "Question": "Rust forms when iron reacts with water and…?",
+    "Image": "",
+    "Answer": "Oxygen",
+    "Choices": [
+      "Oxygen",
+      "Sugar",
+      "Salt",
+      "Sunlight only"
+    ]
+  },
+  {
+    "Question": "Which material is a good conductor of electricity?",
+    "Image": "",
+    "Answer": "Copper",
+    "Choices": [
+      "Copper",
+      "Rubber",
+      "Plastic",
+      "Wood"
+    ]
+  },
+  {
+    "Question": "Which material is a good insulator that stops electricity flowing?",
+    "Image": "",
+    "Answer": "Rubber",
+    "Choices": [
+      "Rubber",
+      "Copper",
+      "Iron",
+      "Aluminium"
+    ]
+  },
+  {
+    "Question": "Which of these is attracted to a magnet?",
+    "Image": "",
+    "Answer": "An iron nail",
+    "Choices": [
+      "An iron nail",
+      "A plastic spoon",
+      "A wooden block",
+      "A glass marble"
+    ]
+  },
+  {
+    "Question": "What are the two ends of a magnet called?",
+    "Image": "",
+    "Answer": "North and south poles",
+    "Choices": [
+      "North and south poles",
+      "Top and bottom",
+      "Plus and minus",
+      "Left and right"
+    ]
+  },
+  {
+    "Question": "What happens when you put two north poles of magnets together?",
+    "Image": "",
+    "Answer": "They push apart",
+    "Choices": [
+      "They push apart",
+      "They stick together",
+      "They melt",
+      "Nothing at all"
+    ]
+  },
+  {
+    "Question": "Which force pulls things down towards the ground?",
+    "Image": "",
+    "Answer": "Gravity",
+    "Choices": [
+      "Gravity",
+      "Friction",
+      "Magnetism",
+      "Air resistance"
+    ]
+  },
+  {
+    "Question": "Which force slows things down when they rub together?",
+    "Image": "",
+    "Answer": "Friction",
+    "Choices": [
+      "Friction",
+      "Gravity",
+      "Buoyancy",
+      "Thrust"
+    ]
+  },
+  {
+    "Question": "Which force slows down a falling parachute?",
+    "Image": "",
+    "Answer": "Air resistance",
+    "Choices": [
+      "Air resistance",
+      "Gravity",
+      "Magnetism",
+      "Electricity"
+    ]
+  },
+  {
+    "Question": "Which force pushes a boat up so it floats?",
+    "Image": "",
+    "Answer": "Upthrust (buoyancy)",
+    "Choices": [
+      "Upthrust (buoyancy)",
+      "Gravity",
+      "Friction",
+      "Magnetism"
+    ]
+  },
+  {
+    "Question": "Which scientist described gravity after watching an apple fall?",
+    "Image": "",
+    "Answer": "Isaac Newton",
+    "Choices": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Thomas Edison",
+      "Charles Darwin"
+    ]
+  },
+  {
+    "Question": "What is a push or a pull called?",
+    "Image": "",
+    "Answer": "A force",
+    "Choices": [
+      "A force",
+      "An energy",
+      "A speed",
+      "A mass"
+    ]
+  },
+  {
+    "Question": "What unit is force measured in?",
+    "Image": "",
+    "Answer": "Newtons",
+    "Choices": [
+      "Newtons",
+      "Meters",
+      "Kilograms",
+      "Seconds"
+    ]
+  },
+  {
+    "Question": "What simple machine is a ramp?",
+    "Image": "",
+    "Answer": "Inclined plane",
+    "Choices": [
+      "Inclined plane",
+      "Lever",
+      "Pulley",
+      "Wheel"
+    ]
+  },
+  {
+    "Question": "A seesaw is an example of which simple machine?",
+    "Image": "",
+    "Answer": "Lever",
+    "Choices": [
+      "Lever",
+      "Pulley",
+      "Screw",
+      "Wedge"
+    ]
+  },
+  {
+    "Question": "Which simple machine uses a rope and a wheel to lift things?",
+    "Image": "",
+    "Answer": "Pulley",
+    "Choices": [
+      "Pulley",
+      "Lever",
+      "Wedge",
+      "Screw"
+    ]
+  },
+  {
+    "Question": "An axe blade is which simple machine?",
+    "Image": "",
+    "Answer": "Wedge",
+    "Choices": [
+      "Wedge",
+      "Pulley",
+      "Lever",
+      "Screw"
+    ]
+  },
+  {
+    "Question": "What do we call how much matter an object has?",
+    "Image": "",
+    "Answer": "Mass",
+    "Choices": [
+      "Mass",
+      "Volume",
+      "Speed",
+      "Shape"
+    ]
+  },
+  {
+    "Question": "Would a bowling ball weigh less on the Moon than on Earth?",
+    "Image": "",
+    "Answer": "Yes, because the Moon's gravity is weaker",
+    "Choices": [
+      "Yes, because the Moon's gravity is weaker",
+      "No, it weighs the same",
+      "No, it weighs more",
+      "It would float away"
+    ]
+  },
+  {
+    "Question": "What is the fastest thing in the universe?",
+    "Image": "",
+    "Answer": "Light",
+    "Choices": [
+      "Light",
+      "Sound",
+      "A rocket",
+      "A cheetah"
+    ]
+  },
+  {
+    "Question": "Where does almost all the energy on Earth come from?",
+    "Image": "",
+    "Answer": "The Sun",
+    "Choices": [
+      "The Sun",
+      "The Moon",
+      "Volcanoes",
+      "The ocean"
+    ]
+  },
+  {
+    "Question": "What kind of energy does a moving car have?",
+    "Image": "",
+    "Answer": "Kinetic energy",
+    "Choices": [
+      "Kinetic energy",
+      "Sound energy",
+      "Stored energy",
+      "Light energy"
+    ]
+  },
+  {
+    "Question": "What kind of energy is stored in food and batteries?",
+    "Image": "",
+    "Answer": "Chemical energy",
+    "Choices": [
+      "Chemical energy",
+      "Kinetic energy",
+      "Sound energy",
+      "Light energy"
+    ]
+  },
+  {
+    "Question": "Which of these is a renewable energy source?",
+    "Image": "",
+    "Answer": "Wind",
+    "Choices": [
+      "Wind",
+      "Coal",
+      "Oil",
+      "Natural gas"
+    ]
+  },
+  {
+    "Question": "What do solar panels turn sunlight into?",
+    "Image": "",
+    "Answer": "Electricity",
+    "Choices": [
+      "Electricity",
+      "Water",
+      "Wind",
+      "Coal"
+    ]
+  },
+  {
+    "Question": "What do wind turbines use to make electricity?",
+    "Image": "",
+    "Answer": "Moving air",
+    "Choices": [
+      "Moving air",
+      "Sunlight",
+      "Rain",
+      "Heat from the ground"
+    ]
+  },
+  {
+    "Question": "What is a complete loop that electricity flows around called?",
+    "Image": "",
+    "Answer": "A circuit",
+    "Choices": [
+      "A circuit",
+      "A circle",
+      "A battery",
+      "A switch"
+    ]
+  },
+  {
+    "Question": "What does a switch do in a circuit?",
+    "Image": "",
+    "Answer": "Opens or closes the circuit",
+    "Choices": [
+      "Opens or closes the circuit",
+      "Makes electricity",
+      "Stores energy",
+      "Makes light"
+    ]
+  },
+  {
+    "Question": "Who is famous for improving the light bulb?",
+    "Image": "",
+    "Answer": "Thomas Edison",
+    "Choices": [
+      "Thomas Edison",
+      "Isaac Newton",
+      "Marie Curie",
+      "Galileo Galilei"
+    ]
+  },
+  {
+    "Question": "Which scientist flew a kite in a storm to study electricity?",
+    "Image": "",
+    "Answer": "Benjamin Franklin",
+    "Choices": [
+      "Benjamin Franklin",
+      "Albert Einstein",
+      "Isaac Newton",
+      "Charles Darwin"
+    ]
+  },
+  {
+    "Question": "What is lightning?",
+    "Image": "",
+    "Answer": "A giant spark of electricity",
+    "Choices": [
+      "A giant spark of electricity",
+      "Burning clouds",
+      "Falling stars",
+      "Hot rain"
+    ]
+  },
+  {
+    "Question": "Why do you see lightning before you hear thunder?",
+    "Image": "",
+    "Answer": "Light travels faster than sound",
+    "Choices": [
+      "Light travels faster than sound",
+      "Sound is slower in rain",
+      "Thunder happens later",
+      "Your eyes are faster than ears"
+    ]
+  },
+  {
+    "Question": "What unit do we use to measure electrical power?",
+    "Image": "",
+    "Answer": "Watts",
+    "Choices": [
+      "Watts",
+      "Meters",
+      "Grams",
+      "Liters"
+    ]
+  },
+  {
+    "Question": "What happens to most materials when they get hot?",
+    "Image": "",
+    "Answer": "They expand",
+    "Choices": [
+      "They expand",
+      "They shrink",
+      "They disappear",
+      "They turn blue"
+    ]
+  },
+  {
+    "Question": "What do we call energy moving from a hot thing to a cold thing?",
+    "Image": "",
+    "Answer": "Heat",
+    "Choices": [
+      "Heat",
+      "Sound",
+      "Gravity",
+      "Magnetism"
+    ]
+  },
+  {
+    "Question": "What tool measures temperature?",
+    "Image": "",
+    "Answer": "Thermometer",
+    "Choices": [
+      "Thermometer",
+      "Barometer",
+      "Ruler",
+      "Stopwatch"
+    ]
+  },
+  {
+    "Question": "What do we call it when light bounces off a mirror?",
+    "Image": "",
+    "Answer": "Reflection",
+    "Choices": [
+      "Reflection",
+      "Refraction",
+      "Absorption",
+      "Vibration"
+    ]
+  },
+  {
+    "Question": "What do we call it when light bends as it goes into water?",
+    "Image": "",
+    "Answer": "Refraction",
+    "Choices": [
+      "Refraction",
+      "Reflection",
+      "Evaporation",
+      "Friction"
+    ]
+  },
+  {
+    "Question": "What splits white light into a rainbow?",
+    "Image": "",
+    "Answer": "A prism",
+    "Choices": [
+      "A prism",
+      "A mirror",
+      "A magnet",
+      "A battery"
+    ]
+  },
+  {
+    "Question": "How many colors are usually named in a rainbow?",
+    "Image": "",
+    "Answer": "7",
+    "Choices": [
+      "7",
+      "5",
+      "6",
+      "10"
+    ]
+  },
+  {
+    "Question": "Which color is at the top of a rainbow?",
+    "Image": "",
+    "Answer": "Red",
+    "Choices": [
+      "Red",
+      "Violet",
+      "Green",
+      "Blue"
+    ]
+  },
+  {
+    "Question": "What makes a shadow?",
+    "Image": "",
+    "Answer": "Something blocking light",
+    "Choices": [
+      "Something blocking light",
+      "Light bouncing",
+      "Dark air",
+      "Cold air"
+    ]
+  },
+  {
+    "Question": "What are the primary colors of light?",
+    "Image": "",
+    "Answer": "Red, green and blue",
+    "Choices": [
+      "Red, green and blue",
+      "Red, yellow and blue",
+      "Black and white",
+      "Orange, purple and green"
+    ]
+  },
+  {
+    "Question": "What is sound made by?",
+    "Image": "",
+    "Answer": "Vibrations",
+    "Choices": [
+      "Vibrations",
+      "Light",
+      "Magnets",
+      "Gravity"
+    ]
+  },
+  {
+    "Question": "Can sound travel through empty space?",
+    "Image": "",
+    "Answer": "No, there is nothing to carry it",
+    "Choices": [
+      "No, there is nothing to carry it",
+      "Yes, very fast",
+      "Yes, but slowly",
+      "Only at night"
+    ]
+  },
+  {
+    "Question": "What do we call a sound that bounces back to you?",
+    "Image": "",
+    "Answer": "An echo",
+    "Choices": [
+      "An echo",
+      "A shadow",
+      "A reflection of light",
+      "A wave of heat"
+    ]
+  },
+  {
+    "Question": "What word describes how high or low a sound is?",
+    "Image": "",
+    "Answer": "Pitch",
+    "Choices": [
+      "Pitch",
+      "Volume",
+      "Speed",
+      "Color"
+    ]
+  },
+  {
+    "Question": "What unit is loudness measured in?",
+    "Image": "",
+    "Answer": "Decibels",
+    "Choices": [
+      "Decibels",
+      "Meters",
+      "Watts",
+      "Hertz"
+    ]
+  },
+  {
+    "Question": "Which travels faster through the air?",
+    "Image": "",
+    "Answer": "Light",
+    "Choices": [
+      "Light",
+      "Sound",
+      "They are the same",
+      "Neither moves"
+    ]
+  },
+  {
+    "Question": "What part of the eye lets light in?",
+    "Image": "",
+    "Answer": "The pupil",
+    "Choices": [
+      "The pupil",
+      "The eyebrow",
+      "The eyelash",
+      "The eyelid"
+    ]
+  },
+  {
+    "Question": "How do plants make their own food?",
+    "Image": "",
+    "Answer": "Photosynthesis",
+    "Choices": [
+      "Photosynthesis",
+      "Digestion",
+      "Evaporation",
+      "Hibernation"
+    ]
+  },
+  {
+    "Question": "What green substance helps plants catch sunlight?",
+    "Image": "",
+    "Answer": "Chlorophyll",
+    "Choices": [
+      "Chlorophyll",
+      "Chloride",
+      "Chlorine",
+      "Chalk"
+    ]
+  },
+  {
+    "Question": "Which part of a plant takes in water from the soil?",
+    "Image": "",
+    "Answer": "Roots",
+    "Choices": [
+      "Roots",
+      "Leaves",
+      "Flowers",
+      "Petals"
+    ]
+  },
+  {
+    "Question": "Which part of a plant usually makes the food?",
+    "Image": "",
+    "Answer": "Leaves",
+    "Choices": [
+      "Leaves",
+      "Roots",
+      "Seeds",
+      "Bark"
+    ]
+  },
+  {
+    "Question": "What gas do plants give out that we need to breathe?",
+    "Image": "",
+    "Answer": "Oxygen",
+    "Choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Helium",
+      "Smoke"
+    ]
+  },
+  {
+    "Question": "What do bees carry from flower to flower?",
+    "Image": "",
+    "Answer": "Pollen",
+    "Choices": [
+      "Pollen",
+      "Seeds",
+      "Water",
+      "Leaves"
+    ]
+  },
+  {
+    "Question": "What is it called when a seed starts to grow?",
+    "Image": "",
+    "Answer": "Germination",
+    "Choices": [
+      "Germination",
+      "Pollination",
+      "Evaporation",
+      "Migration"
+    ]
+  },
+  {
+    "Question": "Which part of a plant becomes a fruit?",
+    "Image": "",
+    "Answer": "The flower",
+    "Choices": [
+      "The flower",
+      "The root",
+      "The stem",
+      "The leaf"
+    ]
+  },
+  {
+    "Question": "What are living things made of?",
+    "Image": "",
+    "Answer": "Cells",
+    "Choices": [
+      "Cells",
+      "Atoms only",
+      "Bricks",
+      "Plastic"
+    ]
+  },
+  {
+    "Question": "What do we call animals that eat only plants?",
+    "Image": "",
+    "Answer": "Herbivores",
+    "Choices": [
+      "Herbivores",
+      "Carnivores",
+      "Omnivores",
+      "Insectivores"
+    ]
+  },
+  {
+    "Question": "What do we call animals that eat only meat?",
+    "Image": "",
+    "Answer": "Carnivores",
+    "Choices": [
+      "Carnivores",
+      "Herbivores",
+      "Omnivores",
+      "Vegetarians"
+    ]
+  },
+  {
+    "Question": "What do we call animals that eat both plants and meat?",
+    "Image": "",
+    "Answer": "Omnivores",
+    "Choices": [
+      "Omnivores",
+      "Herbivores",
+      "Carnivores",
+      "Decomposers"
+    ]
+  },
+  {
+    "Question": "What do we call living things like mushrooms that break down dead stuff?",
+    "Image": "",
+    "Answer": "Decomposers",
+    "Choices": [
+      "Decomposers",
+      "Producers",
+      "Predators",
+      "Herbivores"
+    ]
+  },
+  {
+    "Question": "What do we call the order of who eats whom in nature?",
+    "Image": "",
+    "Answer": "A food chain",
+    "Choices": [
+      "A food chain",
+      "A life cycle",
+      "A water cycle",
+      "A family tree"
+    ]
+  },
+  {
+    "Question": "What does a caterpillar turn into?",
+    "Image": "",
+    "Answer": "A butterfly or moth",
+    "Choices": [
+      "A butterfly or moth",
+      "A bee",
+      "A spider",
+      "A worm"
+    ]
+  },
+  {
+    "Question": "What is a baby frog called?",
+    "Image": "",
+    "Answer": "Tadpole",
+    "Choices": [
+      "Tadpole",
+      "Kitten",
+      "Cub",
+      "Chick"
+    ]
+  },
+  {
+    "Question": "What do we call it when an animal sleeps through the winter?",
+    "Image": "",
+    "Answer": "Hibernation",
+    "Choices": [
+      "Hibernation",
+      "Migration",
+      "Camouflage",
+      "Germination"
+    ]
+  },
+  {
+    "Question": "What do we call it when animals travel far to find food or warmth each year?",
+    "Image": "",
+    "Answer": "Migration",
+    "Choices": [
+      "Migration",
+      "Hibernation",
+      "Evaporation",
+      "Pollination"
+    ]
+  },
+  {
+    "Question": "Which scientist is famous for the theory of evolution?",
+    "Image": "",
+    "Answer": "Charles Darwin",
+    "Choices": [
+      "Charles Darwin",
+      "Isaac Newton",
+      "Thomas Edison",
+      "Galileo"
+    ]
+  },
+  {
+    "Question": "What tool makes tiny things look much bigger?",
+    "Image": "",
+    "Answer": "Microscope",
+    "Choices": [
+      "Microscope",
+      "Telescope",
+      "Periscope",
+      "Stethoscope"
+    ]
+  },
+  {
+    "Question": "What do scientists call a living thing that is too small to see without a microscope?",
+    "Image": "",
+    "Answer": "Microorganism",
+    "Choices": [
+      "Microorganism",
+      "Megaorganism",
+      "Fossil",
+      "Mineral"
+    ]
+  },
+  {
+    "Question": "Which scientist discovered penicillin, the first antibiotic?",
+    "Image": "",
+    "Answer": "Alexander Fleming",
+    "Choices": [
+      "Alexander Fleming",
+      "Albert Einstein",
+      "Marie Curie",
+      "Louis Pasteur"
+    ]
+  },
+  {
+    "Question": "Which scientist won two Nobel Prizes for studying radioactivity?",
+    "Image": "",
+    "Answer": "Marie Curie",
+    "Choices": [
+      "Marie Curie",
+      "Isaac Newton",
+      "Jane Goodall",
+      "Ada Lovelace"
+    ]
+  },
+  {
+    "Question": "Which scientist is famous for studying chimpanzees in the wild?",
+    "Image": "",
+    "Answer": "Jane Goodall",
+    "Choices": [
+      "Jane Goodall",
+      "Marie Curie",
+      "Rosalind Franklin",
+      "Ada Lovelace"
+    ]
+  },
+  {
+    "Question": "What is the hot, melted rock inside a volcano called?",
+    "Image": "",
+    "Answer": "Magma",
+    "Choices": [
+      "Magma",
+      "Lava ice",
+      "Basalt",
+      "Granite"
+    ]
+  },
+  {
+    "Question": "What is melted rock called once it comes out of a volcano?",
+    "Image": "",
+    "Answer": "Lava",
+    "Choices": [
+      "Lava",
+      "Magma",
+      "Ash",
+      "Coal"
+    ]
+  },
+  {
+    "Question": "What do we call the remains of ancient living things preserved in rock?",
+    "Image": "",
+    "Answer": "Fossils",
+    "Choices": [
+      "Fossils",
+      "Crystals",
+      "Minerals",
+      "Pebbles"
+    ]
+  },
+  {
+    "Question": "What are the three main types of rock?",
+    "Image": "",
+    "Answer": "Igneous, sedimentary and metamorphic",
+    "Choices": [
+      "Igneous, sedimentary and metamorphic",
+      "Hard, soft and medium",
+      "Big, small and tiny",
+      "Red, grey and black"
+    ]
+  },
+  {
+    "Question": "Which type of rock forms from cooled lava or magma?",
+    "Image": "",
+    "Answer": "Igneous",
+    "Choices": [
+      "Igneous",
+      "Sedimentary",
+      "Metamorphic",
+      "Fossil rock"
+    ]
+  },
+  {
+    "Question": "What is the hardest natural material?",
+    "Image": "",
+    "Answer": "Diamond",
+    "Choices": [
+      "Diamond",
+      "Gold",
+      "Iron",
+      "Granite"
+    ]
+  },
+  {
+    "Question": "What causes earthquakes?",
+    "Image": "",
+    "Answer": "Moving plates in Earth's crust",
+    "Choices": [
+      "Moving plates in Earth's crust",
+      "Strong winds",
+      "Heavy rain",
+      "The Moon"
+    ]
+  },
+  {
+    "Question": "What do we call the outer layer of the Earth?",
+    "Image": "",
+    "Answer": "The crust",
+    "Choices": [
+      "The crust",
+      "The core",
+      "The mantle",
+      "The shell"
+    ]
+  },
+  {
+    "Question": "What is the center of the Earth called?",
+    "Image": "",
+    "Answer": "The core",
+    "Choices": [
+      "The core",
+      "The crust",
+      "The mantle",
+      "The pit"
+    ]
+  },
+  {
+    "Question": "What do we call the cycle of water evaporating, making clouds and raining?",
+    "Image": "",
+    "Answer": "The water cycle",
+    "Choices": [
+      "The water cycle",
+      "The rock cycle",
+      "The life cycle",
+      "The moon cycle"
+    ]
+  },
+  {
+    "Question": "Clouds are made of…?",
+    "Image": "",
+    "Answer": "Tiny water drops or ice crystals",
+    "Choices": [
+      "Tiny water drops or ice crystals",
+      "Smoke",
+      "Cotton",
+      "Steam from factories"
+    ]
+  },
+  {
+    "Question": "What tool measures how much rain has fallen?",
+    "Image": "",
+    "Answer": "Rain gauge",
+    "Choices": [
+      "Rain gauge",
+      "Thermometer",
+      "Compass",
+      "Ruler"
+    ]
+  },
+  {
+    "Question": "What do we call a spinning column of air that touches the ground?",
+    "Image": "",
+    "Answer": "Tornado",
+    "Choices": [
+      "Tornado",
+      "Rainbow",
+      "Fog",
+      "Drizzle"
+    ]
+  },
+  {
+    "Question": "What is a huge storm that forms over warm oceans called?",
+    "Image": "",
+    "Answer": "Hurricane",
+    "Choices": [
+      "Hurricane",
+      "Blizzard",
+      "Drought",
+      "Heatwave"
+    ]
+  },
+  {
+    "Question": "What do we call a long time with little or no rain?",
+    "Image": "",
+    "Answer": "Drought",
+    "Choices": [
+      "Drought",
+      "Flood",
+      "Blizzard",
+      "Monsoon"
+    ]
+  },
+  {
+    "Question": "What do we call a scientist who studies the weather?",
+    "Image": "",
+    "Answer": "Meteorologist",
+    "Choices": [
+      "Meteorologist",
+      "Geologist",
+      "Biologist",
+      "Astronomer"
+    ]
+  },
+  {
+    "Question": "What do we call a scientist who studies rocks?",
+    "Image": "",
+    "Answer": "Geologist",
+    "Choices": [
+      "Geologist",
+      "Meteorologist",
+      "Zoologist",
+      "Botanist"
+    ]
+  },
+  {
+    "Question": "What do we call a scientist who studies plants?",
+    "Image": "",
+    "Answer": "Botanist",
+    "Choices": [
+      "Botanist",
+      "Zoologist",
+      "Geologist",
+      "Chemist"
+    ]
+  },
+  {
+    "Question": "What do we call a scientist who studies animals?",
+    "Image": "",
+    "Answer": "Zoologist",
+    "Choices": [
+      "Zoologist",
+      "Botanist",
+      "Geologist",
+      "Physicist"
+    ]
+  },
+  {
+    "Question": "What do we call a scientist who studies dinosaurs and fossils?",
+    "Image": "",
+    "Answer": "Paleontologist",
+    "Choices": [
+      "Paleontologist",
+      "Archaeologist",
+      "Astronomer",
+      "Chemist"
+    ]
+  },
+  {
+    "Question": "Which layer of gas around Earth protects us from harmful sun rays?",
+    "Image": "",
+    "Answer": "The ozone layer",
+    "Choices": [
+      "The ozone layer",
+      "The cloud layer",
+      "The rain layer",
+      "The crust"
+    ]
+  },
+  {
+    "Question": "What do we call the blanket of air around Earth?",
+    "Image": "",
+    "Answer": "The atmosphere",
+    "Choices": [
+      "The atmosphere",
+      "The crust",
+      "The ocean",
+      "The core"
+    ]
+  },
+  {
+    "Question": "What do we call the gases that trap heat and warm the planet?",
+    "Image": "",
+    "Answer": "Greenhouse gases",
+    "Choices": [
+      "Greenhouse gases",
+      "Cool gases",
+      "Rainbow gases",
+      "Space gases"
+    ]
+  },
+  {
+    "Question": "Which of these helps the planet the most?",
+    "Image": "",
+    "Answer": "Recycling and saving energy",
+    "Choices": [
+      "Recycling and saving energy",
+      "Leaving lights on",
+      "Throwing litter in rivers",
+      "Cutting down all trees"
+    ]
+  },
+  {
+    "Question": "What is an educated guess that scientists test called?",
+    "Image": "",
+    "Answer": "A hypothesis",
+    "Choices": [
+      "A hypothesis",
+      "A conclusion",
+      "A result",
+      "A theory of everything"
+    ]
+  },
+  {
+    "Question": "What do we call a test that scientists do to find answers?",
+    "Image": "",
+    "Answer": "An experiment",
+    "Choices": [
+      "An experiment",
+      "A story",
+      "A guess",
+      "A dream"
+    ]
+  },
+  {
+    "Question": "In a fair test, how many things should you change at a time?",
+    "Image": "",
+    "Answer": "Just one",
+    "Choices": [
+      "Just one",
+      "All of them",
+      "Two or three",
+      "None"
+    ]
+  },
+  {
+    "Question": "What should you wear to protect your eyes in a science lab?",
+    "Image": "",
+    "Answer": "Safety goggles",
+    "Choices": [
+      "Safety goggles",
+      "Sunglasses",
+      "A hat",
+      "A scarf"
+    ]
+  },
+  {
+    "Question": "Sound travels faster than light.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Ice floats on water.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Plants need sunlight to make food.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "All metals are attracted to magnets.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Hot air rises.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Water expands when it freezes.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "A spider is an insect.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Mushrooms are plants.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Diamonds are made of carbon.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Lightning is hotter than the surface of the Sun.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Glass is a good conductor of electricity.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The Moon makes its own light.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Salt water freezes at a lower temperature than fresh water.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Bats are blind.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "A rainbow can only be seen when the Sun is behind you.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Heavier objects always fall faster than lighter ones in a vacuum.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Whales are mammals.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Rubber is a good insulator.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Seeds can be spread by wind, water and animals.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Sound can travel through water.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "What do we call a material that you can see through clearly?",
+    "Image": "",
+    "Answer": "Transparent",
+    "Choices": [
+      "Transparent",
+      "Opaque",
+      "Shiny",
+      "Magnetic"
+    ]
+  },
+  {
+    "Question": "What do we call a material that blocks all light?",
+    "Image": "",
+    "Answer": "Opaque",
+    "Choices": [
+      "Opaque",
+      "Transparent",
+      "Translucent",
+      "Reflective"
+    ]
+  },
+  {
+    "Question": "What do we call the amount of space something takes up?",
+    "Image": "",
+    "Answer": "Volume",
+    "Choices": [
+      "Volume",
+      "Mass",
+      "Weight",
+      "Speed"
+    ]
+  },
+  {
+    "Question": "Which of these is a liquid at room temperature?",
+    "Image": "",
+    "Answer": "Milk",
+    "Choices": [
+      "Milk",
+      "Ice",
+      "Steam",
+      "Wood"
+    ]
+  },
+  {
+    "Question": "What does a compass needle point towards?",
+    "Image": "",
+    "Answer": "Magnetic north",
+    "Choices": [
+      "Magnetic north",
+      "The Sun",
+      "The nearest city",
+      "The ocean"
+    ]
+  },
+  {
+    "Question": "What is the invisible area of force around a magnet called?",
+    "Image": "",
+    "Answer": "Magnetic field",
+    "Choices": [
+      "Magnetic field",
+      "Gravity well",
+      "Force bubble",
+      "Static zone"
+    ]
+  },
+  {
+    "Question": "Rubbing a balloon on your hair makes which kind of electricity?",
+    "Image": "",
+    "Answer": "Static electricity",
+    "Choices": [
+      "Static electricity",
+      "Solar power",
+      "Wind power",
+      "Kinetic energy"
+    ]
+  },
+  {
+    "Question": "Which tool measures air pressure to help forecast the weather?",
+    "Image": "",
+    "Answer": "Barometer",
+    "Choices": [
+      "Barometer",
+      "Thermometer",
+      "Rain gauge",
+      "Telescope"
+    ]
+  }
+]

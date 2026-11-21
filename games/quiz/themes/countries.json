@@ -1,0 +1,1867 @@
+[
+  {
+    "Question": "What is the capital city of Algeria?",
+    "Image": "",
+    "Answer": "Algiers",
+    "Choices": [
+      "Algiers",
+      "Dakar",
+      "Nairobi",
+      "Ottawa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Angola?",
+    "Image": "",
+    "Answer": "Luanda",
+    "Choices": [
+      "Luanda",
+      "Algiers",
+      "Abuja",
+      "Belgrade"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Botswana?",
+    "Image": "",
+    "Answer": "Gaborone",
+    "Choices": [
+      "Gaborone",
+      "Dakar",
+      "Nairobi",
+      "Bratislava"
+    ]
+  },
+  {
+    "Question": "What is the capital city of DR Congo?",
+    "Image": "",
+    "Answer": "Kinshasa",
+    "Choices": [
+      "Kinshasa",
+      "Luanda",
+      "Dakar",
+      "Quito"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Egypt?",
+    "Image": "",
+    "Answer": "Cairo",
+    "Choices": [
+      "Cairo",
+      "Dakar",
+      "Harare",
+      "Suva"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Ethiopia?",
+    "Image": "",
+    "Answer": "Addis Ababa",
+    "Choices": [
+      "Addis Ababa",
+      "Abuja",
+      "Kinshasa",
+      "Santo Domingo"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Ghana?",
+    "Image": "",
+    "Answer": "Accra",
+    "Choices": [
+      "Accra",
+      "Addis Ababa",
+      "Dakar",
+      "Belgrade"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Kenya?",
+    "Image": "",
+    "Answer": "Nairobi",
+    "Choices": [
+      "Nairobi",
+      "Algiers",
+      "Accra",
+      "Prague"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Morocco?",
+    "Image": "",
+    "Answer": "Rabat",
+    "Choices": [
+      "Rabat",
+      "Algiers",
+      "Cairo",
+      "Port Moresby"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Nigeria?",
+    "Image": "",
+    "Answer": "Abuja",
+    "Choices": [
+      "Abuja",
+      "Tunis",
+      "Cairo",
+      "Abu Dhabi"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Rwanda?",
+    "Image": "",
+    "Answer": "Kigali",
+    "Choices": [
+      "Kigali",
+      "Addis Ababa",
+      "Abuja",
+      "Havana"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Senegal?",
+    "Image": "",
+    "Answer": "Dakar",
+    "Choices": [
+      "Dakar",
+      "Harare",
+      "Kampala",
+      "Brasília"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Tunisia?",
+    "Image": "",
+    "Answer": "Tunis",
+    "Choices": [
+      "Tunis",
+      "Harare",
+      "Nairobi",
+      "Bratislava"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Uganda?",
+    "Image": "",
+    "Answer": "Kampala",
+    "Choices": [
+      "Kampala",
+      "Algiers",
+      "Harare",
+      "Athens"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Zimbabwe?",
+    "Image": "",
+    "Answer": "Harare",
+    "Choices": [
+      "Harare",
+      "Kigali",
+      "Luanda",
+      "Vilnius"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Bangladesh?",
+    "Image": "",
+    "Answer": "Dhaka",
+    "Choices": [
+      "Dhaka",
+      "Doha",
+      "Phnom Penh",
+      "Budapest"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Cambodia?",
+    "Image": "",
+    "Answer": "Phnom Penh",
+    "Choices": [
+      "Phnom Penh",
+      "Ankara",
+      "Islamabad",
+      "Nassau"
+    ]
+  },
+  {
+    "Question": "What is the capital city of China?",
+    "Image": "",
+    "Answer": "Beijing",
+    "Choices": [
+      "Beijing",
+      "New Delhi",
+      "Ulaanbaatar",
+      "Port Moresby"
+    ]
+  },
+  {
+    "Question": "What is the capital city of India?",
+    "Image": "",
+    "Answer": "New Delhi",
+    "Choices": [
+      "New Delhi",
+      "Dhaka",
+      "Jakarta",
+      "Prague"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Indonesia?",
+    "Image": "",
+    "Answer": "Jakarta",
+    "Choices": [
+      "Jakarta",
+      "Doha",
+      "Kathmandu",
+      "Bogotá"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Japan?",
+    "Image": "",
+    "Answer": "Tokyo",
+    "Choices": [
+      "Tokyo",
+      "Ulaanbaatar",
+      "Kuala Lumpur",
+      "Belgrade"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Malaysia?",
+    "Image": "",
+    "Answer": "Kuala Lumpur",
+    "Choices": [
+      "Kuala Lumpur",
+      "Beijing",
+      "Bangkok",
+      "Suva"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Mongolia?",
+    "Image": "",
+    "Answer": "Ulaanbaatar",
+    "Choices": [
+      "Ulaanbaatar",
+      "Jakarta",
+      "New Delhi",
+      "Kinshasa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Nepal?",
+    "Image": "",
+    "Answer": "Kathmandu",
+    "Choices": [
+      "Kathmandu",
+      "Islamabad",
+      "Bangkok",
+      "Addis Ababa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Pakistan?",
+    "Image": "",
+    "Answer": "Islamabad",
+    "Choices": [
+      "Islamabad",
+      "Tokyo",
+      "Ulaanbaatar",
+      "Quito"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Philippines?",
+    "Image": "",
+    "Answer": "Manila",
+    "Choices": [
+      "Manila",
+      "Doha",
+      "Hanoi",
+      "Bern"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Qatar?",
+    "Image": "",
+    "Answer": "Doha",
+    "Choices": [
+      "Doha",
+      "Manila",
+      "Abu Dhabi",
+      "Valletta"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Saudi Arabia?",
+    "Image": "",
+    "Answer": "Riyadh",
+    "Choices": [
+      "Riyadh",
+      "Abu Dhabi",
+      "Manila",
+      "Valletta"
+    ]
+  },
+  {
+    "Question": "What is the capital city of South Korea?",
+    "Image": "",
+    "Answer": "Seoul",
+    "Choices": [
+      "Seoul",
+      "Phnom Penh",
+      "Abu Dhabi",
+      "Sofia"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Thailand?",
+    "Image": "",
+    "Answer": "Bangkok",
+    "Choices": [
+      "Bangkok",
+      "Dhaka",
+      "Abu Dhabi",
+      "London"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Turkey?",
+    "Image": "",
+    "Answer": "Ankara",
+    "Choices": [
+      "Ankara",
+      "Kathmandu",
+      "Bangkok",
+      "Athens"
+    ]
+  },
+  {
+    "Question": "What is the capital city of United Arab Emirates?",
+    "Image": "",
+    "Answer": "Abu Dhabi",
+    "Choices": [
+      "Abu Dhabi",
+      "Doha",
+      "Kathmandu",
+      "Canberra"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Vietnam?",
+    "Image": "",
+    "Answer": "Hanoi",
+    "Choices": [
+      "Hanoi",
+      "Riyadh",
+      "Islamabad",
+      "Reykjavík"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Austria?",
+    "Image": "",
+    "Answer": "Vienna",
+    "Choices": [
+      "Vienna",
+      "Oslo",
+      "Sofia",
+      "Suva"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Belgium?",
+    "Image": "",
+    "Answer": "Brussels",
+    "Choices": [
+      "Brussels",
+      "Rome",
+      "Stockholm",
+      "Cairo"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Bulgaria?",
+    "Image": "",
+    "Answer": "Sofia",
+    "Choices": [
+      "Sofia",
+      "Belgrade",
+      "Lisbon",
+      "Buenos Aires"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Croatia?",
+    "Image": "",
+    "Answer": "Zagreb",
+    "Choices": [
+      "Zagreb",
+      "Valletta",
+      "Bucharest",
+      "Ottawa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Czechia?",
+    "Image": "",
+    "Answer": "Prague",
+    "Choices": [
+      "Prague",
+      "Bratislava",
+      "Stockholm",
+      "Jakarta"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Denmark?",
+    "Image": "",
+    "Answer": "Copenhagen",
+    "Choices": [
+      "Copenhagen",
+      "Vilnius",
+      "Warsaw",
+      "Addis Ababa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Estonia?",
+    "Image": "",
+    "Answer": "Tallinn",
+    "Choices": [
+      "Tallinn",
+      "Stockholm",
+      "Valletta",
+      "Nassau"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Finland?",
+    "Image": "",
+    "Answer": "Helsinki",
+    "Choices": [
+      "Helsinki",
+      "Warsaw",
+      "Budapest",
+      "Abu Dhabi"
+    ]
+  },
+  {
+    "Question": "What is the capital city of France?",
+    "Image": "",
+    "Answer": "Paris",
+    "Choices": [
+      "Paris",
+      "Budapest",
+      "Bucharest",
+      "Kuala Lumpur"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Germany?",
+    "Image": "",
+    "Answer": "Berlin",
+    "Choices": [
+      "Berlin",
+      "Reykjavík",
+      "Copenhagen",
+      "Cairo"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Greece?",
+    "Image": "",
+    "Answer": "Athens",
+    "Choices": [
+      "Athens",
+      "Amsterdam",
+      "Stockholm",
+      "Canberra"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Hungary?",
+    "Image": "",
+    "Answer": "Budapest",
+    "Choices": [
+      "Budapest",
+      "Copenhagen",
+      "Bratislava",
+      "Phnom Penh"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Iceland?",
+    "Image": "",
+    "Answer": "Reykjavík",
+    "Choices": [
+      "Reykjavík",
+      "London",
+      "Stockholm",
+      "Nassau"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Ireland?",
+    "Image": "",
+    "Answer": "Dublin",
+    "Choices": [
+      "Dublin",
+      "Valletta",
+      "Stockholm",
+      "Islamabad"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Italy?",
+    "Image": "",
+    "Answer": "Rome",
+    "Choices": [
+      "Rome",
+      "Lisbon",
+      "Zagreb",
+      "Kingston"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Latvia?",
+    "Image": "",
+    "Answer": "Riga",
+    "Choices": [
+      "Riga",
+      "Tallinn",
+      "Vienna",
+      "Bangkok"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Lithuania?",
+    "Image": "",
+    "Answer": "Vilnius",
+    "Choices": [
+      "Vilnius",
+      "Helsinki",
+      "Tallinn",
+      "Riyadh"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Malta?",
+    "Image": "",
+    "Answer": "Valletta",
+    "Choices": [
+      "Valletta",
+      "Vilnius",
+      "Stockholm",
+      "Nassau"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Netherlands?",
+    "Image": "",
+    "Answer": "Amsterdam",
+    "Choices": [
+      "Amsterdam",
+      "Prague",
+      "Vilnius",
+      "Kampala"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Norway?",
+    "Image": "",
+    "Answer": "Oslo",
+    "Choices": [
+      "Oslo",
+      "Ljubljana",
+      "Stockholm",
+      "Beijing"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Poland?",
+    "Image": "",
+    "Answer": "Warsaw",
+    "Choices": [
+      "Warsaw",
+      "Bratislava",
+      "Stockholm",
+      "Bogotá"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Portugal?",
+    "Image": "",
+    "Answer": "Lisbon",
+    "Choices": [
+      "Lisbon",
+      "Riga",
+      "Prague",
+      "San José"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Romania?",
+    "Image": "",
+    "Answer": "Bucharest",
+    "Choices": [
+      "Bucharest",
+      "Lisbon",
+      "Madrid",
+      "Port Moresby"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Russia?",
+    "Image": "",
+    "Answer": "Moscow",
+    "Choices": [
+      "Moscow",
+      "Athens",
+      "Budapest",
+      "Washington, D.C."
+    ]
+  },
+  {
+    "Question": "What is the capital city of Serbia?",
+    "Image": "",
+    "Answer": "Belgrade",
+    "Choices": [
+      "Belgrade",
+      "Reykjavík",
+      "Valletta",
+      "Mexico City"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Slovakia?",
+    "Image": "",
+    "Answer": "Bratislava",
+    "Choices": [
+      "Bratislava",
+      "Moscow",
+      "Valletta",
+      "Tunis"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Slovenia?",
+    "Image": "",
+    "Answer": "Ljubljana",
+    "Choices": [
+      "Ljubljana",
+      "Prague",
+      "Oslo",
+      "San José"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Spain?",
+    "Image": "",
+    "Answer": "Madrid",
+    "Choices": [
+      "Madrid",
+      "Bucharest",
+      "Prague",
+      "Quito"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Sweden?",
+    "Image": "",
+    "Answer": "Stockholm",
+    "Choices": [
+      "Stockholm",
+      "Prague",
+      "Bratislava",
+      "Suva"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Switzerland?",
+    "Image": "",
+    "Answer": "Bern",
+    "Choices": [
+      "Bern",
+      "Bratislava",
+      "Lisbon",
+      "Havana"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Ukraine?",
+    "Image": "",
+    "Answer": "Kyiv",
+    "Choices": [
+      "Kyiv",
+      "Brussels",
+      "Bratislava",
+      "Buenos Aires"
+    ]
+  },
+  {
+    "Question": "What is the capital city of United Kingdom?",
+    "Image": "",
+    "Answer": "London",
+    "Choices": [
+      "London",
+      "Madrid",
+      "Brussels",
+      "Beijing"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Bahamas?",
+    "Image": "",
+    "Answer": "Nassau",
+    "Choices": [
+      "Nassau",
+      "Kingston",
+      "Panama City",
+      "Ulaanbaatar"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Canada?",
+    "Image": "",
+    "Answer": "Ottawa",
+    "Choices": [
+      "Ottawa",
+      "Havana",
+      "Washington, D.C.",
+      "Quito"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Costa Rica?",
+    "Image": "",
+    "Answer": "San José",
+    "Choices": [
+      "San José",
+      "Mexico City",
+      "Ottawa",
+      "Bratislava"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Cuba?",
+    "Image": "",
+    "Answer": "Havana",
+    "Choices": [
+      "Havana",
+      "San José",
+      "Ottawa",
+      "Accra"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Dominican Republic?",
+    "Image": "",
+    "Answer": "Santo Domingo",
+    "Choices": [
+      "Santo Domingo",
+      "San José",
+      "Mexico City",
+      "Jakarta"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Jamaica?",
+    "Image": "",
+    "Answer": "Kingston",
+    "Choices": [
+      "Kingston",
+      "Panama City",
+      "Mexico City",
+      "Bern"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Mexico?",
+    "Image": "",
+    "Answer": "Mexico City",
+    "Choices": [
+      "Mexico City",
+      "Nassau",
+      "San José",
+      "Seoul"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Panama?",
+    "Image": "",
+    "Answer": "Panama City",
+    "Choices": [
+      "Panama City",
+      "Kingston",
+      "Santo Domingo",
+      "Dakar"
+    ]
+  },
+  {
+    "Question": "What is the capital city of United States?",
+    "Image": "",
+    "Answer": "Washington, D.C.",
+    "Choices": [
+      "Washington, D.C.",
+      "Panama City",
+      "Kingston",
+      "Oslo"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Argentina?",
+    "Image": "",
+    "Answer": "Buenos Aires",
+    "Choices": [
+      "Buenos Aires",
+      "Bogotá",
+      "Caracas",
+      "New Delhi"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Brazil?",
+    "Image": "",
+    "Answer": "Brasília",
+    "Choices": [
+      "Brasília",
+      "Buenos Aires",
+      "Quito",
+      "Algiers"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Chile?",
+    "Image": "",
+    "Answer": "Santiago",
+    "Choices": [
+      "Santiago",
+      "Buenos Aires",
+      "Caracas",
+      "Reykjavík"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Colombia?",
+    "Image": "",
+    "Answer": "Bogotá",
+    "Choices": [
+      "Bogotá",
+      "Asunción",
+      "Santiago",
+      "Kinshasa"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Ecuador?",
+    "Image": "",
+    "Answer": "Quito",
+    "Choices": [
+      "Quito",
+      "Santiago",
+      "Asunción",
+      "Islamabad"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Paraguay?",
+    "Image": "",
+    "Answer": "Asunción",
+    "Choices": [
+      "Asunción",
+      "Brasília",
+      "Bogotá",
+      "Bucharest"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Peru?",
+    "Image": "",
+    "Answer": "Lima",
+    "Choices": [
+      "Lima",
+      "Bogotá",
+      "Montevideo",
+      "Kuala Lumpur"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Uruguay?",
+    "Image": "",
+    "Answer": "Montevideo",
+    "Choices": [
+      "Montevideo",
+      "Bogotá",
+      "Brasília",
+      "Kyiv"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Venezuela?",
+    "Image": "",
+    "Answer": "Caracas",
+    "Choices": [
+      "Caracas",
+      "Bogotá",
+      "Santiago",
+      "Tokyo"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Australia?",
+    "Image": "",
+    "Answer": "Canberra",
+    "Choices": [
+      "Canberra",
+      "Port Moresby",
+      "Wellington",
+      "Lisbon"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Fiji?",
+    "Image": "",
+    "Answer": "Suva",
+    "Choices": [
+      "Suva",
+      "Wellington",
+      "Port Moresby",
+      "Doha"
+    ]
+  },
+  {
+    "Question": "What is the capital city of New Zealand?",
+    "Image": "",
+    "Answer": "Wellington",
+    "Choices": [
+      "Wellington",
+      "Suva",
+      "Port Moresby",
+      "Mexico City"
+    ]
+  },
+  {
+    "Question": "What is the capital city of Papua New Guinea?",
+    "Image": "",
+    "Answer": "Port Moresby",
+    "Choices": [
+      "Port Moresby",
+      "Wellington",
+      "Suva",
+      "Dakar"
+    ]
+  },
+  {
+    "Question": "Which country is shaped like a boot?",
+    "Image": "",
+    "Answer": "Italy",
+    "Choices": [
+      "Italy",
+      "Spain",
+      "Greece",
+      "Portugal"
+    ]
+  },
+  {
+    "Question": "Which is the largest country in the world by area?",
+    "Image": "",
+    "Answer": "Russia",
+    "Choices": [
+      "Russia",
+      "Canada",
+      "China",
+      "United States"
+    ]
+  },
+  {
+    "Question": "Which country has the most people in the world?",
+    "Image": "",
+    "Answer": "India",
+    "Choices": [
+      "India",
+      "China",
+      "United States",
+      "Indonesia"
+    ]
+  },
+  {
+    "Question": "What is the smallest country in the world?",
+    "Image": "",
+    "Answer": "Vatican City",
+    "Choices": [
+      "Vatican City",
+      "Monaco",
+      "San Marino",
+      "Malta"
+    ]
+  },
+  {
+    "Question": "In which country are the Great Pyramids of Giza?",
+    "Image": "",
+    "Answer": "Egypt",
+    "Choices": [
+      "Egypt",
+      "Mexico",
+      "Peru",
+      "Greece"
+    ]
+  },
+  {
+    "Question": "The Eiffel Tower is in which country?",
+    "Image": "",
+    "Answer": "France",
+    "Choices": [
+      "France",
+      "Italy",
+      "Belgium",
+      "Spain"
+    ]
+  },
+  {
+    "Question": "The Great Wall is in which country?",
+    "Image": "",
+    "Answer": "China",
+    "Choices": [
+      "China",
+      "Japan",
+      "Mongolia",
+      "India"
+    ]
+  },
+  {
+    "Question": "The Taj Mahal is in which country?",
+    "Image": "",
+    "Answer": "India",
+    "Choices": [
+      "India",
+      "Pakistan",
+      "Nepal",
+      "Bangladesh"
+    ]
+  },
+  {
+    "Question": "Machu Picchu, an ancient city in the mountains, is in which country?",
+    "Image": "",
+    "Answer": "Peru",
+    "Choices": [
+      "Peru",
+      "Chile",
+      "Bolivia",
+      "Mexico"
+    ]
+  },
+  {
+    "Question": "Kangaroos and koalas live in the wild in which country?",
+    "Image": "",
+    "Answer": "Australia",
+    "Choices": [
+      "Australia",
+      "New Zealand",
+      "South Africa",
+      "Brazil"
+    ]
+  },
+  {
+    "Question": "Which country is called the Land of the Rising Sun?",
+    "Image": "",
+    "Answer": "Japan",
+    "Choices": [
+      "Japan",
+      "China",
+      "South Korea",
+      "Thailand"
+    ]
+  },
+  {
+    "Question": "Which country has a red maple leaf on its flag?",
+    "Image": "",
+    "Answer": "Canada",
+    "Choices": [
+      "Canada",
+      "United States",
+      "Switzerland",
+      "Sweden"
+    ]
+  },
+  {
+    "Question": "The Statue of Liberty is in which country?",
+    "Image": "",
+    "Answer": "United States",
+    "Choices": [
+      "United States",
+      "France",
+      "Canada",
+      "United Kingdom"
+    ]
+  },
+  {
+    "Question": "The Christ the Redeemer statue looks over which city?",
+    "Image": "",
+    "Answer": "Rio de Janeiro",
+    "Choices": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Buenos Aires",
+      "Lima"
+    ]
+  },
+  {
+    "Question": "The famous clock tower Big Ben is in which city?",
+    "Image": "",
+    "Answer": "London",
+    "Choices": [
+      "London",
+      "Paris",
+      "Dublin",
+      "Edinburgh"
+    ]
+  },
+  {
+    "Question": "The Colosseum, where Roman crowds once watched shows, is in which city?",
+    "Image": "",
+    "Answer": "Rome",
+    "Choices": [
+      "Rome",
+      "Athens",
+      "Paris",
+      "Madrid"
+    ]
+  },
+  {
+    "Question": "Mount Fuji is in which country?",
+    "Image": "",
+    "Answer": "Japan",
+    "Choices": [
+      "Japan",
+      "China",
+      "Nepal",
+      "South Korea"
+    ]
+  },
+  {
+    "Question": "Mount Everest sits on the border of Nepal and which other country?",
+    "Image": "",
+    "Answer": "China",
+    "Choices": [
+      "China",
+      "India",
+      "Bhutan",
+      "Pakistan"
+    ]
+  },
+  {
+    "Question": "Most of the Amazon rainforest is in which country?",
+    "Image": "",
+    "Answer": "Brazil",
+    "Choices": [
+      "Brazil",
+      "Peru",
+      "Colombia",
+      "Venezuela"
+    ]
+  },
+  {
+    "Question": "Which continent is Egypt in?",
+    "Image": "",
+    "Answer": "Africa",
+    "Choices": [
+      "Africa",
+      "Asia",
+      "Europe",
+      "South America"
+    ]
+  },
+  {
+    "Question": "Which continent is Brazil in?",
+    "Image": "",
+    "Answer": "South America",
+    "Choices": [
+      "South America",
+      "North America",
+      "Africa",
+      "Europe"
+    ]
+  },
+  {
+    "Question": "How many continents are there?",
+    "Image": "",
+    "Answer": "7",
+    "Choices": [
+      "7",
+      "5",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "Question": "Which is the largest continent?",
+    "Image": "",
+    "Answer": "Asia",
+    "Choices": [
+      "Asia",
+      "Africa",
+      "North America",
+      "Europe"
+    ]
+  },
+  {
+    "Question": "Which is the smallest continent?",
+    "Image": "",
+    "Answer": "Australia",
+    "Choices": [
+      "Australia",
+      "Europe",
+      "Antarctica",
+      "South America"
+    ]
+  },
+  {
+    "Question": "Which icy continent has no countries and almost no people?",
+    "Image": "",
+    "Answer": "Antarctica",
+    "Choices": [
+      "Antarctica",
+      "The Arctic",
+      "Greenland",
+      "Iceland"
+    ]
+  },
+  {
+    "Question": "Which is the largest ocean on Earth?",
+    "Image": "",
+    "Answer": "Pacific Ocean",
+    "Choices": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean"
+    ]
+  },
+  {
+    "Question": "What language do most people speak in Brazil?",
+    "Image": "",
+    "Answer": "Portuguese",
+    "Choices": [
+      "Portuguese",
+      "Spanish",
+      "Brazilian",
+      "French"
+    ]
+  },
+  {
+    "Question": "What language do most people speak in Mexico?",
+    "Image": "",
+    "Answer": "Spanish",
+    "Choices": [
+      "Spanish",
+      "Portuguese",
+      "Mexican",
+      "English"
+    ]
+  },
+  {
+    "Question": "What money is used in Japan?",
+    "Image": "",
+    "Answer": "Yen",
+    "Choices": [
+      "Yen",
+      "Yuan",
+      "Won",
+      "Dollar"
+    ]
+  },
+  {
+    "Question": "What money is used in the United Kingdom?",
+    "Image": "",
+    "Answer": "Pound",
+    "Choices": [
+      "Pound",
+      "Euro",
+      "Dollar",
+      "Franc"
+    ]
+  },
+  {
+    "Question": "Which money do many countries in Europe share?",
+    "Image": "",
+    "Answer": "Euro",
+    "Choices": [
+      "Euro",
+      "Pound",
+      "Franc",
+      "Peso"
+    ]
+  },
+  {
+    "Question": "Which country is famous for tulips, windmills and wooden clogs?",
+    "Image": "",
+    "Answer": "Netherlands",
+    "Choices": [
+      "Netherlands",
+      "Denmark",
+      "Belgium",
+      "Germany"
+    ]
+  },
+  {
+    "Question": "Pizza and pasta are famous foods from which country?",
+    "Image": "",
+    "Answer": "Italy",
+    "Choices": [
+      "Italy",
+      "Greece",
+      "France",
+      "Spain"
+    ]
+  },
+  {
+    "Question": "Sushi is a famous food from which country?",
+    "Image": "",
+    "Answer": "Japan",
+    "Choices": [
+      "Japan",
+      "China",
+      "Thailand",
+      "India"
+    ]
+  },
+  {
+    "Question": "Tacos are a famous food from which country?",
+    "Image": "",
+    "Answer": "Mexico",
+    "Choices": [
+      "Mexico",
+      "Spain",
+      "Brazil",
+      "Argentina"
+    ]
+  },
+  {
+    "Question": "In which country do giant pandas live in the wild?",
+    "Image": "",
+    "Answer": "China",
+    "Choices": [
+      "China",
+      "Japan",
+      "India",
+      "Thailand"
+    ]
+  },
+  {
+    "Question": "The huge island of Greenland is part of which country?",
+    "Image": "",
+    "Answer": "Denmark",
+    "Choices": [
+      "Denmark",
+      "Canada",
+      "Norway",
+      "Iceland"
+    ]
+  },
+  {
+    "Question": "Which country has the longest coastline in the world?",
+    "Image": "",
+    "Answer": "Canada",
+    "Choices": [
+      "Canada",
+      "Russia",
+      "Australia",
+      "Indonesia"
+    ]
+  },
+  {
+    "Question": "What is the longest river in Africa?",
+    "Image": "",
+    "Answer": "Nile",
+    "Choices": [
+      "Nile",
+      "Congo",
+      "Niger",
+      "Zambezi"
+    ]
+  },
+  {
+    "Question": "What is the largest hot desert in the world?",
+    "Image": "",
+    "Answer": "Sahara",
+    "Choices": [
+      "Sahara",
+      "Gobi",
+      "Kalahari",
+      "Arabian Desert"
+    ]
+  },
+  {
+    "Question": "Which country has three capital cities?",
+    "Image": "",
+    "Answer": "South Africa",
+    "Choices": [
+      "South Africa",
+      "Brazil",
+      "Egypt",
+      "Canada"
+    ]
+  },
+  {
+    "Question": "The city of Istanbul is in which country?",
+    "Image": "",
+    "Answer": "Turkey",
+    "Choices": [
+      "Turkey",
+      "Greece",
+      "Egypt",
+      "Iran"
+    ]
+  },
+  {
+    "Question": "Which country is made up of England, Scotland, Wales and Northern Ireland?",
+    "Image": "",
+    "Answer": "United Kingdom",
+    "Choices": [
+      "United Kingdom",
+      "Ireland",
+      "Australia",
+      "Iceland"
+    ]
+  },
+  {
+    "Question": "Which country is so big it is also called a continent?",
+    "Image": "",
+    "Answer": "Australia",
+    "Choices": [
+      "Australia",
+      "Greenland",
+      "Madagascar",
+      "New Zealand"
+    ]
+  },
+  {
+    "Question": "Which is the biggest country in South America?",
+    "Image": "",
+    "Answer": "Brazil",
+    "Choices": [
+      "Brazil",
+      "Argentina",
+      "Peru",
+      "Colombia"
+    ]
+  },
+  {
+    "Question": "Which is the biggest country in Africa by area?",
+    "Image": "",
+    "Answer": "Algeria",
+    "Choices": [
+      "Algeria",
+      "Nigeria",
+      "Egypt",
+      "Kenya"
+    ]
+  },
+  {
+    "Question": "Which African country has the most people?",
+    "Image": "",
+    "Answer": "Nigeria",
+    "Choices": [
+      "Nigeria",
+      "Egypt",
+      "Ethiopia",
+      "South Africa"
+    ]
+  },
+  {
+    "Question": "Which country gave the Statue of Liberty to the United States as a gift?",
+    "Image": "",
+    "Answer": "France",
+    "Choices": [
+      "France",
+      "United Kingdom",
+      "Spain",
+      "Italy"
+    ]
+  },
+  {
+    "Question": "The Leaning Tower of Pisa is in which country?",
+    "Image": "",
+    "Answer": "Italy",
+    "Choices": [
+      "Italy",
+      "Spain",
+      "Greece",
+      "France"
+    ]
+  },
+  {
+    "Question": "In which country did the Olympic Games begin long ago?",
+    "Image": "",
+    "Answer": "Greece",
+    "Choices": [
+      "Greece",
+      "Italy",
+      "Egypt",
+      "China"
+    ]
+  },
+  {
+    "Question": "Iceland is famous for which natural wonders?",
+    "Image": "",
+    "Answer": "Volcanoes and geysers",
+    "Choices": [
+      "Volcanoes and geysers",
+      "Rainforests",
+      "Giant deserts",
+      "Coral reefs"
+    ]
+  },
+  {
+    "Question": "The Kremlin and Red Square are in which country?",
+    "Image": "",
+    "Answer": "Russia",
+    "Choices": [
+      "Russia",
+      "Ukraine",
+      "Poland",
+      "China"
+    ]
+  },
+  {
+    "Question": "Which country is famous for maple syrup?",
+    "Image": "",
+    "Answer": "Canada",
+    "Choices": [
+      "Canada",
+      "Sweden",
+      "Norway",
+      "Switzerland"
+    ]
+  },
+  {
+    "Question": "Which country is famous for the Alps, cheese with holes and watches?",
+    "Image": "",
+    "Answer": "Switzerland",
+    "Choices": [
+      "Switzerland",
+      "Austria",
+      "Belgium",
+      "Sweden"
+    ]
+  },
+  {
+    "Question": "The Sydney Opera House is in which country?",
+    "Image": "",
+    "Answer": "Australia",
+    "Choices": [
+      "Australia",
+      "New Zealand",
+      "United Kingdom",
+      "Canada"
+    ]
+  },
+  {
+    "Question": "The kiwi bird is a national symbol of which country?",
+    "Image": "",
+    "Answer": "New Zealand",
+    "Choices": [
+      "New Zealand",
+      "Australia",
+      "Fiji",
+      "Japan"
+    ]
+  },
+  {
+    "Question": "Bollywood movies come from which country?",
+    "Image": "",
+    "Answer": "India",
+    "Choices": [
+      "India",
+      "Pakistan",
+      "Bangladesh",
+      "Sri Lanka"
+    ]
+  },
+  {
+    "Question": "The Maasai Mara, famous for safaris, is in which country?",
+    "Image": "",
+    "Answer": "Kenya",
+    "Choices": [
+      "Kenya",
+      "Nigeria",
+      "Egypt",
+      "Morocco"
+    ]
+  },
+  {
+    "Question": "Which long, thin country runs down the west side of South America?",
+    "Image": "",
+    "Answer": "Chile",
+    "Choices": [
+      "Chile",
+      "Peru",
+      "Argentina",
+      "Ecuador"
+    ]
+  },
+  {
+    "Question": "Which ocean lies between Africa and Australia?",
+    "Image": "",
+    "Answer": "Indian Ocean",
+    "Choices": [
+      "Indian Ocean",
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Arctic Ocean"
+    ]
+  },
+  {
+    "Question": "Hawaii is part of which country?",
+    "Image": "",
+    "Answer": "United States",
+    "Choices": [
+      "United States",
+      "Japan",
+      "Australia",
+      "Mexico"
+    ]
+  },
+  {
+    "Question": "The ancient temple Angkor Wat is in which country?",
+    "Image": "",
+    "Answer": "Cambodia",
+    "Choices": [
+      "Cambodia",
+      "Thailand",
+      "Vietnam",
+      "Laos"
+    ]
+  },
+  {
+    "Question": "Petra, a city carved into pink rock, is in which country?",
+    "Image": "",
+    "Answer": "Jordan",
+    "Choices": [
+      "Jordan",
+      "Egypt",
+      "Turkey",
+      "Morocco"
+    ]
+  },
+  {
+    "Question": "Stonehenge, a famous ring of giant stones, is in which country?",
+    "Image": "",
+    "Answer": "United Kingdom",
+    "Choices": [
+      "United Kingdom",
+      "Ireland",
+      "France",
+      "Norway"
+    ]
+  },
+  {
+    "Question": "Which country is famous for fjords and is west of Sweden?",
+    "Image": "",
+    "Answer": "Norway",
+    "Choices": [
+      "Norway",
+      "Finland",
+      "Denmark",
+      "Iceland"
+    ]
+  },
+  {
+    "Question": "Which imaginary line divides Earth into a northern and a southern half?",
+    "Image": "",
+    "Answer": "The Equator",
+    "Choices": [
+      "The Equator",
+      "The Prime Meridian",
+      "The Tropic of Cancer",
+      "The Date Line"
+    ]
+  },
+  {
+    "Question": "What do we call a country with no coastline at all?",
+    "Image": "",
+    "Answer": "Landlocked",
+    "Choices": [
+      "Landlocked",
+      "An island",
+      "A peninsula",
+      "Coastal"
+    ]
+  },
+  {
+    "Question": "The big city of Mumbai is in which country?",
+    "Image": "",
+    "Answer": "India",
+    "Choices": [
+      "India",
+      "Pakistan",
+      "Bangladesh",
+      "Sri Lanka"
+    ]
+  },
+  {
+    "Question": "The Great Barrier Reef is off the coast of which country?",
+    "Image": "",
+    "Answer": "Australia",
+    "Choices": [
+      "Australia",
+      "Indonesia",
+      "Philippines",
+      "New Zealand"
+    ]
+  },
+  {
+    "Question": "Mount Kilimanjaro, Africa's tallest mountain, is in which country?",
+    "Image": "",
+    "Answer": "Tanzania",
+    "Choices": [
+      "Tanzania",
+      "Kenya",
+      "Uganda",
+      "Ethiopia"
+    ]
+  },
+  {
+    "Question": "Victoria Falls lies between Zambia and which other country?",
+    "Image": "",
+    "Answer": "Zimbabwe",
+    "Choices": [
+      "Zimbabwe",
+      "Botswana",
+      "Kenya",
+      "Malawi"
+    ]
+  },
+  {
+    "Question": "Which country is home to the city of Venice, with canals instead of streets?",
+    "Image": "",
+    "Answer": "Italy",
+    "Choices": [
+      "Italy",
+      "Netherlands",
+      "Greece",
+      "Croatia"
+    ]
+  },
+  {
+    "Question": "Which language is spoken in Argentina?",
+    "Image": "",
+    "Answer": "Spanish",
+    "Choices": [
+      "Spanish",
+      "Portuguese",
+      "Italian",
+      "English"
+    ]
+  },
+  {
+    "Question": "The Panama Canal joins the Atlantic Ocean and which other ocean?",
+    "Image": "",
+    "Answer": "Pacific Ocean",
+    "Choices": [
+      "Pacific Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Southern Ocean"
+    ]
+  },
+  {
+    "Question": "Which country is the largest in North America by area?",
+    "Image": "",
+    "Answer": "Canada",
+    "Choices": [
+      "Canada",
+      "United States",
+      "Mexico",
+      "Greenland"
+    ]
+  },
+  {
+    "Question": "The country of Madagascar is an island off the coast of which continent?",
+    "Image": "",
+    "Answer": "Africa",
+    "Choices": [
+      "Africa",
+      "Asia",
+      "South America",
+      "Australia"
+    ]
+  },
+  {
+    "Question": "Paris is a city in France.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Australia is in the Northern Hemisphere.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Russia is in both Europe and Asia.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The capital of Canada is Toronto.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Brazil is the only country in South America where most people speak Portuguese.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Antarctica is the coldest continent.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Egypt is in South America.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "China and India are the two countries with the most people.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  }
+]

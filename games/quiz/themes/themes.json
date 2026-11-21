@@ -1,0 +1,81 @@
+[
+  {
+    "id": "countries",
+    "name": "Countries",
+    "emoji": "🌍",
+    "color": "#00A8B5",
+    "file": "countries.json"
+  },
+  {
+    "id": "flags",
+    "name": "Guess the Flag",
+    "emoji": "🚩",
+    "color": "#E15959",
+    "file": "flags.json",
+    "imageStyle": "flag"
+  },
+  {
+    "id": "logos",
+    "name": "Guess the Logo",
+    "emoji": "🏷️",
+    "color": "#FAD201",
+    "file": "logos.json",
+    "imageStyle": "logo"
+  },
+  {
+    "id": "roblox",
+    "name": "Roblox",
+    "emoji": "🟥",
+    "color": "#E15959",
+    "file": "roblox.json"
+  },
+  {
+    "id": "minecraft",
+    "name": "Minecraft",
+    "emoji": "⛏️",
+    "color": "#00A8B5",
+    "file": "minecraft.json"
+  },
+  {
+    "id": "science",
+    "name": "Science",
+    "emoji": "🔬",
+    "color": "#FAD201",
+    "file": "science.json"
+  },
+  {
+    "id": "space",
+    "name": "Space & Beyond",
+    "emoji": "🚀",
+    "color": "#00A8B5",
+    "file": "space.json"
+  },
+  {
+    "id": "planets",
+    "name": "Planets",
+    "emoji": "🪐",
+    "color": "#FAD201",
+    "file": "planets.json"
+  },
+  {
+    "id": "myths",
+    "name": "Myths: True or False?",
+    "emoji": "🤔",
+    "color": "#E15959",
+    "file": "myths.json"
+  },
+  {
+    "id": "human-body",
+    "name": "Human Body",
+    "emoji": "🫀",
+    "color": "#E15959",
+    "file": "human-body.json"
+  },
+  {
+    "id": "animal-superpowers",
+    "name": "Animal Superpowers",
+    "emoji": "🦸",
+    "color": "#00A8B5",
+    "file": "animal-superpowers.json"
+  }
+]

@@ -1,0 +1,1596 @@
+[
+  {
+    "Question": "What is the money used in Roblox called?",
+    "Image": "",
+    "Answer": "Robux",
+    "Choices": [
+      "Robux",
+      "Bux",
+      "Coins",
+      "RoCash"
+    ]
+  },
+  {
+    "Question": "What is the free program used to build Roblox games?",
+    "Image": "",
+    "Answer": "Roblox Studio",
+    "Choices": [
+      "Roblox Studio",
+      "Roblox Maker",
+      "Block Builder",
+      "Game Lab"
+    ]
+  },
+  {
+    "Question": "Which coding language is used to make Roblox games?",
+    "Image": "",
+    "Answer": "Luau",
+    "Choices": [
+      "Luau",
+      "Python",
+      "Java",
+      "Scratch"
+    ]
+  },
+  {
+    "Question": "What unit is used to measure distance in Roblox?",
+    "Image": "",
+    "Answer": "Studs",
+    "Choices": [
+      "Studs",
+      "Blocks",
+      "Pixels",
+      "Bricks"
+    ]
+  },
+  {
+    "Question": "In which year did Roblox officially launch?",
+    "Image": "",
+    "Answer": "2006",
+    "Choices": [
+      "2006",
+      "2010",
+      "2001",
+      "2014"
+    ]
+  },
+  {
+    "Question": "What is the name of Roblox's famous builder character with a hard hat?",
+    "Image": "",
+    "Answer": "Builderman",
+    "Choices": [
+      "Builderman",
+      "Blockman",
+      "Brickster",
+      "Hammerhead"
+    ]
+  },
+  {
+    "Question": "The classic Roblox character with a yellow head, blue shirt and green pants is called a…?",
+    "Image": "",
+    "Answer": "Noob",
+    "Choices": [
+      "Noob",
+      "Guest",
+      "Bacon",
+      "Pro"
+    ]
+  },
+  {
+    "Question": "What do players call the default Roblox hair that looks like a strip of meat?",
+    "Image": "",
+    "Answer": "Bacon hair",
+    "Choices": [
+      "Bacon hair",
+      "Noodle hair",
+      "Toast hair",
+      "Sausage hair"
+    ]
+  },
+  {
+    "Question": "What was Roblox's paid membership called before it became Roblox Premium?",
+    "Image": "",
+    "Answer": "Builders Club",
+    "Choices": [
+      "Builders Club",
+      "Robux Club",
+      "Gold Pass",
+      "VIP Club"
+    ]
+  },
+  {
+    "Question": "Which old Roblox currency was removed in 2016?",
+    "Image": "",
+    "Answer": "Tix",
+    "Choices": [
+      "Tix",
+      "Gems",
+      "Stars",
+      "Bucks"
+    ]
+  },
+  {
+    "Question": "What famous sound did Roblox characters make when they fell apart?",
+    "Image": "",
+    "Answer": "Oof",
+    "Choices": [
+      "Oof",
+      "Ouch",
+      "Boing",
+      "Bonk"
+    ]
+  },
+  {
+    "Question": "In Roblox, an \"obby\" is short for what?",
+    "Image": "",
+    "Answer": "Obstacle course",
+    "Choices": [
+      "Obstacle course",
+      "Object box",
+      "Open lobby",
+      "Old body"
+    ]
+  },
+  {
+    "Question": "In many obbies, what happens if you touch a red \"kill brick\"?",
+    "Image": "",
+    "Answer": "You go back to your last checkpoint",
+    "Choices": [
+      "You go back to your last checkpoint",
+      "You win Robux",
+      "You can fly",
+      "You win the game"
+    ]
+  },
+  {
+    "Question": "What does a checkpoint do in an obby?",
+    "Image": "",
+    "Answer": "Saves your progress",
+    "Choices": [
+      "Saves your progress",
+      "Gives you a pet",
+      "Changes your avatar",
+      "Doubles your speed"
+    ]
+  },
+  {
+    "Question": "Roblox's name comes from mixing which two words?",
+    "Image": "",
+    "Answer": "Robots and blocks",
+    "Choices": [
+      "Robots and blocks",
+      "Rocks and boxes",
+      "Robins and locks",
+      "Robes and socks"
+    ]
+  },
+  {
+    "Question": "Before it was called Roblox, the game was called…?",
+    "Image": "",
+    "Answer": "DynaBlocks",
+    "Choices": [
+      "DynaBlocks",
+      "MegaBlocks",
+      "BrickLand",
+      "BuildaBlox"
+    ]
+  },
+  {
+    "Question": "What are Roblox players sometimes called?",
+    "Image": "",
+    "Answer": "Robloxians",
+    "Choices": [
+      "Robloxians",
+      "Blockers",
+      "Brickers",
+      "Studders"
+    ]
+  },
+  {
+    "Question": "What did Roblox start calling its games in 2021?",
+    "Image": "",
+    "Answer": "Experiences",
+    "Choices": [
+      "Experiences",
+      "Adventures",
+      "Worlds",
+      "Levels"
+    ]
+  },
+  {
+    "Question": "What is the Roblox shop for clothes and accessories called today?",
+    "Image": "",
+    "Answer": "Marketplace",
+    "Choices": [
+      "Marketplace",
+      "Robux Mall",
+      "Blox Store",
+      "Gear Market"
+    ]
+  },
+  {
+    "Question": "What does UGC mean for items in the Roblox shop?",
+    "Image": "",
+    "Answer": "User-Generated Content",
+    "Choices": [
+      "User-Generated Content",
+      "Ultra Good Clothes",
+      "Unlimited Game Coins",
+      "Universal Gear Collection"
+    ]
+  },
+  {
+    "Question": "In the Roblox logo, the letter \"O\" looks like a…?",
+    "Image": "",
+    "Answer": "Tilted square",
+    "Choices": [
+      "Tilted square",
+      "Circle",
+      "Star",
+      "Heart"
+    ]
+  },
+  {
+    "Question": "What color is the classic Roblox noob's head?",
+    "Image": "",
+    "Answer": "Yellow",
+    "Choices": [
+      "Yellow",
+      "Green",
+      "Blue",
+      "Red"
+    ]
+  },
+  {
+    "Question": "Which special Roblox items have only a few copies and can be traded?",
+    "Image": "",
+    "Answer": "Limiteds",
+    "Choices": [
+      "Limiteds",
+      "Freebies",
+      "Starters",
+      "Basics"
+    ]
+  },
+  {
+    "Question": "Which famous, very expensive Roblox hats have names like \"Empyreus\"?",
+    "Image": "",
+    "Answer": "Dominus hats",
+    "Choices": [
+      "Dominus hats",
+      "Crown hats",
+      "Fedora hats",
+      "Party hats"
+    ]
+  },
+  {
+    "Question": "Which Roblox avatar bundle makes your character look like it has no head?",
+    "Image": "",
+    "Answer": "Headless Horseman",
+    "Choices": [
+      "Headless Horseman",
+      "Invisible Knight",
+      "Ghost Rider",
+      "Sleepy Knight"
+    ]
+  },
+  {
+    "Question": "What were Roblox's yearly awards for the best games and creators called?",
+    "Image": "",
+    "Answer": "The Bloxy Awards",
+    "Choices": [
+      "The Bloxy Awards",
+      "The Robbies",
+      "The Blockies",
+      "The Oofies"
+    ]
+  },
+  {
+    "Question": "What was Roblox's famous springtime event where players searched for hidden eggs?",
+    "Image": "",
+    "Answer": "Egg Hunt",
+    "Choices": [
+      "Egg Hunt",
+      "Bunny Run",
+      "Spring Fling",
+      "Egg Race"
+    ]
+  },
+  {
+    "Question": "Which of these devices can you NOT play Roblox on?",
+    "Image": "",
+    "Answer": "A microwave oven",
+    "Choices": [
+      "A microwave oven",
+      "An Xbox",
+      "An iPad",
+      "A computer"
+    ]
+  },
+  {
+    "Question": "Which special avatar moves, like dances and waves, can you do in Roblox?",
+    "Image": "",
+    "Answer": "Emotes",
+    "Choices": [
+      "Emotes",
+      "Badges",
+      "Gamepasses",
+      "Studs"
+    ]
+  },
+  {
+    "Question": "What are the rewards you earn for doing special things in a Roblox game called?",
+    "Image": "",
+    "Answer": "Badges",
+    "Choices": [
+      "Badges",
+      "Medals",
+      "Stickers",
+      "Trophies"
+    ]
+  },
+  {
+    "Question": "What is a one-time purchase that gives you a special perk in one game?",
+    "Image": "",
+    "Answer": "Game pass",
+    "Choices": [
+      "Game pass",
+      "Badge",
+      "Model",
+      "Stud"
+    ]
+  },
+  {
+    "Question": "What is the Roblox avatar type with 15 body parts called?",
+    "Image": "",
+    "Answer": "R15",
+    "Choices": [
+      "R15",
+      "R6",
+      "R10",
+      "R20"
+    ]
+  },
+  {
+    "Question": "What is the older Roblox avatar type with 6 body parts called?",
+    "Image": "",
+    "Answer": "R6",
+    "Choices": [
+      "R6",
+      "R15",
+      "R4",
+      "R8"
+    ]
+  },
+  {
+    "Question": "What can Roblox Premium members do that other players can't?",
+    "Image": "",
+    "Answer": "Trade items",
+    "Choices": [
+      "Trade items",
+      "Fly in every game",
+      "Get unlimited Robux",
+      "Skip every obby"
+    ]
+  },
+  {
+    "Question": "What does Roblox Premium give members every month?",
+    "Image": "",
+    "Answer": "Some Robux",
+    "Choices": [
+      "Some Robux",
+      "A free pet",
+      "A new house",
+      "A trophy"
+    ]
+  },
+  {
+    "Question": "What is a private server?",
+    "Image": "",
+    "Answer": "A server only you and invited friends can join",
+    "Choices": [
+      "A server only you and invited friends can join",
+      "A server for teachers",
+      "A server that never ends",
+      "A server with no games"
+    ]
+  },
+  {
+    "Question": "What is a server in Roblox?",
+    "Image": "",
+    "Answer": "A copy of a game that a group of players share",
+    "Choices": [
+      "A copy of a game that a group of players share",
+      "A type of Robux",
+      "A pet that serves food",
+      "A part in Studio"
+    ]
+  },
+  {
+    "Question": "What is the Roblox program that lets creators swap earned Robux for real money?",
+    "Image": "",
+    "Answer": "Developer Exchange (DevEx)",
+    "Choices": [
+      "Developer Exchange (DevEx)",
+      "Robux Bank",
+      "Coin Swap",
+      "Builders Pay"
+    ]
+  },
+  {
+    "Question": "Which of these is a famous classic Roblox map?",
+    "Image": "",
+    "Answer": "Crossroads",
+    "Choices": [
+      "Crossroads",
+      "Pixel Valley",
+      "Dusty Plains",
+      "Snow Town"
+    ]
+  },
+  {
+    "Question": "Where is Roblox's headquarters?",
+    "Image": "",
+    "Answer": "San Mateo, California",
+    "Choices": [
+      "San Mateo, California",
+      "London, England",
+      "Tokyo, Japan",
+      "Toronto, Canada"
+    ]
+  },
+  {
+    "Question": "What does Roblox's yearly developer event \"RDC\" stand for?",
+    "Image": "",
+    "Answer": "Roblox Developers Conference",
+    "Choices": [
+      "Roblox Developers Conference",
+      "Robux Dance Club",
+      "RealDer Coders",
+      "Roblox Design Cup"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, which setting stops a part from falling down?",
+    "Image": "",
+    "Answer": "Anchored",
+    "Choices": [
+      "Anchored",
+      "Locked",
+      "Frozen",
+      "Pinned"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, which window lists every object in your game?",
+    "Image": "",
+    "Answer": "Explorer",
+    "Choices": [
+      "Explorer",
+      "Toolbox",
+      "Output",
+      "Terrain"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, where do you find free models made by others?",
+    "Image": "",
+    "Answer": "Toolbox",
+    "Choices": [
+      "Toolbox",
+      "Explorer",
+      "Output",
+      "Properties"
+    ]
+  },
+  {
+    "Question": "What is the most basic building block in Roblox Studio called?",
+    "Image": "",
+    "Answer": "Part",
+    "Choices": [
+      "Part",
+      "Cube",
+      "Piece",
+      "Chunk"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, which window shows error messages and printed text?",
+    "Image": "",
+    "Answer": "Output",
+    "Choices": [
+      "Output",
+      "Explorer",
+      "Toolbox",
+      "Terrain"
+    ]
+  },
+  {
+    "Question": "Which Luau command shows text in the Output window?",
+    "Image": "",
+    "Answer": "print()",
+    "Choices": [
+      "print()",
+      "say()",
+      "show()",
+      "shout()"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, which window lets you change a part's color and size?",
+    "Image": "",
+    "Answer": "Properties",
+    "Choices": [
+      "Properties",
+      "Toolbox",
+      "Output",
+      "Chat"
+    ]
+  },
+  {
+    "Question": "What gives a Roblox character the ability to walk, jump and have health?",
+    "Image": "",
+    "Answer": "Humanoid",
+    "Choices": [
+      "Humanoid",
+      "Robux",
+      "Baseplate",
+      "Toolbox"
+    ]
+  },
+  {
+    "Question": "How much health does a normal Roblox character start with?",
+    "Image": "",
+    "Answer": "100",
+    "Choices": [
+      "100",
+      "10",
+      "50",
+      "1000"
+    ]
+  },
+  {
+    "Question": "How fast does a normal Roblox character walk?",
+    "Image": "",
+    "Answer": "16 studs per second",
+    "Choices": [
+      "16 studs per second",
+      "5 studs per second",
+      "50 studs per second",
+      "100 studs per second"
+    ]
+  },
+  {
+    "Question": "In Roblox Studio, what is the Baseplate?",
+    "Image": "",
+    "Answer": "A big flat floor to build on",
+    "Choices": [
+      "A big flat floor to build on",
+      "A dinner plate item",
+      "A type of script",
+      "A Robux bundle"
+    ]
+  },
+  {
+    "Question": "What is a script in Roblox?",
+    "Image": "",
+    "Answer": "Code that tells the game what to do",
+    "Choices": [
+      "Code that tells the game what to do",
+      "A movie about Roblox",
+      "A type of hat",
+      "A chat message"
+    ]
+  },
+  {
+    "Question": "What does the Play button in Roblox Studio do?",
+    "Image": "",
+    "Answer": "Tests your game",
+    "Choices": [
+      "Tests your game",
+      "Deletes your game",
+      "Buys Robux",
+      "Opens the shop"
+    ]
+  },
+  {
+    "Question": "Which Roblox Studio tool makes hills, grass and water?",
+    "Image": "",
+    "Answer": "Terrain Editor",
+    "Choices": [
+      "Terrain Editor",
+      "Paint Bucket",
+      "Toolbox",
+      "Output"
+    ]
+  },
+  {
+    "Question": "What do you need to make a part spin forever in Roblox Studio?",
+    "Image": "",
+    "Answer": "A script",
+    "Choices": [
+      "A script",
+      "A badge",
+      "A game pass",
+      "A friend"
+    ]
+  },
+  {
+    "Question": "Where do new players appear when a Roblox game starts?",
+    "Image": "",
+    "Answer": "Spawn location",
+    "Choices": [
+      "Spawn location",
+      "Base camp",
+      "Toolbox",
+      "Output"
+    ]
+  },
+  {
+    "Question": "What is \"Gear\" in Roblox?",
+    "Image": "",
+    "Answer": "Tools and items your avatar can hold",
+    "Choices": [
+      "Tools and items your avatar can hold",
+      "A type of car",
+      "The Roblox logo",
+      "A chat filter"
+    ]
+  },
+  {
+    "Question": "In Adopt Me!, what do you hatch from eggs?",
+    "Image": "",
+    "Answer": "Pets",
+    "Choices": [
+      "Pets",
+      "Cars",
+      "Houses",
+      "Dragons only"
+    ]
+  },
+  {
+    "Question": "In Adopt Me!, how many of the same full-grown pet make a Neon pet?",
+    "Image": "",
+    "Answer": "4",
+    "Choices": [
+      "4",
+      "2",
+      "3",
+      "10"
+    ]
+  },
+  {
+    "Question": "In Adopt Me!, what do you get by combining four Neon pets?",
+    "Image": "",
+    "Answer": "A Mega Neon pet",
+    "Choices": [
+      "A Mega Neon pet",
+      "A Super pet",
+      "A Golden pet",
+      "A Robot pet"
+    ]
+  },
+  {
+    "Question": "What is the money called in Adopt Me!?",
+    "Image": "",
+    "Answer": "Bucks",
+    "Choices": [
+      "Bucks",
+      "Robux",
+      "Coins",
+      "Gems"
+    ]
+  },
+  {
+    "Question": "Which Roblox game is a town where you role-play, live in houses and drive cars?",
+    "Image": "",
+    "Answer": "Brookhaven RP",
+    "Choices": [
+      "Brookhaven RP",
+      "Doors",
+      "Tower of Hell",
+      "Piggy"
+    ]
+  },
+  {
+    "Question": "In Murder Mystery 2, which role tries to stop the murderer?",
+    "Image": "",
+    "Answer": "Sheriff",
+    "Choices": [
+      "Sheriff",
+      "Innocent",
+      "Detective",
+      "Guard"
+    ]
+  },
+  {
+    "Question": "In Murder Mystery 2, what role do most players get?",
+    "Image": "",
+    "Answer": "Innocent",
+    "Choices": [
+      "Innocent",
+      "Sheriff",
+      "Murderer",
+      "Hero"
+    ]
+  },
+  {
+    "Question": "In Jailbreak, players can be either criminals or…?",
+    "Image": "",
+    "Answer": "Police",
+    "Choices": [
+      "Police",
+      "Firefighters",
+      "Doctors",
+      "Pirates"
+    ]
+  },
+  {
+    "Question": "In Jailbreak, where do criminals start the game?",
+    "Image": "",
+    "Answer": "In prison",
+    "Choices": [
+      "In prison",
+      "In a bank",
+      "At school",
+      "In a hospital"
+    ]
+  },
+  {
+    "Question": "In Jailbreak, which of these places can criminals rob?",
+    "Image": "",
+    "Answer": "The bank",
+    "Choices": [
+      "The bank",
+      "The school",
+      "The park",
+      "The library"
+    ]
+  },
+  {
+    "Question": "What does the Roblox obby Tower of Hell NOT have?",
+    "Image": "",
+    "Answer": "Checkpoints",
+    "Choices": [
+      "Checkpoints",
+      "Stairs",
+      "Players",
+      "Colors"
+    ]
+  },
+  {
+    "Question": "In Tower of Hell, what happens when the timer runs out?",
+    "Image": "",
+    "Answer": "A new tower is made",
+    "Choices": [
+      "A new tower is made",
+      "Everyone wins",
+      "The game closes",
+      "You get Robux"
+    ]
+  },
+  {
+    "Question": "Which Roblox game has you surviving floods, tornadoes and earthquakes?",
+    "Image": "",
+    "Answer": "Natural Disaster Survival",
+    "Choices": [
+      "Natural Disaster Survival",
+      "Tower of Hell",
+      "Bee Swarm Simulator",
+      "Adopt Me!"
+    ]
+  },
+  {
+    "Question": "In Natural Disaster Survival, where is safer during a flood?",
+    "Image": "",
+    "Answer": "Somewhere high up",
+    "Choices": [
+      "Somewhere high up",
+      "In a basement",
+      "Under the water",
+      "At the bottom of a hill"
+    ]
+  },
+  {
+    "Question": "In Bee Swarm Simulator, bees collect pollen to make…?",
+    "Image": "",
+    "Answer": "Honey",
+    "Choices": [
+      "Honey",
+      "Jam",
+      "Bread",
+      "Sugar"
+    ]
+  },
+  {
+    "Question": "Which Roblox game lets you be a cashier, a cook or a delivery driver at a restaurant?",
+    "Image": "",
+    "Answer": "Work at a Pizza Place",
+    "Choices": [
+      "Work at a Pizza Place",
+      "Jailbreak",
+      "Piggy",
+      "Doors"
+    ]
+  },
+  {
+    "Question": "In Piggy, what are you trying to do?",
+    "Image": "",
+    "Answer": "Escape before Piggy catches you",
+    "Choices": [
+      "Escape before Piggy catches you",
+      "Build a farm",
+      "Race cars",
+      "Bake a cake"
+    ]
+  },
+  {
+    "Question": "Who made the Roblox horror game Piggy?",
+    "Image": "",
+    "Answer": "MiniToon",
+    "Choices": [
+      "MiniToon",
+      "Builderman",
+      "The Noob",
+      "Dr. Roblox"
+    ]
+  },
+  {
+    "Question": "In Piggy, what do you collect to help you escape?",
+    "Image": "",
+    "Answer": "Keys and tools",
+    "Choices": [
+      "Keys and tools",
+      "Pets",
+      "Robux",
+      "Flowers"
+    ]
+  },
+  {
+    "Question": "The Roblox horror game Doors mostly takes place in a…?",
+    "Image": "",
+    "Answer": "Hotel",
+    "Choices": [
+      "Hotel",
+      "School",
+      "Spaceship",
+      "Jungle"
+    ]
+  },
+  {
+    "Question": "In Doors, which monster speeds down the hallway so you must hide in a closet?",
+    "Image": "",
+    "Answer": "Rush",
+    "Choices": [
+      "Rush",
+      "Seek",
+      "Figure",
+      "Halt"
+    ]
+  },
+  {
+    "Question": "In Doors, which blind monster listens for players in the library?",
+    "Image": "",
+    "Answer": "Figure",
+    "Choices": [
+      "Figure",
+      "Rush",
+      "Ambush",
+      "Screech"
+    ]
+  },
+  {
+    "Question": "In Doors, which monster chases you down a long hallway full of eyes?",
+    "Image": "",
+    "Answer": "Seek",
+    "Choices": [
+      "Seek",
+      "Rush",
+      "Figure",
+      "Ambush"
+    ]
+  },
+  {
+    "Question": "In Doors, what must you NOT do when the monster Eyes appears?",
+    "Image": "",
+    "Answer": "Look at it",
+    "Choices": [
+      "Look at it",
+      "Hide",
+      "Walk",
+      "Open doors"
+    ]
+  },
+  {
+    "Question": "What is Welcome to Bloxburg mostly about?",
+    "Image": "",
+    "Answer": "Building houses and living a life",
+    "Choices": [
+      "Building houses and living a life",
+      "Racing cars",
+      "Fighting zombies",
+      "Flying to space"
+    ]
+  },
+  {
+    "Question": "In Royale High, players go to a school for…?",
+    "Image": "",
+    "Answer": "Royals and fairies",
+    "Choices": [
+      "Royals and fairies",
+      "Ninjas",
+      "Pirates",
+      "Robots"
+    ]
+  },
+  {
+    "Question": "In Theme Park Tycoon 2, what do you build?",
+    "Image": "",
+    "Answer": "An amusement park",
+    "Choices": [
+      "An amusement park",
+      "A zoo",
+      "A spaceship",
+      "A castle"
+    ]
+  },
+  {
+    "Question": "In Lumber Tycoon 2, what do players chop to collect wood?",
+    "Image": "",
+    "Answer": "Trees",
+    "Choices": [
+      "Trees",
+      "Rocks",
+      "Ice",
+      "Cars"
+    ]
+  },
+  {
+    "Question": "In Blox Fruits, what does eating a Blox Fruit give you?",
+    "Image": "",
+    "Answer": "Special powers",
+    "Choices": [
+      "Special powers",
+      "A pet",
+      "A car",
+      "More Robux"
+    ]
+  },
+  {
+    "Question": "The world of Blox Fruits is split into the First, Second and Third…?",
+    "Image": "",
+    "Answer": "Sea",
+    "Choices": [
+      "Sea",
+      "Island",
+      "Kingdom",
+      "Planet"
+    ]
+  },
+  {
+    "Question": "In Pet Simulator games, pets can be upgraded to Golden and then…?",
+    "Image": "",
+    "Answer": "Rainbow",
+    "Choices": [
+      "Rainbow",
+      "Diamond",
+      "Silver",
+      "Bronze"
+    ]
+  },
+  {
+    "Question": "In Flee the Facility, what is the player who chases everyone called?",
+    "Image": "",
+    "Answer": "The Beast",
+    "Choices": [
+      "The Beast",
+      "The Hunter",
+      "The Boss",
+      "The Guard"
+    ]
+  },
+  {
+    "Question": "In Flee the Facility, what do survivors hack to escape?",
+    "Image": "",
+    "Answer": "Computers",
+    "Choices": [
+      "Computers",
+      "Doors",
+      "Robots",
+      "Phones"
+    ]
+  },
+  {
+    "Question": "In Hide and Seek Extreme, what is the seeker called?",
+    "Image": "",
+    "Answer": "It",
+    "Choices": [
+      "It",
+      "The Hunter",
+      "The Finder",
+      "The Tagger"
+    ]
+  },
+  {
+    "Question": "What do you do in Epic Minigames?",
+    "Image": "",
+    "Answer": "Play lots of short minigames",
+    "Choices": [
+      "Play lots of short minigames",
+      "Build a house",
+      "Adopt pets",
+      "Drive trains"
+    ]
+  },
+  {
+    "Question": "What do you do in Speed Run 4?",
+    "Image": "",
+    "Answer": "Run through levels as fast as you can",
+    "Choices": [
+      "Run through levels as fast as you can",
+      "Grow a garden",
+      "Run a pizza shop",
+      "Raise bees"
+    ]
+  },
+  {
+    "Question": "What is Dress to Impress about?",
+    "Image": "",
+    "Answer": "Making outfits to match a theme",
+    "Choices": [
+      "Making outfits to match a theme",
+      "Racing cars",
+      "Fighting dragons",
+      "Baking cakes"
+    ]
+  },
+  {
+    "Question": "In Dress to Impress, what happens at the end of a round?",
+    "Image": "",
+    "Answer": "Players walk the runway and vote",
+    "Choices": [
+      "Players walk the runway and vote",
+      "Everyone races",
+      "A monster appears",
+      "The tower falls"
+    ]
+  },
+  {
+    "Question": "What do you do in Grow a Garden?",
+    "Image": "",
+    "Answer": "Plant seeds, grow crops and sell them",
+    "Choices": [
+      "Plant seeds, grow crops and sell them",
+      "Build robots",
+      "Fight in an arena",
+      "Race boats"
+    ]
+  },
+  {
+    "Question": "In Grow a Garden, crops with special effects like Gold or Rainbow are called…?",
+    "Image": "",
+    "Answer": "Mutations",
+    "Choices": [
+      "Mutations",
+      "Upgrades",
+      "Badges",
+      "Limiteds"
+    ]
+  },
+  {
+    "Question": "In 99 Nights in the Forest, what must you keep burning to stay safe?",
+    "Image": "",
+    "Answer": "The campfire",
+    "Choices": [
+      "The campfire",
+      "A lighthouse",
+      "A candle",
+      "A torch on a castle"
+    ]
+  },
+  {
+    "Question": "What do you do in Funky Friday?",
+    "Image": "",
+    "Answer": "Hit arrows in time with music",
+    "Choices": [
+      "Hit arrows in time with music",
+      "Build a city",
+      "Grow plants",
+      "Catch fish"
+    ]
+  },
+  {
+    "Question": "In BedWars, what do you have to protect?",
+    "Image": "",
+    "Answer": "Your bed",
+    "Choices": [
+      "Your bed",
+      "Your flag",
+      "Your crown",
+      "Your egg"
+    ]
+  },
+  {
+    "Question": "In BedWars, what happens if your bed is broken?",
+    "Image": "",
+    "Answer": "You can't come back after you're defeated",
+    "Choices": [
+      "You can't come back after you're defeated",
+      "You get a new bed",
+      "You win the game",
+      "Nothing happens"
+    ]
+  },
+  {
+    "Question": "In Roblox Islands, you start on a small…?",
+    "Image": "",
+    "Answer": "Floating island",
+    "Choices": [
+      "Floating island",
+      "Spaceship",
+      "Pirate ship",
+      "Mountain"
+    ]
+  },
+  {
+    "Question": "What do you run in Restaurant Tycoon 2?",
+    "Image": "",
+    "Answer": "A restaurant",
+    "Choices": [
+      "A restaurant",
+      "A zoo",
+      "A hospital",
+      "A school"
+    ]
+  },
+  {
+    "Question": "In Mining Simulator, what do you dig for?",
+    "Image": "",
+    "Answer": "Ores and gems",
+    "Choices": [
+      "Ores and gems",
+      "Pets",
+      "Water",
+      "Trees"
+    ]
+  },
+  {
+    "Question": "What is a tycoon game in Roblox usually about?",
+    "Image": "",
+    "Answer": "Building a business and earning money",
+    "Choices": [
+      "Building a business and earning money",
+      "Escaping a monster",
+      "Racing",
+      "Hide and seek"
+    ]
+  },
+  {
+    "Question": "What is a simulator game in Roblox usually about?",
+    "Image": "",
+    "Answer": "Repeating a task to grow stronger or richer",
+    "Choices": [
+      "Repeating a task to grow stronger or richer",
+      "Solving one puzzle",
+      "Only chatting",
+      "Watching videos"
+    ]
+  },
+  {
+    "Question": "Piggy and Doors belong to which type of Roblox game?",
+    "Image": "",
+    "Answer": "Horror",
+    "Choices": [
+      "Horror",
+      "Tycoon",
+      "Sports",
+      "Racing"
+    ]
+  },
+  {
+    "Question": "What does \"AFK\" mean?",
+    "Image": "",
+    "Answer": "Away from keyboard",
+    "Choices": [
+      "Away from keyboard",
+      "Always fun kid",
+      "Avatar friend kit",
+      "All for keeps"
+    ]
+  },
+  {
+    "Question": "What does \"GG\" mean at the end of a game?",
+    "Image": "",
+    "Answer": "Good game",
+    "Choices": [
+      "Good game",
+      "Go green",
+      "Great goal",
+      "Get going"
+    ]
+  },
+  {
+    "Question": "What does \"BRB\" mean?",
+    "Image": "",
+    "Answer": "Be right back",
+    "Choices": [
+      "Be right back",
+      "Big red box",
+      "Bring Robux back",
+      "Best Roblox build"
+    ]
+  },
+  {
+    "Question": "In games, what does \"OP\" usually mean?",
+    "Image": "",
+    "Answer": "Overpowered",
+    "Choices": [
+      "Overpowered",
+      "Open player",
+      "Only pets",
+      "Out of place"
+    ]
+  },
+  {
+    "Question": "In gaming, what does \"lag\" mean?",
+    "Image": "",
+    "Answer": "The game is slow or freezing",
+    "Choices": [
+      "The game is slow or freezing",
+      "You won a prize",
+      "You leveled up",
+      "You made a new friend"
+    ]
+  },
+  {
+    "Question": "In games, what does \"respawn\" mean?",
+    "Image": "",
+    "Answer": "Come back after being defeated",
+    "Choices": [
+      "Come back after being defeated",
+      "Change your avatar",
+      "Buy an item",
+      "Leave the game"
+    ]
+  },
+  {
+    "Question": "What does \"NPC\" stand for?",
+    "Image": "",
+    "Answer": "Non-player character",
+    "Choices": [
+      "Non-player character",
+      "New pet club",
+      "Next player card",
+      "No points collected"
+    ]
+  },
+  {
+    "Question": "What does \"PvP\" stand for?",
+    "Image": "",
+    "Answer": "Player versus player",
+    "Choices": [
+      "Player versus player",
+      "Pets versus pets",
+      "Points versus prizes",
+      "Play very peacefully"
+    ]
+  },
+  {
+    "Question": "What does \"XP\" stand for in games?",
+    "Image": "",
+    "Answer": "Experience points",
+    "Choices": [
+      "Experience points",
+      "Extra pets",
+      "X-ray power",
+      "Expert player"
+    ]
+  },
+  {
+    "Question": "In gaming slang, a \"noob\" is…?",
+    "Image": "",
+    "Answer": "A new or beginner player",
+    "Choices": [
+      "A new or beginner player",
+      "A secret level",
+      "A rare pet",
+      "A boss monster"
+    ]
+  },
+  {
+    "Question": "To stay safe on Roblox, what should you never share?",
+    "Image": "",
+    "Answer": "Your password",
+    "Choices": [
+      "Your password",
+      "Your favorite game",
+      "Your avatar outfit",
+      "Your favorite pet"
+    ]
+  },
+  {
+    "Question": "If someone is mean to you in Roblox chat, what should you do?",
+    "Image": "",
+    "Answer": "Block and report them",
+    "Choices": [
+      "Block and report them",
+      "Be mean back",
+      "Give them Robux",
+      "Share your password"
+    ]
+  },
+  {
+    "Question": "Someone online offers you free Robux for your password. What should you do?",
+    "Image": "",
+    "Answer": "Say no and report it, it's a scam",
+    "Choices": [
+      "Say no and report it, it's a scam",
+      "Give them your password",
+      "Ask for more Robux",
+      "Tell them your address"
+    ]
+  },
+  {
+    "Question": "What Roblox button lets you tell Roblox that someone broke the rules?",
+    "Image": "",
+    "Answer": "Report",
+    "Choices": [
+      "Report",
+      "Kick",
+      "Oof",
+      "Respawn"
+    ]
+  },
+  {
+    "Question": "Roblox Studio is free to download.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You have to be an adult to make games in Roblox Studio.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox can be played on Xbox.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox can be played on PlayStation.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox games are made by players, not just by the Roblox company.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Every Roblox game costs Robux to play.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Websites that promise free Robux are usually scams.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You should share your Roblox password with friends you meet online.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Robux can be bought with Roblox gift cards.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "In Roblox, one stud is about as big as a car.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Tower of Hell has a checkpoint on every floor.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "In Doors, hiding in a closet can save you from Rush.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The classic \"oof\" sound was replaced with a new sound in 2022.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox came out before Minecraft.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "In Adopt Me!, pets grow up as you take care of them.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox avatars can only be yellow.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox Studio can make games for phones, computers and game consoles.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "In Murder Mystery 2, the Sheriff's job is to stop the Murderer.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "An obby is a type of Roblox pet.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Neon pets in Adopt Me! glow.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Anchored parts in Roblox Studio fall down when the game starts.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "You can make lakes and oceans with Roblox Studio's Terrain tools.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "A meteor shower can be one of the disasters in Natural Disaster Survival.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Bee Swarm Simulator is about collecting pollen with bees.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Roblox has games where you can be a pet, a baby or a superhero.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "In BedWars, you can still come back after being defeated as long as your bed is safe.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "Builderman is a famous Roblox character who wears a hard hat.",
+    "Image": "",
+    "Answer": "True",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  },
+  {
+    "Question": "The Roblox character called a noob has a purple head.",
+    "Image": "",
+    "Answer": "False",
+    "Choices": [
+      "True",
+      "False"
+    ]
+  }
+]

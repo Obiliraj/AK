@@ -21,31 +21,48 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
 
   /* ======================================================
-     Load themes from /themes/*.js
-     Question formats supported:
-       ["Question?", "Right answer", "Wrong 1", "Wrong 2", "Wrong 3"]
-       { q: "Question?", img: "https://...", answer: "Right", wrong: ["W1", "W2", "W3"] }
-     True/False: ["Statement.", "True", "False"]  (first choice is always the right one)
+     Load themes from /themes (JSON)
+     themes/themes.json lists the themes. Each theme file is an array of:
+       { "Question": "...", "Image": "https://... or empty", "Answer": "...", "Choices": ["...", "..."] }
+     True/False questions have two Choices: ["True", "False"].
      ====================================================== */
+  let THEMES = [];
+
   function normalise(raw, theme) {
-    let q, answer, wrong, img;
-    if (Array.isArray(raw)) {
-      [q, answer, ...wrong] = raw;
-    } else if (raw && typeof raw === "object") {
-      q = raw.q; answer = raw.answer; wrong = raw.wrong || []; img = raw.img;
+    if (!raw || typeof raw !== "object") return null;
+    const q = typeof raw.Question === "string" ? raw.Question.trim() : "";
+    const answer = typeof raw.Answer === "string" ? raw.Answer.trim() : "";
+    const choices = Array.isArray(raw.Choices)
+      ? [...new Set(raw.Choices.filter((c) => typeof c === "string" && c.trim()).map((c) => c.trim()))]
+      : [];
+    if (!q || !answer || choices.length < 2 || !choices.includes(answer)) {
+      console.warn(`Skipped a question in "${theme.name}" (it needs a Question, an Answer and Choices that include the Answer):`, raw);
+      return null;
     }
-    if (typeof q !== "string" || typeof answer !== "string" || !q.trim() || !answer.trim()) return null;
-    wrong = (wrong || []).filter((w) => typeof w === "string" && w.trim() && w !== answer);
-    if (!wrong.length) return null;
-    const isTF = wrong.length === 1 && [answer, wrong[0]].sort().join() === "False,True";
-    return { q: q.trim(), answer: answer.trim(), wrong: wrong.map((w) => w.trim()), img: img || "", isTF, theme };
+    const isTF = choices.length === 2 && choices.slice().sort().join() === "False,True";
+    const img = typeof raw.Image === "string" ? raw.Image.trim() : "";
+    return { q, answer, choices, img, isTF, theme };
   }
 
-  const THEMES = (window.QUIZ_THEMES || []).map((t) => {
-    const theme = { id: t.id, name: t.name, emoji: t.emoji || "❓", color: t.color || "#00A8B5", imageStyle: t.imageStyle || "" };
-    theme.questions = (t.questions || []).map((r) => normalise(r, theme)).filter(Boolean);
-    return theme;
-  }).filter((t) => t.questions.length);
+  async function loadThemes() {
+    const res = await fetch("themes/themes.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("themes.json " + res.status);
+    const list = await res.json();
+    const loaded = await Promise.all(list.map(async (t) => {
+      try {
+        const r = await fetch("themes/" + t.file, { cache: "no-cache" });
+        if (!r.ok) throw new Error(r.status);
+        const raw = await r.json();
+        const theme = { id: t.id, name: t.name, emoji: t.emoji || "❓", color: t.color || "#00A8B5", imageStyle: t.imageStyle || "" };
+        theme.questions = (Array.isArray(raw) ? raw : []).map((x) => normalise(x, theme)).filter(Boolean);
+        return theme;
+      } catch (e) {
+        console.warn("Could not load theme file " + t.file, e);
+        return null;
+      }
+    }));
+    return loaded.filter((t) => t && t.questions.length);
+  }
 
   /* ======================================================
      State
@@ -196,21 +213,24 @@
       : `${esc(p.avatar)} Go, <b>${esc(p.name)}</b>!`;
     $("questionText").textContent = q.q;
 
-    // picture
+    // picture: the <img> placeholder is shown only when the question has an Image link
     const wrap = $("qImageWrap"), img = $("qImage");
     $("imgError").classList.add("hidden");
     wrap.className = "qimage" + (q.theme.imageStyle ? " " + q.theme.imageStyle : "");
     if (q.img) {
-      img.classList.remove("hidden");
+      img.hidden = false;
       img.alt = "Picture for this question";
       img.src = q.img;
+      wrap.classList.remove("hidden");
     } else {
-      wrap.classList.add("hidden");
+      img.hidden = true;
       img.removeAttribute("src");
+      img.alt = "";
+      wrap.classList.add("hidden");
     }
 
     // answers
-    const choices = q.isTF ? ["True", "False"] : shuffle([q.answer, ...q.wrong]);
+    const choices = q.isTF ? ["True", "False"] : shuffle(q.choices);
     const box = $("answers");
     box.className = "answers" + (q.isTF ? " tf" : "");
     box.innerHTML = choices.map((c, i) => `
@@ -231,7 +251,7 @@
 
   $("qImage").addEventListener("error", () => {
     if (!state.current || !state.current.img) return;
-    $("qImage").classList.add("hidden");
+    $("qImage").hidden = true;
     $("imgError").classList.remove("hidden");
   });
 
@@ -398,5 +418,15 @@
   /* ---------- init ---------- */
   renderPickers();
   renderPlayerInputs();
-  renderThemes();
+  $("startBtn").disabled = true;
+  loadThemes().then((themes) => {
+    THEMES = themes;
+    if (!THEMES.length) throw new Error("no themes");
+    renderThemes();
+    $("startBtn").disabled = false;
+  }).catch((e) => {
+    console.error(e);
+    $("themeGrid").innerHTML = `<p class="setup-error">😕 The quiz questions couldn't load.<br>
+      Open the game from its website (GitHub Pages) or a local web server. Opening the file directly from your computer won't load the questions.</p>`;
+  });
 })();

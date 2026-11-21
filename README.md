@@ -21,43 +21,44 @@ The game adds "Would you rather…" in front of every card. You can add or remov
 
 ## Change the Quiz Champs questions
 
-Each quiz theme is one file in **`games/quiz/themes/`**, with 150 or more questions each:
+Each quiz theme is a JSON file in **`games/quiz/themes/`**, with 150 or more questions each. `themes.json` lists the themes (name, emoji, color and file).
 
 | Theme | File |
 |---|---|
-| 🌍 Countries | `countries.js` |
-| 🚩 Guess the Flag | `flags.js` |
-| 🏷️ Guess the Logo | `logos.js` |
-| 🟥 Roblox | `roblox.js` |
-| ⛏️ Minecraft | `minecraft.js` |
-| 🔬 Science | `science.js` |
-| 🚀 Space & Beyond | `space.js` |
-| 🪐 Planets | `planets.js` |
-| 🤔 Myths: True or False? | `myths.js` |
-| 🫀 Human Body | `human-body.js` |
-| 🦸 Animal Superpowers | `animal-superpowers.js` |
+| 🌍 Countries | `countries.json` |
+| 🚩 Guess the Flag | `flags.json` |
+| 🏷️ Guess the Logo | `logos.json` |
+| 🟥 Roblox | `roblox.json` |
+| ⛏️ Minecraft | `minecraft.json` |
+| 🔬 Science | `science.json` |
+| 🚀 Space & Beyond | `space.json` |
+| 🪐 Planets | `planets.json` |
+| 🤔 Myths: True or False? | `myths.json` |
+| 🫀 Human Body | `human-body.json` |
+| 🦸 Animal Superpowers | `animal-superpowers.json` |
 
-A question is one line. **The first choice is always the right answer** (the game shuffles them):
+Every question has the same four fields, with or without a picture:
 
-```js
-["Which planet is called the Red Planet?", "Mars", "Venus", "Jupiter", "Mercury"],
+```json
+{
+  "Question": "Which country does this flag belong to?",
+  "Image": "https://cdn.jsdelivr.net/npm/flag-icons@7.6.0/flags/4x3/jp.svg",
+  "Answer": "Japan",
+  "Choices": ["Japan", "China", "Peru", "Kenya"]
+}
 ```
 
-True or false questions have just two choices, with the right one first:
+- **Image** is a picture link, or `""` for no picture. The picture only shows when there is a link.
+- **Answer** must exactly match one of the **Choices**. The game shuffles the choices.
+- **True or false** questions have just two choices: `"Choices": ["True", "False"]`.
 
-```js
-["Octopuses have three hearts.", "True", "False"],
-```
-
-Picture questions use an image link:
-
-```js
-{ q: "Which country does this flag belong to?", img: "https://...", answer: "Japan", wrong: ["China", "Peru", "Kenya"] },
-```
+Questions with a missing field, or an Answer that isn't in the Choices, are skipped (the browser console says which one).
 
 Flag pictures come from [flag-icons](https://github.com/lipis/flag-icons) and logos from [Simple Icons](https://simpleicons.org). Both are free collections served by the jsDelivr CDN, so picture questions need an internet connection.
 
-**To add a new theme,** copy one of the theme files, change its `id`, `name`, `emoji` and questions, and add a `<script>` line for it near the bottom of `games/quiz/index.html`.
+**To add a new theme,** create a new JSON file in `games/quiz/themes/` and add an entry for it to `themes.json`.
+
+> The quiz loads its questions from these JSON files, so it must be opened from a web address (GitHub Pages, or a local server such as `python3 -m http.server`). Double-clicking `index.html` on your computer won't load the questions.
 
 **Scoring:** 1 point for each right answer. 5 right in a row gives +1 bonus point, and 10 in a row gives +2 more. After 10, a new streak starts, so 15 in a row gives +1 again and 20 gives +2. A wrong answer resets the streak.
 
@@ -79,4 +80,4 @@ To change the silly name words, edit **`assets/names.js`**.
 3. Under **Build and deployment**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then save.
 4. After a minute your site will be at `https://<your-username>.github.io/<repo-name>/`.
 
-You can also play locally by double-clicking `index.html`. It works without a server.
+To play on your own computer, run `python3 -m http.server` in this folder and open http://localhost:8000. (Would You Rather also works by double-clicking its file, but Quiz Champs needs a server to load its JSON questions.)
