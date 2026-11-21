@@ -5,10 +5,10 @@
   const MIN_PLAYERS = 2;
   const AVATARS = ["🦁", "🐼", "🦊", "🐸", "🐵", "🦄", "🐯", "🐧", "🐨", "🐙", "🦖", "🐰"];
   const COLORS = [
-    { c: "#ff5c9a", soft: "#ffe3ef" },
-    { c: "#2d9cff", soft: "#dff2ff" },
-    { c: "#13c4a3", soft: "#dcf8f1" },
-    { c: "#ff9f1c", soft: "#fff0d9" }
+    { c: "#E15959", soft: "#3A2A31" }, // coral
+    { c: "#00A8B5", soft: "#173A42" }, // teal
+    { c: "#FAD201", soft: "#3A3A22" }, // yellow
+    { c: "#FFFFFF", soft: "#2C3E49" }  // white
   ];
 
   // Load cards from cards.js, ignoring any blank/broken entries.

@@ -10,7 +10,7 @@ window.PORTAL_GAMES = [
     players: "2–4 players",
     age: "Ages 4+",
     url: "games/would-you-rather/",
-    color: "#7c5cff"
+    color: "#00A8B5"
   }
-  // { title: "Next Game", emoji: "🎲", description: "...", players: "1–4 players", age: "Ages 5+", url: "games/next-game/", color: "#ff5c9a" }
+  // { title: "Next Game", emoji: "🎲", description: "...", players: "1–4 players", age: "Ages 5+", url: "games/next-game/", color: "#E15959" }
 ];
