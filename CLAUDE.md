@@ -1,0 +1,112 @@
+# Kids Game Zone — notes for AI agents and developers
+
+A static HTML/CSS/JS games portal for kids, hosted on **GitHub Pages** from the `main` branch root.
+It is played on iPads, phones and laptops, so every change must stay responsive (test at phone width, ~390px).
+No build step, no frameworks, no npm dependencies in the site itself.
+
+The owner prefers to be called **Harini**. Content must be appropriate for kids around **10 years old**.
+
+## Layout
+
+```
+index.html                 Landing page: game list, player-name dialog, color-theme picker
+games.js                   List of games shown on the landing page (PORTAL_GAMES)
+assets/portal.css          Shared styles + ALL color themes (one CSS block per theme)
+assets/theme.js            Theme list + applies saved theme; loaded in <head> of every page
+assets/player.js           PlayerName.get()/set(): saved player name (localStorage "kgz.playerName")
+assets/names.js            Word lists for the silly-name builder ("Curious Cucumber")
+games/would-you-rather/    2–4 player card game; 100 cards in cards.js (window.WYR_CARDS)
+games/quiz/                "Quiz Champs": 1–4 player quiz
+  quiz.js / quiz.css       Game logic and styles
+  themes/themes.json       List of quiz themes: id, name, emoji, color, file, imageStyle
+  themes/*.json            Questions, one file per theme (150+ each)
+tools/validate-questions.mjs   Checks all quiz JSON (run before committing question changes)
+```
+
+## Conventions
+
+- **Colors:** never hard-code colors in game CSS. Use the role variables from `assets/portal.css`:
+  `--yellow` (highlight, main buttons, card borders), `--coral` (option A, wrong answer, player 1),
+  `--teal` (option B, right answer, player 2), and `--on-yellow/--on-coral/--on-teal` for text on top of them.
+  Surfaces: `--bg`, `--surface`, `--surface-2`, `--line`, `--ink`, `--ink-soft`, plus `--*-tint`.
+  Player colors are `--p1`…`--p4` (and `--p1-soft`…). In `games.js` and `themes.json`, `color` is a role name.
+- **Themes:** Midnight Pop (default, no `data-theme`), Berry Twilight (`berry`), Neon Lagoon (`lagoon`),
+  Ocean Sunset (`sunset`), Silver Steel (`steel`, the only light theme), Christmas (`christmas`, CSS snowfall
+  via `body::before/::after`). To add a theme: add a `:root[data-theme="x"]` block in `portal.css` and an entry in `assets/theme.js`.
+  Every new page must include `<script src="…/assets/theme.js"></script>` right after the theme-color meta tag.
+- **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
+  emoji as icons. Keep pages working without the font.
+- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`), always in try/catch.
+- **Escaping:** any user text (names) inserted as HTML must go through the `esc()` helper or `textContent`.
+- **New game:** create `games/<name>/index.html`, reuse `assets/portal.css`, `theme.js` and `player.js`
+  (pre-fill Player 1 from `PlayerName.get()`), then add an entry to `games.js`.
+
+## Quiz Champs rules (as specified by the owner)
+
+- Max 4 players; players take turns; questions per player: 5/10/15/20.
+- Choose one theme, several, or "Random mix of all". No question repeats within a game.
+- 1 point per correct answer. Streak bonus: **5 in a row = +1**, **10 in a row = +2**, then it repeats
+  (15 → +1, 20 → +2). A wrong answer resets the streak. Winner announced at the end; ties handled.
+- Answers show ✓/✗ marks (needed because some themes have no red/green).
+
+## Quiz question format (required by the owner, keep it exactly)
+
+Every theme file is a JSON array. Image and non-image questions use the **same shape**:
+
+```json
+{
+  "Question": "Which country does this flag belong to?",
+  "Image": "https://cdn.jsdelivr.net/npm/flag-icons@7.6.0/flags/4x3/jp.svg",
+  "Answer": "Japan",
+  "Choices": ["Japan", "China", "Peru", "Kenya"]
+}
+```
+
+- `Image` is `""` when there is no picture. The question card has an `<img id="qImage">` placeholder that is
+  shown only when `Image` has a link.
+- True/False questions have exactly `"Choices": ["True", "False"]` (shown in that order; others are shuffled).
+- Each theme needs **at least 150 questions**. Run `node tools/validate-questions.mjs` after any change.
+- Because questions are loaded with `fetch`, the quiz does not work from `file://`; it shows a message instead.
+  Test locally with `python3 -m http.server` from the repo root.
+
+Themes: Countries, Guess the Flag, Guess the Logo, Roblox, Minecraft, Science, Space & Beyond, Planets,
+Myths: True or False?, Human Body, Animal Superpowers (about 1,800 questions).
+
+### Picture sources
+- Flags: `flag-icons@7.6.0` via jsDelivr, `…/flags/4x3/<iso2>.svg`. All 193 UN members.
+  Lookalike flags (e.g. Chad/Romania, Indonesia/Monaco) must never be offered as each other's wrong answers.
+- Logos: `simple-icons@16.36.0` via jsDelivr, `…/icons/<slug>.svg` (black, shown on a white tile).
+  Logos that spell out the brand name (Samsung, KFC, IKEA, Coca-Cola…) were removed because they give the answer away.
+  Many famous brands (LEGO, Nintendo, Disney, Pepsi, Amazon, Minecraft) are not in Simple Icons.
+  Pin exact versions in URLs, and verify a slug exists before adding it (e.g. `npm pack simple-icons@16.36.0`).
+
+### Content guidance
+- Stick to well-established facts; skip anything disputed. Roblox content dates quickly (game updates),
+  so re-check Roblox questions occasionally.
+- Avoid politically contested items (e.g. contested capitals) and anything not suitable for ~10-year-olds.
+
+## Testing
+
+Before pushing, check in a real browser at phone (iPhone 13), iPad and laptop sizes, with no horizontal scroll
+and no console errors. Playwright with Chromium works well:
+- Serve the repo with `python3 -m http.server`.
+- jsDelivr may be blocked in sandboxes; route `cdn.jsdelivr.net` requests to locally installed
+  `flag-icons` / `simple-icons` npm packages to test images.
+- A good quiz check: play a solo 10-question game answering everything correctly, and expect 13 points (10 + 1 + 2).
+- Also check: the name dialog (Enter key must not re-open it), and the theme picker applying across pages.
+
+## Git
+
+- Work on `main` (GitHub Pages serves it). Commit with clear messages, then push.
+- `.nojekyll` must stay so GitHub Pages serves files as-is.
+
+## History (what has been built, in order)
+
+1. Landing page + Would You Rather (100 editable cards).
+2. Dark theme with yellow/coral/teal/navy palette.
+3. Player name on the landing page (type it or build a silly name), saved and pre-filled in games.
+4. Quiz Champs with 11 themes (first as JS files).
+5. Quiz questions converted to the JSON format above.
+6. Site-wide color theme picker with six themes.
+
+Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
