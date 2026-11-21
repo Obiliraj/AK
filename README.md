@@ -7,6 +7,7 @@ A small collection of browser games for kids. It works on iPad, phones and lapto
 | Game | Players | Folder |
 |------|---------|--------|
 | 🤔 Would You Rather? | 2–4 | `games/would-you-rather/` |
+| 🏆 Quiz Champs | 1–4 | `games/quiz/` |
 
 ## Change the Would You Rather cards
 
@@ -17,6 +18,48 @@ Open **`games/would-you-rather/cards.js`** and edit the list. Each card looks li
 ```
 
 The game adds "Would you rather…" in front of every card. You can add or remove as many cards as you like.
+
+## Change the Quiz Champs questions
+
+Each quiz theme is one file in **`games/quiz/themes/`**, with 150 or more questions each:
+
+| Theme | File |
+|---|---|
+| 🌍 Countries | `countries.js` |
+| 🚩 Guess the Flag | `flags.js` |
+| 🏷️ Guess the Logo | `logos.js` |
+| 🟥 Roblox | `roblox.js` |
+| ⛏️ Minecraft | `minecraft.js` |
+| 🔬 Science | `science.js` |
+| 🚀 Space & Beyond | `space.js` |
+| 🪐 Planets | `planets.js` |
+| 🤔 Myths: True or False? | `myths.js` |
+| 🫀 Human Body | `human-body.js` |
+| 🦸 Animal Superpowers | `animal-superpowers.js` |
+
+A question is one line. **The first choice is always the right answer** (the game shuffles them):
+
+```js
+["Which planet is called the Red Planet?", "Mars", "Venus", "Jupiter", "Mercury"],
+```
+
+True or false questions have just two choices, with the right one first:
+
+```js
+["Octopuses have three hearts.", "True", "False"],
+```
+
+Picture questions use an image link:
+
+```js
+{ q: "Which country does this flag belong to?", img: "https://...", answer: "Japan", wrong: ["China", "Peru", "Kenya"] },
+```
+
+Flag pictures come from [flag-icons](https://github.com/lipis/flag-icons) and logos from [Simple Icons](https://simpleicons.org). Both are free collections served by the jsDelivr CDN, so picture questions need an internet connection.
+
+**To add a new theme,** copy one of the theme files, change its `id`, `name`, `emoji` and questions, and add a `<script>` line for it near the bottom of `games/quiz/index.html`.
+
+**Scoring:** 1 point for each right answer. 5 right in a row gives +1 bonus point, and 10 in a row gives +2 more. After 10, a new streak starts, so 15 in a row gives +1 again and 20 gives +2. A wrong answer resets the streak.
 
 ## Player name
 

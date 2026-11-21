@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1A252C" />
+  <title>Quiz Champs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/portal.css" />
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="wrap app">
+    <nav class="topbar">
+      <a class="btn ghost small" href="../../">🏠 Games</a>
+      <div class="title">🏆 Quiz Champs</div>
+      <button class="btn ghost small hidden" id="endBtn" type="button">🏁 End</button>
+    </nav>
+
+    <!-- ============ SETUP ============ -->
+    <section id="setup" class="screen">
+      <div class="panel">
+        <h1>1. How many players?</h1>
+        <div class="count-picker" id="countPicker" role="radiogroup" aria-label="Number of players">
+          <button type="button" class="count" data-count="1" role="radio">1</button>
+          <button type="button" class="count" data-count="2" role="radio">2</button>
+          <button type="button" class="count" data-count="3" role="radio">3</button>
+          <button type="button" class="count" data-count="4" role="radio">4</button>
+        </div>
+        <p class="hint">Tap your picture to change it, and type your name.</p>
+        <div id="playerInputs" class="player-inputs"></div>
+      </div>
+
+      <div class="panel">
+        <h1>2. Pick your themes</h1>
+        <p class="hint">Choose one theme, a few, or a random mix of everything!</p>
+        <div class="theme-actions">
+          <button type="button" class="btn yellow small" id="mixAll">🎲 Random mix of all</button>
+          <button type="button" class="btn ghost small" id="clearThemes">Clear</button>
+        </div>
+        <div class="themes" id="themeGrid"></div>
+      </div>
+
+      <div class="panel">
+        <h1>3. Questions for each player</h1>
+        <div class="count-picker" id="lengthPicker" role="radiogroup" aria-label="Questions for each player">
+          <button type="button" class="count wide" data-len="5" role="radio">5</button>
+          <button type="button" class="count wide" data-len="10" role="radio">10</button>
+          <button type="button" class="count wide" data-len="15" role="radio">15</button>
+          <button type="button" class="count wide" data-len="20" role="radio">20</button>
+        </div>
+        <p class="setup-error hidden" id="setupError" role="alert"></p>
+        <button class="btn yellow big start" id="startBtn" type="button">🚀 Start the quiz!</button>
+
+        <details class="rules">
+          <summary>📜 How to play</summary>
+          <ol>
+            <li>Players take turns. On your turn, read the question and tap your answer.</li>
+            <li>Every right answer scores <b>1 point</b>.</li>
+            <li>🔥 Get <b>5 in a row</b> right and you win <b>1 bonus point</b>.</li>
+            <li>🔥🔥 Get <b>10 in a row</b> right and you win <b>2 more bonus points</b>. Then a new streak begins!</li>
+            <li>A wrong answer resets your streak to zero.</li>
+            <li>The player with the most points at the end wins!</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ GAME ============ -->
+    <section id="game" class="screen hidden">
+      <div class="scoreboard" id="scoreboard"></div>
+
+      <div class="qcard" id="qcard">
+        <div class="qmeta">
+          <span class="theme-tag" id="themeTag"></span>
+          <span class="qcount" id="qCount"></span>
+        </div>
+        <p class="turn" id="turnMsg"></p>
+        <h2 class="question" id="questionText"></h2>
+        <div class="qimage hidden" id="qImageWrap">
+          <img id="qImage" alt="" />
+          <div class="img-error hidden" id="imgError">
+            <p>😕 This picture didn't load. Are you online?</p>
+            <button type="button" class="btn ghost small" id="skipBtn">⏭️ Skip this question</button>
+          </div>
+        </div>
+        <button type="button" class="btn ghost small speak" id="speakBtn">🔊 Read it to me</button>
+        <div class="answers" id="answers"></div>
+        <div class="feedback hidden" id="feedback" aria-live="polite"></div>
+        <button class="btn yellow big next hidden" id="nextBtn" type="button">Next ➜</button>
+      </div>
+    </section>
+
+    <!-- ============ END ============ -->
+    <section id="end" class="screen hidden">
+      <div class="panel">
+        <div class="trophy" id="trophy">🏆</div>
+        <h1 id="winnerText"></h1>
+        <p class="hint" id="winnerSub"></p>
+        <ol class="leaderboard" id="leaderboard"></ol>
+        <div class="end-actions">
+          <button class="btn yellow big" id="againBtn" type="button">🔁 Play again</button>
+          <button class="btn ghost big" id="changeBtn" type="button">🎨 Change themes</button>
+        </div>
+      </div>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+    </section>
+  </div>
+
+  <!--
+    QUESTION THEMES
+    Each file in /themes adds one theme. To add a new theme, copy a file,
+    change it, and add a <script> line for it here.
+  -->
+  <script src="themes/countries.js"></script>
+  <script src="themes/flags.js"></script>
+  <script src="themes/logos.js"></script>
+  <script src="themes/roblox.js"></script>
+  <script src="themes/minecraft.js"></script>
+  <script src="themes/science.js"></script>
+  <script src="themes/space.js"></script>
+  <script src="themes/planets.js"></script>
+  <script src="themes/myths.js"></script>
+  <script src="themes/human-body.js"></script>
+  <script src="themes/animal-superpowers.js"></script>
+
+  <script src="../../assets/player.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
