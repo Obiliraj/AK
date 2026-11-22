@@ -25,7 +25,7 @@ window.PORTAL_GAMES = [
   {
     title: "Tower Builder",
     emoji: "🧱",
-    description: "Practise your times tables! Every right answer adds a block to your tower.",
+    description: "Times tables with 4 modes: practice, tower challenge, beat the clock and a mastery map!",
     players: "1 player",
     age: "Ages 7+",
     url: "games/tower-builder/",

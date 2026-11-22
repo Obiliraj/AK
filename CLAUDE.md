@@ -21,7 +21,8 @@ games/quiz/                "Quiz Champs": 1–4 player quiz
   quiz.js / quiz.css       Game logic and styles
   themes/themes.json       List of quiz themes: id, name, emoji, color, file, imageStyle
   themes/*.json            Questions, one file per theme (150+ each)
-games/tower-builder/      Times tables tower game: index.html, style.css, game.js (saves to "kgz.towerBuilder")
+games/tower-builder/      Times tables tower game (Practice, Tower challenge, Beat the clock, Mastery map):
+                           index.html, style.css, game.js (saves to "kgz.towerBuilder")
 tools/validate-questions.mjs   Checks all quiz JSON (run before committing question changes)
 ```
 
@@ -37,7 +38,7 @@ New games must get their own `README.md` in the same style.
 
 ## Conventions
 
-- **Colors:** never hard-code colors in game CSS. Use the role variables from `assets/portal.css`:
+- **Colors:** never hard-code colors in game CSS (one agreed exception: Tower Builder's mastery-map green, `--map-green`). Use the role variables from `assets/portal.css`:
   `--yellow` (highlight, main buttons, card borders), `--coral` (option A, wrong answer, player 1),
   `--teal` (option B, right answer, player 2), and `--on-yellow/--on-coral/--on-teal` for text on top of them.
   Surfaces: `--bg`, `--surface`, `--surface-2`, `--line`, `--ink`, `--ink-soft`, plus `--*-tint`.
@@ -137,5 +138,7 @@ and no console errors. Playwright with Chromium works well:
 9. Tower Builder: times tables game (blocks drop on right answers, tricky facts repeat, Web Audio sounds).
 10. Site-wide sound switch on the landing page, favourite stars on game cards; Tower Builder opens with tables 6–9
     and drops a block on every 3rd wrong answer (not only 3 in a row).
+11. Tower Builder modes: Practice (one table, calm), Tower challenge, Beat the clock (60 s) and a 12×12 Mastery map
+    (grey → yellow → green after 3 right in a row).
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.

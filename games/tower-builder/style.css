@@ -1,6 +1,13 @@
 /* Tower Builder — uses the shared theme colors from ../../assets/portal.css */
 
-:root { --radius: 24px; --block-h: 36px; }
+:root {
+  --radius: 24px;
+  --block-h: 36px;
+  /* Mastery map "mastered" color. The owner asked for grey → yellow → green, and the site themes have
+     no green role, so this one color is fixed. Grey and yellow come from the theme. */
+  --map-green: #34c26f;
+  --on-map-green: #0b2616;
+}
 
 .app {
   padding-top: max(12px, env(safe-area-inset-top));
@@ -114,6 +121,82 @@
 }
 .reset { margin-top: 24px; }
 
+/* ---------- Game modes ---------- */
+.kinds {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.kind {
+  min-height: 112px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  padding: 10px 6px;
+  border-radius: 20px;
+  border: 3px solid var(--line);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 1.05rem;
+  box-shadow: 0 4px 0 var(--press);
+  transition: transform .1s, background-color .15s;
+}
+.kind:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--press); }
+.kind b { font-weight: 700; line-height: 1.15; }
+.kind small { color: var(--ink-soft); font-size: .85rem; }
+.kind-emoji { font-size: 2rem; line-height: 1.1; }
+.kind[aria-checked="true"] { background: var(--yellow); color: var(--on-yellow); border-color: var(--yellow); }
+.kind[aria-checked="true"] small { color: var(--on-yellow); }
+.kind.map-kind { border-style: dashed; }
+.table-btn[aria-checked="true"] {
+  background: var(--yellow);
+  color: var(--on-yellow);
+  border-color: var(--yellow);
+}
+
+/* ---------- Mastery map ---------- */
+.map-panel { max-width: 760px; }
+.map-counts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; margin: 14px 0; font-weight: 600; }
+.map-count { display: inline-flex; align-items: center; gap: 8px; }
+.map-count .swatch { width: 22px; height: 22px; min-height: 0; border-radius: 6px; padding: 0; font-size: 0; }
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+  gap: 3px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.map-head {
+  display: grid; place-items: center;
+  aspect-ratio: 1;
+  font-weight: 700;
+  font-size: clamp(.75rem, 2.8vw, 1.05rem);
+  color: var(--ink-soft);
+}
+.map-head.corner { color: var(--yellow); }
+button.map-head.row {
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+  color: var(--yellow);
+  text-decoration: underline dotted;
+}
+.map-cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 6px;
+  padding: 0;
+  font-weight: 600;
+  font-size: clamp(.6rem, 2.5vw, .95rem);
+  font-variant-numeric: tabular-nums;
+}
+.map-cell.l0 { background: var(--surface-2); color: var(--ink-soft); }
+.map-cell.l1 { background: var(--yellow); color: var(--on-yellow); }
+.map-cell.l2 { background: var(--map-green); color: var(--on-map-green); }
+.map-cell.picked { outline: 3px solid var(--ink); outline-offset: 1px; position: relative; z-index: 1; }
+.map-detail { min-height: 3em; margin: 14px 0 0; font-size: 1.1rem; font-weight: 500; }
+
 /* ---------- Game ---------- */
 .hud {
   display: flex; justify-content: center; gap: 10px;
@@ -130,6 +213,7 @@
 }
 .hud-label { font-size: .85rem; color: var(--ink-soft); }
 .hud-value { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.hud-item.time.hurry .hud-value { color: var(--coral); animation: pulse 1s ease-in-out infinite; }
 .oops-dots { display: flex; gap: 6px; height: 1.8rem; align-items: center; }
 .oops-dots i {
   width: 18px; height: 18px; border-radius: 50%;
@@ -294,7 +378,12 @@
   .topbar .lbl { display: none; }
   .topbar .btn.small { width: 48px; padding: 0; }
 }
+@media (max-width: 640px) {
+  .kinds { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 420px) {
+  .map-grid { gap: 2px; }
+  .map-cell { border-radius: 4px; }
   .tower-box { height: clamp(170px, 26vh, 240px); }
   .ask { padding: 10px; }
   .feedback { margin: 4px 0 8px; font-size: 1.1rem; }
@@ -324,4 +413,5 @@
   80% { transform: translateX(-50%) rotate(1.5deg); }
 }
 @keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes pulse { 50% { transform: scale(1.2); } }
 

@@ -27,11 +27,27 @@
     <section id="menu" class="screen">
       <div class="panel">
         <h1 id="hello">Let's build a tower!</h1>
-        <p class="hint">Every right answer adds a block. Every 3 wrong answers knock the top block off!</p>
 
-        <h2>Which times tables?</h2>
+        <h2>Pick a game mode</h2>
+        <div class="kinds" role="radiogroup" aria-label="Game mode">
+          <button type="button" class="kind" data-kind="practice" role="radio">
+            <span class="kind-emoji">📘</span><b>Practice</b><small>One table, no rush</small>
+          </button>
+          <button type="button" class="kind" data-kind="challenge" role="radio">
+            <span class="kind-emoji">🧱</span><b>Tower challenge</b><small>Mixed tables</small>
+          </button>
+          <button type="button" class="kind" data-kind="clock" role="radio">
+            <span class="kind-emoji">⏱️</span><b>Beat the clock</b><small>60 seconds</small>
+          </button>
+          <button type="button" class="kind map-kind" id="openMapBtn">
+            <span class="kind-emoji">🗺️</span><b>Mastery map</b><small>See your progress</small>
+          </button>
+        </div>
+        <p class="hint" id="kindHint"></p>
+
+        <h2 id="tablesTitle">Which times tables?</h2>
         <div class="tables" id="tables" role="group" aria-label="Times tables to practise"></div>
-        <div class="row-actions">
+        <div class="row-actions" id="tableActions">
           <button class="btn ghost small" id="allBtn" type="button">✅ All</button>
           <button class="btn ghost small" id="noneBtn" type="button">✖️ Clear</button>
         </div>
@@ -49,7 +65,7 @@
         <p class="warn hidden" id="pickWarn">Pick at least one times table!</p>
         <div class="end-actions">
           <button class="btn teal big hidden" id="continueBtn" type="button">▶️ Keep building</button>
-          <button class="btn yellow big" id="startBtn" type="button">🧱 Start a new tower!</button>
+          <button class="btn yellow big" id="startBtn" type="button">🧱 Start!</button>
         </div>
 
         <div class="stats" id="menuStats"></div>
@@ -61,15 +77,34 @@
       </div>
     </section>
 
+    <!-- ============ MASTERY MAP ============ -->
+    <section id="map" class="screen hidden">
+      <div class="panel map-panel">
+        <h1>🗺️ Mastery map</h1>
+        <p class="hint">Every square is one question. Get it right <b>3 times in a row</b> to turn it green!</p>
+        <div class="map-counts" id="mapCounts"></div>
+        <div class="map-scroll">
+          <div class="map-grid" id="mapGrid" role="grid" aria-label="All 144 times table questions"></div>
+        </div>
+        <p class="map-detail" id="mapDetail" aria-live="polite">Tap a square to see how it's going. Tap a row number to practise that table.</p>
+        <div class="end-actions">
+          <button class="btn yellow big" id="mapBackBtn" type="button">⬅️ Back</button>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ GAME ============ -->
     <section id="game" class="screen hidden">
       <div class="hud">
         <div class="hud-item"><span class="hud-label">Tower</span><span class="hud-value" id="heightVal">0</span></div>
-        <div class="hud-item"><span class="hud-label">🏆 Best</span><span class="hud-value" id="bestVal">0</span></div>
-        <div class="hud-item oops" aria-label="Wrong answers (3 knock off a block)">
+        <div class="hud-item" id="bestItem"><span class="hud-label">🏆 Best</span><span class="hud-value" id="bestVal">0</span></div>
+        <div class="hud-item" id="rightItem"><span class="hud-label">✓ Right</span><span class="hud-value" id="rightVal">0</span></div>
+        <div class="hud-item oops" id="oopsItem" aria-label="Wrong answers (3 knock off a block)">
           <span class="hud-label">Oops</span>
           <span class="oops-dots" id="oopsDots"><i></i><i></i><i></i></span>
         </div>
+        <div class="hud-item time" id="timeItem"><span class="hud-label">⏱️ Time</span><span class="hud-value" id="timeVal">60</span></div>
+        <div class="hud-item" id="tableItem"><span class="hud-label">Table</span><span class="hud-value" id="tableVal">×4</span></div>
       </div>
 
       <div class="play">
@@ -118,8 +153,9 @@
           <div class="tricky-list" id="endTricky"></div>
         </div>
         <div class="end-actions">
-          <button class="btn yellow big" id="againBtn" type="button">🔁 Build again</button>
-          <button class="btn ghost big" id="menuBtn" type="button">⚙️ Change tables</button>
+          <button class="btn yellow big" id="againBtn" type="button">🔁 Play again</button>
+          <button class="btn ghost big" id="menuBtn" type="button">⚙️ Change mode</button>
+          <button class="btn ghost big" id="endMapBtn" type="button">🗺️ Mastery map</button>
         </div>
       </div>
     </section>

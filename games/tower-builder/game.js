@@ -1,9 +1,11 @@
 /*
-  Tower Builder — times tables practice.
+  Tower Builder — times tables practice with four modes:
+    📘 Practice         one table, no timer, blocks never fall off
+    🧱 Tower challenge  mixed tables; every 3rd wrong answer knocks the top block off
+    ⏱️ Beat the clock   mixed tables; build as tall as you can in 60 seconds
+    🗺️ Mastery map      12×12 grid of every question: grey → yellow → green
   Right answer = a new block drops onto the tower.
   Wrong answer = the tower wobbles and the right answer is shown.
-  Every third wrong answer (not just in a row) = the top block falls off,
-  and the wrong-answer count starts again.
   Game logic is described in README.md.
 */
 (function () {
@@ -12,36 +14,62 @@
   const STORE_KEY = "kgz.towerBuilder";
   const MAX_TROUBLE = 8;          // how "tricky" a fact can get
   const RETRY_AFTER = 3;          // a missed fact comes back after this many questions
-  const RIGHT_DELAY = 900;        // ms before the next question
-  const WRONG_DELAY = 2200;
   const COLORS = 6;               // block color classes c0…c5
-  const OOPS_LIMIT = 3;           // wrong answers (at any time) that knock off the top block
+  const OOPS_LIMIT = 3;           // wrong answers (at any time) that knock off the top block (challenge only)
   const START_TABLES = [6, 7, 8, 9];   // always pre-selected when the game opens
+  const CLOCK_SECONDS = 60;
+  const MASTERED = 3;             // right this many times in a row = green on the mastery map
+
+  // Per-mode rules
+  const KINDS = {
+    practice: {
+      name: "Practice", emoji: "📘", start: "📘 Start practice",
+      hint: "Pick one times table and learn it calmly. No timer, and blocks never fall off.",
+      rightDelay: 900, wrongDelay: 2400
+    },
+    challenge: {
+      name: "Tower challenge", emoji: "🧱", start: "🧱 Start a new tower!",
+      hint: "Questions mixed from your tables. Every 3 wrong answers knock the top block off!",
+      rightDelay: 900, wrongDelay: 2200
+    },
+    clock: {
+      name: "Beat the clock", emoji: "⏱️", start: "⏱️ Start the clock!",
+      hint: "How tall can you build in 60 seconds? Answer fast — wrong answers just cost time.",
+      rightDelay: 350, wrongDelay: 1300
+    }
+  };
 
   const $ = (id) => document.getElementById(id);
 
   // ---------------- Saved data ----------------
   function defaults() {
     return {
-      best: 0,
+      best: 0,                    // tallest tower in Tower challenge
+      clockBest: 0,               // tallest tower in Beat the clock
+      kind: "challenge",          // last game mode played
       tables: START_TABLES.slice(),
-      mode: "choice",
-      facts: {},                  // "7x8": { right, wrong, trouble }
+      practiceTable: START_TABLES[0],
+      mode: "choice",             // answer style: "choice" or "pad"
+      facts: {},                  // "7x8": { right, wrong, trouble, streak }
       totals: { right: 0, wrong: 0, games: 0 },
-      current: null               // unfinished tower: { blocks: [...], tables, mode }
+      current: null               // unfinished Tower challenge: { blocks: [...], tables, mode, oops }
     };
   }
+  const validTable = (n) => Number.isInteger(n) && n >= 1 && n <= 12;
   function load() {
     const d = defaults();
     try {
       const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       if (raw && typeof raw === "object") {
         if (Number.isFinite(raw.best)) d.best = Math.max(0, Math.floor(raw.best));
+        if (Number.isFinite(raw.clockBest)) d.clockBest = Math.max(0, Math.floor(raw.clockBest));
+        if (KINDS[raw.kind]) d.kind = raw.kind;
         if (raw.muted === true) d.oldMuted = true;   // from the old in-game mute button
         if (Array.isArray(raw.tables)) {
-          const t = raw.tables.map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= 12);
+          const t = raw.tables.map(Number).filter(validTable);
           if (t.length) d.tables = Array.from(new Set(t)).sort((a, b) => a - b);
         }
+        if (validTable(Number(raw.practiceTable))) d.practiceTable = Number(raw.practiceTable);
         if (raw.mode === "pad" || raw.mode === "choice") d.mode = raw.mode;
         if (raw.facts && typeof raw.facts === "object") d.facts = raw.facts;
         if (raw.totals && typeof raw.totals === "object") Object.assign(d.totals, raw.totals);
@@ -60,6 +88,7 @@
   const data = load();
 
   // ---------------- Sound (Web Audio) ----------------
+  // One site-wide on/off switch on the landing page (assets/sound.js).
   let audio = null;
   function ctx() {
     if (window.SiteSound && SiteSound.isMuted()) return null;
@@ -97,18 +126,32 @@
     land() { tone(170, 0.16, { type: "triangle", vol: 0.35, slideTo: 70 }); },
     wrong() { tone(240, 0.32, { type: "square", vol: 0.07, slideTo: 150 }); },
     fall() { tone(500, 0.7, { type: "sawtooth", vol: 0.07, slideTo: 90 }); },
-    best() { [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.22, { vol: 0.15, delay: i * 0.11 })); }
+    best() { [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.22, { vol: 0.15, delay: i * 0.11 })); },
+    tick() { tone(1200, 0.05, { type: "square", vol: 0.05 }); },
+    timeUp() { [784, 659, 523].forEach((f, i) => tone(f, 0.25, { type: "triangle", vol: 0.2, delay: i * 0.15 })); }
   };
 
   // ---------------- Facts and question picking ----------------
   const key = (t, n) => t + "x" + n;
   function factInfo(k) {
-    if (!data.facts[k] || typeof data.facts[k] !== "object") data.facts[k] = { right: 0, wrong: 0, trouble: 0 };
+    if (!data.facts[k] || typeof data.facts[k] !== "object") data.facts[k] = { right: 0, wrong: 0, trouble: 0, streak: 0 };
     return data.facts[k];
   }
   function trouble(k) {
     const f = data.facts[k];
     return f && Number.isFinite(f.trouble) ? f.trouble : 0;
+  }
+  // Right answers in a row for a fact. Older saves have no streak: count them as learning if they had no trouble.
+  function streak(k) {
+    const f = data.facts[k];
+    if (!f) return 0;
+    if (Number.isFinite(f.streak)) return f.streak;
+    return (f.trouble || 0) === 0 ? Math.min(f.right || 0, MASTERED - 1) : 0;
+  }
+  // Mastery level for the map: 0 = grey (not yet), 1 = yellow (learning), 2 = green (mastered)
+  function level(k) {
+    const s = streak(k);
+    return s >= MASTERED ? 2 : s >= 1 ? 1 : 0;
   }
 
   let game = null;   // state of the game being played
@@ -160,18 +203,30 @@
 
   // ---------------- Screens ----------------
   function show(id) {
-    ["menu", "game", "end"].forEach((s) => $(s).classList.toggle("hidden", s !== id));
+    ["menu", "map", "game", "end"].forEach((s) => $(s).classList.toggle("hidden", s !== id));
     $("finishBtn").classList.toggle("hidden", id !== "game");
     window.scrollTo(0, 0);
   }
 
   // ---------------- Menu ----------------
+  let pickKind = data.kind;
   let pickTables = new Set(START_TABLES);   // the menu always opens with 6–9 picked
+  let pickOne = START_TABLES[0];            // Practice uses one table (6 when the page opens)
   let pickMode = data.mode;
 
   function renderMenu() {
     const name = window.PlayerName ? PlayerName.get() : "";
     $("hello").textContent = name ? "Hi " + name + ", let's build!" : "Let's build a tower!";
+
+    const k = KINDS[pickKind];
+    document.querySelectorAll(".kind[data-kind]").forEach((b) => b.setAttribute("aria-checked", b.dataset.kind === pickKind ? "true" : "false"));
+    $("kindHint").textContent = k.hint;
+    $("startBtn").textContent = k.start;
+
+    const single = pickKind === "practice";
+    $("tablesTitle").textContent = single ? "Which times table?" : "Which times tables?";
+    $("tableActions").classList.toggle("hidden", single);
+    $("tables").setAttribute("role", single ? "radiogroup" : "group");
 
     const box = $("tables");
     box.innerHTML = "";
@@ -181,12 +236,18 @@
       b.className = "table-btn";
       b.textContent = "×" + t;
       b.setAttribute("aria-label", t + " times table");
-      b.setAttribute("aria-pressed", pickTables.has(t) ? "true" : "false");
+      const on = single ? pickOne === t : pickTables.has(t);
+      b.setAttribute(single ? "aria-checked" : "aria-pressed", on ? "true" : "false");
+      if (single) b.setAttribute("role", "radio");
       b.addEventListener("click", () => {
         sfx.tap();
-        if (pickTables.has(t)) pickTables.delete(t); else pickTables.add(t);
-        b.setAttribute("aria-pressed", pickTables.has(t) ? "true" : "false");
+        if (single) pickOne = t;
+        else if (pickTables.has(t)) pickTables.delete(t);
+        else pickTables.add(t);
         $("pickWarn").classList.add("hidden");
+        renderMenu();
+        const again = $("tables").children[t - 1];
+        if (again) again.focus();
       });
       box.appendChild(b);
     }
@@ -195,22 +256,26 @@
     const stats = $("menuStats");
     stats.innerHTML = "";
     const answered = data.totals.right + data.totals.wrong;
+    let mastered = 0;
+    for (let r = 1; r <= 12; r++) for (let c = 1; c <= 12; c++) if (level(key(r, c)) === 2) mastered++;
     [
-      [data.best, "🏆 Best tower"],
-      [data.totals.right, "✓ Right answers"],
-      [answered ? Math.round((data.totals.right / answered) * 100) + "%" : "–", "🎯 Accuracy"]
+      [data.best, "🧱 Best tower"],
+      [data.clockBest, "⏱️ Best in 60 s"],
+      [answered ? Math.round((data.totals.right / answered) * 100) + "%" : "–", "🎯 Accuracy"],
+      [mastered + " / 144", "🗺️ Mastered"]
     ].forEach(([v, label]) => stats.appendChild(statEl(v, label)));
 
     const tricky = Object.keys(data.facts)
-      .filter((k) => trouble(k) > 0)
+      .filter((x) => trouble(x) > 0)
       .sort((x, y) => trouble(y) - trouble(x))
       .slice(0, 8);
     $("trickyBox").classList.toggle("hidden", tricky.length === 0);
     fillChips($("trickyList"), tricky);
 
+    // "Keep building" continues an unfinished Tower challenge
     const cur = data.current;
     const cont = $("continueBtn");
-    if (cur && cur.blocks.length) {
+    if (pickKind === "challenge" && cur && cur.blocks.length) {
       cont.textContent = "▶️ Keep building (" + cur.blocks.length + ")";
       cont.classList.remove("hidden");
     } else {
@@ -239,15 +304,110 @@
     });
   }
 
+  // ---------------- Mastery map ----------------
+  const LEVEL_NAMES = ["Not yet", "Learning", "Mastered"];
+
+  function renderMap() {
+    const grid = $("mapGrid");
+    grid.innerHTML = "";
+    const counts = [0, 0, 0];
+
+    const corner = document.createElement("div");
+    corner.className = "map-head corner";
+    corner.textContent = "×";
+    corner.setAttribute("aria-hidden", "true");
+    grid.appendChild(corner);
+    for (let c = 1; c <= 12; c++) {
+      const h = document.createElement("div");
+      h.className = "map-head";
+      h.textContent = c;
+      h.setAttribute("aria-hidden", "true");
+      grid.appendChild(h);
+    }
+    for (let r = 1; r <= 12; r++) {
+      const rh = document.createElement("button");
+      rh.type = "button";
+      rh.className = "map-head row";
+      rh.textContent = r;
+      rh.setAttribute("aria-label", "Practise the " + r + " times table");
+      rh.addEventListener("click", () => {
+        sfx.tap();
+        pickKind = "practice";
+        pickOne = r;
+        startGame(false);
+      });
+      grid.appendChild(rh);
+      for (let c = 1; c <= 12; c++) {
+        const k = key(r, c);
+        const lv = level(k);
+        counts[lv]++;
+        const cell = document.createElement("button");
+        cell.type = "button";
+        cell.className = "map-cell l" + lv;
+        cell.textContent = r * c;
+        cell.setAttribute("aria-label", r + " times " + c + " equals " + r * c + ": " + LEVEL_NAMES[lv]);
+        cell.addEventListener("click", () => showCell(r, c, cell));
+        grid.appendChild(cell);
+      }
+    }
+
+    const box = $("mapCounts");
+    box.innerHTML = "";
+    [["l2", "🟩", counts[2], "Mastered"], ["l1", "🟨", counts[1], "Learning"], ["l0", "⬜", counts[0], "Not yet"]].forEach(([cls, , n, label]) => {
+      const d = document.createElement("div");
+      d.className = "map-count";
+      const sw = document.createElement("span");
+      sw.className = "swatch map-cell " + cls;
+      sw.setAttribute("aria-hidden", "true");
+      const t = document.createElement("span");
+      t.textContent = n + " " + label;
+      d.append(sw, t);
+      box.appendChild(d);
+    });
+    $("mapDetail").textContent = "Tap a square to see how it's going. Tap a row number to practise that table.";
+  }
+
+  function showCell(r, c, cell) {
+    sfx.tap();
+    document.querySelectorAll(".map-cell.picked").forEach((x) => x.classList.remove("picked"));
+    cell.classList.add("picked");
+    const f = data.facts[key(r, c)];
+    const lv = level(key(r, c));
+    let text = r + " × " + c + " = " + r * c + " — " + LEVEL_NAMES[lv] + ". ";
+    if (!f || (!f.right && !f.wrong)) text += "Not asked yet.";
+    else {
+      text += "Right " + (f.right || 0) + (f.right === 1 ? " time" : " times") + ", wrong " + (f.wrong || 0) + ". ";
+      const s = streak(key(r, c));
+      text += lv === 2 ? "⭐ " + s + " in a row!" : (MASTERED - s) + " more right in a row to turn green.";
+    }
+    $("mapDetail").textContent = text;
+  }
+
+  function openMap() {
+    stopTimer();
+    renderMap();
+    show("map");
+  }
+
   // ---------------- Game ----------------
   function startGame(resume) {
-    const tables = resume ? data.current.tables : Array.from(pickTables).sort((a, b) => a - b);
+    const kind = resume ? "challenge" : pickKind;
+    let tables;
+    if (resume) tables = data.current.tables;
+    else if (kind === "practice") tables = [pickOne];
+    else tables = Array.from(pickTables).sort((a, b) => a - b);
     const mode = resume ? data.current.mode : pickMode;
     if (!tables || !tables.length) { $("pickWarn").classList.remove("hidden"); return; }
 
-    data.tables = tables;
+    stopTimer();
+    data.kind = kind;
     data.mode = mode;
+    if (kind === "practice") data.practiceTable = tables[0];
+    else data.tables = tables;
+
     game = {
+      kind: kind,
+      rules: KINDS[kind],
       tables: tables,
       mode: mode,
       pool: buildPool(tables),
@@ -257,28 +417,81 @@
       right: 0,
       wrong: 0,
       peak: 0,
-      startBest: data.best,
+      startBest: bestFor(kind),
       newBest: false,
       missed: new Set(),
       retry: [],
       lastKey: null,
       q: null,
       locked: false,
-      entry: ""
+      over: false,
+      entry: "",
+      endAt: 0,
+      timer: null,
+      lastTick: CLOCK_SECONDS
     };
     game.peak = game.blocks.length;
-    data.current = { blocks: game.blocks, tables: tables, mode: mode, oops: game.oops };
+    if (kind === "challenge") {
+      data.current = { blocks: game.blocks, tables: tables, mode: mode, oops: game.oops };
+    }
     save();
+
+    // Which HUD boxes each mode shows
+    const hud = { bestItem: kind !== "practice", rightItem: kind === "practice", oopsItem: kind === "challenge",
+      timeItem: kind === "clock", tableItem: kind === "practice" };
+    Object.keys(hud).forEach((id) => $(id).classList.toggle("hidden", !hud[id]));
+    $("tableVal").textContent = "×" + tables[0];
+    $("timeItem").classList.remove("hurry");
+    $("timeVal").textContent = CLOCK_SECONDS;
 
     $("choices").classList.toggle("hidden", mode !== "choice");
     $("pad").classList.toggle("hidden", mode !== "pad");
+    $("towerEmpty").textContent = kind === "clock" ? "Ready? The clock starts now!" : "Answer a question to place your first block!";
     show("game");
     drawTower();
     updateHud();
     nextQuestion();
+    if (kind === "clock") startTimer();
+  }
+
+  function bestFor(kind) {
+    return kind === "challenge" ? data.best : kind === "clock" ? data.clockBest : 0;
+  }
+  function setBestFor(kind, v) {
+    if (kind === "challenge") data.best = v;
+    else if (kind === "clock") data.clockBest = v;
+  }
+
+  // ---------------- Beat the clock timer ----------------
+  function startTimer() {
+    game.endAt = Date.now() + CLOCK_SECONDS * 1000;
+    game.timer = setInterval(updateTimer, 200);
+  }
+  function stopTimer() {
+    if (game && game.timer) { clearInterval(game.timer); game.timer = null; }
+  }
+  function updateTimer() {
+    if (!game || game.kind !== "clock") return;
+    const left = Math.max(0, Math.ceil((game.endAt - Date.now()) / 1000));
+    $("timeVal").textContent = left;
+    $("timeItem").classList.toggle("hurry", left <= 10);
+    if (left < game.lastTick && left <= 5 && left > 0) sfx.tick();
+    game.lastTick = left;
+    if (left === 0) timeUp();
+  }
+  function timeUp() {
+    stopTimer();
+    game.over = true;
+    game.locked = true;
+    if (game.mode === "choice") document.querySelectorAll(".choice").forEach((c) => { c.disabled = true; });
+    else setPadDisabled(true);
+    setFeedback("⏰ Time's up!", "right");
+    sfx.timeUp();
+    setTimeout(finish, 1400);
   }
 
   function nextQuestion() {
+    if (!game || game.over) return;
     const f = pickFact();
     game.lastKey = f.k;
     game.asked++;
@@ -317,11 +530,12 @@
   }
 
   function answer(value, btn) {
-    if (!game || game.locked) return;
+    if (!game || game.locked || game.over) return;
     game.locked = true;
     const q = game.q;
     const ok = Number(value) === q.answer;
     const info = factInfo(q.k);
+    if (!Number.isFinite(info.streak)) info.streak = streak(q.k);
     const slot = $("slot");
     slot.textContent = q.answer;
 
@@ -337,31 +551,35 @@
 
     if (ok) {
       info.right++;
+      info.streak++;
       info.trouble = Math.max(0, (info.trouble || 0) - 1);
       data.totals.right++;
       game.right++;
       slot.classList.add("right");
-      setFeedback(cheer(), "right");
+      setFeedback(info.streak === MASTERED ? "🟩 Mastered " + q.t + " × " + q.n + "!" : cheer(), "right");
       sfx.right();
       addBlock(q);
-      setTimeout(nextQuestion, RIGHT_DELAY);
+      setTimeout(nextQuestion, game.rules.rightDelay);
     } else {
       info.wrong++;
+      info.streak = 0;
       info.trouble = Math.min(MAX_TROUBLE, (info.trouble || 0) + 3);
       data.totals.wrong++;
       game.wrong++;
-      game.oops++;
       game.missed.add(q.k);
       game.retry.push({ k: q.k, due: game.asked + RETRY_AFTER });
       slot.classList.add("wrong");
       setFeedback((game.mode === "pad" ? "✗ You typed " + value + ". " : "✗ Not quite! ") + "The answer is " + q.answer + ".", "wrong");
       sfx.wrong();
       wobble();
-      // The 3rd dot lights up, then the top block falls and the dots start again (in removeTop).
-      if (game.oops >= OOPS_LIMIT) setTimeout(removeTop, 650);
-      setTimeout(nextQuestion, WRONG_DELAY);
+      // Tower challenge only: the 3rd oops dot lights up, then the top block falls (see removeTop).
+      if (game.kind === "challenge") {
+        game.oops++;
+        if (game.oops >= OOPS_LIMIT) setTimeout(removeTop, 650);
+      }
+      setTimeout(nextQuestion, game.rules.wrongDelay);
     }
-    if (data.current) data.current.oops = game.oops;
+    if (game.kind === "challenge" && data.current) data.current.oops = game.oops;
     updateHud();
     save();
   }
@@ -407,9 +625,9 @@
     $("stack").style.bottom = 14 - overflow + "px";
     $("towerEmpty").classList.toggle("hidden", game.blocks.length > 0);
 
-    const best = Math.max(data.best, game.peak);
+    const best = Math.max(bestFor(game.kind), game.peak);
     const line = $("bestLine");
-    line.classList.toggle("hidden", best === 0);
+    line.classList.toggle("hidden", game.kind === "practice" || best === 0);
     line.style.bottom = best * bh + "px";
   }
 
@@ -426,8 +644,8 @@
     setTimeout(sfx.land, 330);
 
     if (game.blocks.length > game.peak) game.peak = game.blocks.length;
-    if (game.peak > data.best) {
-      data.best = game.peak;
+    if (game.kind !== "practice" && game.peak > bestFor(game.kind)) {
+      setBestFor(game.kind, game.peak);
       if (!game.newBest && game.startBest > 0) { setTimeout(sfx.best, 450); setFeedback("🏆 New best tower!", "right"); }
       game.newBest = true;
     }
@@ -436,8 +654,9 @@
     save();
   }
 
+  // Tower challenge only
   function removeTop() {
-    if (!game) return;
+    if (!game || game.over) return;
     game.oops = 0;
     if (data.current) data.current.oops = 0;
     updateHud();
@@ -467,7 +686,8 @@
 
   function updateHud() {
     $("heightVal").textContent = game.blocks.length;
-    $("bestVal").textContent = Math.max(data.best, game.peak);
+    $("bestVal").textContent = Math.max(bestFor(game.kind), game.peak);
+    $("rightVal").textContent = game.right;
     $("oopsDots").querySelectorAll("i").forEach((d, i) => d.classList.toggle("on", i < game.oops));
   }
 
@@ -509,19 +729,38 @@
   // ---------------- End ----------------
   function finish() {
     if (!game) return;
+    stopTimer();
+    game.over = true;
     data.totals.games++;
-    data.current = null;
+    if (game.kind === "challenge") data.current = null;
     save();
 
     const h = game.blocks.length;
-    $("endEmoji").textContent = game.newBest ? "🏆" : h >= 10 ? "🏰" : "🏗️";
-    $("endTitle").textContent = game.newBest ? "New best tower!" : "Great building!";
+    const answered = game.right + game.wrong;
     const stats = $("endStats");
     stats.innerHTML = "";
-    stats.appendChild(statEl(h, "🧱 Tower height"));
-    stats.appendChild(statEl(game.peak, "📏 Tallest today"));
-    stats.appendChild(statEl(game.right + " / " + (game.right + game.wrong), "✓ Right answers"));
-    stats.appendChild(statEl(data.best, "🏆 Best ever"));
+    if (game.kind === "practice") {
+      $("endEmoji").textContent = "📘";
+      $("endTitle").textContent = "Great practice with the " + game.tables[0] + "s!";
+      stats.appendChild(statEl(game.right + " / " + answered, "✓ Right answers"));
+      stats.appendChild(statEl(h, "🧱 Blocks built"));
+      let mastered = 0;
+      for (let n = 1; n <= 12; n++) if (level(key(game.tables[0], n)) === 2) mastered++;
+      stats.appendChild(statEl(mastered + " / 12", "🟩 Mastered in the " + game.tables[0] + "s"));
+    } else if (game.kind === "clock") {
+      $("endEmoji").textContent = game.newBest ? "🏆" : "⏱️";
+      $("endTitle").textContent = game.newBest ? "New record in 60 seconds!" : "Time's up!";
+      stats.appendChild(statEl(h, "🧱 Blocks in 60 s"));
+      stats.appendChild(statEl(game.right + " / " + answered, "✓ Right answers"));
+      stats.appendChild(statEl(data.clockBest, "🏆 Best in 60 s"));
+    } else {
+      $("endEmoji").textContent = game.newBest ? "🏆" : h >= 10 ? "🏰" : "🏗️";
+      $("endTitle").textContent = game.newBest ? "New best tower!" : "Great building!";
+      stats.appendChild(statEl(h, "🧱 Tower height"));
+      stats.appendChild(statEl(game.peak, "📏 Tallest today"));
+      stats.appendChild(statEl(game.right + " / " + answered, "✓ Right answers"));
+      stats.appendChild(statEl(data.best, "🏆 Best ever"));
+    }
 
     const missed = Array.from(game.missed);
     $("endTrickyBox").classList.toggle("hidden", missed.length === 0);
@@ -533,6 +772,16 @@
   // ---------------- Buttons ----------------
   // Sound on/off is one setting for all games, switched on the landing page (assets/sound.js).
 
+  document.querySelectorAll(".kind[data-kind]").forEach((b) => b.addEventListener("click", () => {
+    sfx.tap();
+    pickKind = b.dataset.kind;
+    $("pickWarn").classList.add("hidden");
+    renderMenu();
+  }));
+  $("openMapBtn").addEventListener("click", () => { sfx.tap(); openMap(); });
+  $("endMapBtn").addEventListener("click", () => { sfx.tap(); openMap(); });
+  $("mapBackBtn").addEventListener("click", () => { sfx.tap(); renderMenu(); show("menu"); });
+
   document.querySelectorAll(".mode").forEach((m) => m.addEventListener("click", () => {
     sfx.tap();
     pickMode = m.dataset.mode;
@@ -540,14 +789,31 @@
   }));
   $("allBtn").addEventListener("click", () => { for (let t = 1; t <= 12; t++) pickTables.add(t); renderMenu(); });
   $("noneBtn").addEventListener("click", () => { pickTables.clear(); renderMenu(); });
-  $("startBtn").addEventListener("click", () => { sfx.tap(); data.current = null; startGame(false); });
+  $("startBtn").addEventListener("click", () => {
+    sfx.tap();
+    if (pickKind === "challenge") data.current = null;
+    startGame(false);
+  });
   $("continueBtn").addEventListener("click", () => { sfx.tap(); startGame(true); });
   $("finishBtn").addEventListener("click", finish);
-  $("againBtn").addEventListener("click", () => { pickTables = new Set(data.tables); pickMode = data.mode; startGame(false); });
-  $("menuBtn").addEventListener("click", () => { pickTables = new Set(data.tables); pickMode = data.mode; renderMenu(); show("menu"); });
+  $("againBtn").addEventListener("click", () => {
+    pickKind = data.kind;
+    if (data.kind === "practice") pickOne = data.practiceTable;
+    else pickTables = new Set(data.tables);
+    pickMode = data.mode;
+    startGame(false);
+  });
+  $("menuBtn").addEventListener("click", () => {
+    pickKind = data.kind;
+    if (data.kind === "practice") pickOne = data.practiceTable;
+    else pickTables = new Set(data.tables);
+    pickMode = data.mode;
+    renderMenu();
+    show("menu");
+  });
   $("resetBtn").addEventListener("click", () => {
-    if (!window.confirm("Reset your best tower and all your progress?")) return;
-    Object.assign(data, defaults(), { mode: pickMode });
+    if (!window.confirm("Reset your best towers, mastery map and all your progress?")) return;
+    Object.assign(data, defaults(), { mode: pickMode, kind: pickKind });
     save();
     renderMenu();
   });
