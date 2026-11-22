@@ -30,6 +30,15 @@ window.PORTAL_GAMES = [
     age: "Ages 7+",
     url: "games/tower-builder/",
     color: "coral"
+  },
+  {
+    title: "Sunny Scoops",
+    emoji: "🍦",
+    description: "Run an ice cream shop! Add up orders, give the right change in Aussie dollars and grow your profit.",
+    players: "1 player",
+    age: "Ages 7+",
+    url: "games/sunny-scoops/",
+    color: "teal"
   }
   // { title: "Next Game", emoji: "🎲", description: "...", players: "1–4 players", age: "Ages 5+", url: "games/next-game/", color: "coral" }
 ];

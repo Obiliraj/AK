@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1A252C" />
+  <script src="../../assets/theme.js"></script>
+  <script src="../../assets/sound.js"></script>
+  <title>Sunny Scoops</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/portal.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap app">
+    <nav class="topbar">
+      <a class="btn ghost small" href="../../" aria-label="All games">🏠 <span class="lbl">Games</span></a>
+      <div class="title">🍦 Sunny Scoops</div>
+      <div class="topbar-right" data-settings-slot>
+        <button class="btn ghost small hidden" id="closeShopBtn" type="button" aria-label="Close the shop">🏁 <span class="lbl">Close shop</span></button>
+      </div>
+    </nav>
+
+    <div class="hud" aria-live="polite">
+      <div class="hud-box"><span class="label">Day</span><span class="val" id="statDay">1</span></div>
+      <div class="hud-box"><span class="label">Customer</span><span class="val" id="statCust">0 / 8</span></div>
+      <div class="hud-box"><span class="label">💰 Register</span><span class="val" id="statRegister">$20.00</span></div>
+      <div class="hud-box profit"><span class="label">⭐ Today's profit</span><span class="val" id="statProfit">$0.00</span></div>
+    </div>
+
+    <main id="game" class="game">
+      <section class="scene" aria-label="Shop">
+        <div class="queue-wrap">
+          <span class="queue-label">Waiting in line</span>
+          <div class="queue" id="queue"></div>
+        </div>
+        <div class="customer-row">
+          <div class="customer">
+            <div class="avatar" id="avatar"></div>
+            <div class="cust-name" id="custName"></div>
+          </div>
+          <div class="bubble" id="bubble" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <aside class="menu-board" aria-label="Menu and prices">
+        <h2>Menu</h2>
+        <div id="menu"></div>
+      </aside>
+
+      <section class="counter" aria-label="Counter">
+        <div class="step" id="stepTotal">
+          <h3><span class="num">1</span> Add up the total</h3>
+          <form class="row" id="totalForm" autocomplete="off">
+            <label class="money-input">
+              <span>$</span>
+              <input id="totalInput" inputmode="decimal" placeholder="0.00" aria-label="Total amount in dollars" />
+            </label>
+            <button class="btn yellow" type="submit" id="checkTotalBtn">🗣️ Tell the customer</button>
+            <button class="btn ghost" type="button" id="hintBtn">🔍 Show each price</button>
+          </form>
+          <div class="feedback" id="totalFeedback" aria-live="polite"></div>
+          <div class="working" id="working" hidden></div>
+        </div>
+
+        <div class="step" id="stepPaid">
+          <h3><span class="num">2</span> The customer pays</h3>
+          <div class="paid-money" id="paidMoney"></div>
+          <p class="paid-text" id="paidText"></p>
+        </div>
+
+        <div class="step" id="stepChange">
+          <h3><span class="num">3</span> Give the change</h3>
+          <p class="tip">Tap money in your till to put it on the counter. Tap money on the counter to put it back.</p>
+          <div class="till" id="till"></div>
+          <div class="tray-wrap">
+            <div class="tray" id="tray"></div>
+            <div class="tray-sum">Change on counter: <strong id="traySum">$0.00</strong></div>
+          </div>
+          <div class="row">
+            <button class="btn ghost" type="button" id="clearBtn">🧹 Clear counter</button>
+            <button class="btn yellow" type="button" id="giveBtn">🤝 Give change</button>
+          </div>
+        </div>
+
+        <div class="result" id="result" hidden></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="overlay" id="startScreen">
+    <div class="card">
+      <div class="card-art" id="startArt" aria-hidden="true"></div>
+      <h2 id="hello">Run the ice cream shop!</h2>
+      <p>Kids are lining up for treats. You're the shopkeeper.</p>
+      <ol class="rules">
+        <li>Read the order and <b>add up the total</b> using the menu.</li>
+        <li>The customer pays with <b>more money than the total</b>.</li>
+        <li>Tap notes and coins to <b>give the right change</b>.</li>
+      </ol>
+      <ul class="money-rules">
+        <li>You keep <b>10% of every sale</b> as profit.</li>
+        <li>You start each day with <b>$20</b> in the register.</li>
+        <li><b>Too little change?</b> You pay back what you owe <b>plus a $1 sorry fine</b>.</li>
+        <li><b>Too much change?</b> The extra money is lost from your profit.</li>
+      </ul>
+      <p class="pick-label">Choose a level</p>
+      <div class="levels" role="radiogroup" aria-label="Level">
+        <button class="level" type="button" data-level="easy" role="radio">🍦 Easy<small>1–2 items</small></button>
+        <button class="level" type="button" data-level="medium" role="radio">🍨 Medium<small>2–3 items, some doubles</small></button>
+        <button class="level" type="button" data-level="hard" role="radio">🏆 Hard<small>3–4 items, more doubles</small></button>
+      </div>
+      <button class="btn yellow big" type="button" id="startBtn">🏪 Open the shop</button>
+      <p class="best" id="bestLine"></p>
+    </div>
+  </div>
+
+  <div class="overlay" id="dayEnd" hidden>
+    <div class="card">
+      <h2 id="dayEndTitle">Closing time!</h2>
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <div class="summary" id="summary"></div>
+      <div class="row center">
+        <button class="btn ghost" type="button" id="levelBtn">⚙️ Change level</button>
+        <button class="btn yellow" type="button" id="nextDayBtn">☀️ Start next day</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/player.js"></script>
+  <script src="game.js"></script>
+  <script src="../../assets/music.js"></script>
+  <script src="../../assets/settings.js"></script>
+  <script src="../../assets/skyline.js"></script>
+</body>
+</html>

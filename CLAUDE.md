@@ -25,6 +25,8 @@ games/quiz/                "Quiz Champs": 1–4 player quiz
   themes/*.json            Questions, one file per theme (150+ each)
 games/tower-builder/      Times tables tower game (Practice, Tower challenge, Beat the clock, Mastery map):
                            index.html, style.css, game.js (saves to "kgz.towerBuilder")
+games/sunny-scoops/        Ice cream shop money game (add up orders, give change in AUD, 10% profit):
+                           index.html, style.css, game.js (saves to "kgz.sunnyScoops")
 tools/validate-questions.mjs   Checks all quiz JSON (run before committing question changes)
 ```
 
@@ -35,12 +37,14 @@ Each game folder has a `README.md` describing its full game logic: rules, flow, 
 - `games/would-you-rather/README.md`
 - `games/quiz/README.md`
 - `games/tower-builder/README.md`
+- `games/sunny-scoops/README.md`
 
 New games must get their own `README.md` in the same style.
 
 ## Conventions
 
-- **Colors:** never hard-code colors in game CSS (agreed exceptions in Tower Builder: the mastery-map green `--map-green`, the block materials wood/stone/brick/ice/silver/gold, and the sky scenery, which is mixed with `--bg`). Use the role variables from `assets/portal.css`:
+- **Colors:** never hard-code colors in game CSS (agreed exceptions in Tower Builder: the mastery-map green `--map-green`, the block materials wood/stone/brick/ice/silver/gold, and the sky scenery, which is mixed with `--bg`; in Sunny Scoops: the SVG
+  pictures drawn in game.js — Australian notes and coins in their real colours, food, ice cream flavours and the kids). Use the role variables from `assets/portal.css`:
   `--yellow` (highlight, main buttons, card borders), `--coral` (option A, wrong answer, player 1),
   `--teal` (option B, right answer, player 2), and `--on-yellow/--on-coral/--on-teal` for text on top of them.
   Surfaces: `--bg`, `--surface`, `--surface-2`, `--line`, `--ink`, `--ink-soft`, plus `--*-tint`.
@@ -73,7 +77,7 @@ New games must get their own `README.md` in the same style.
   in `kgz.favourites`) are listed first, then the rest, each group in `games.js` order.
 - **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
   emoji as icons. Keep pages working without the font.
-- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.muted`, `kgz.music`, `kgz.favourites`, `kgz.towerBuilder`), always in try/catch.
+- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.muted`, `kgz.music`, `kgz.favourites`, `kgz.towerBuilder`, `kgz.sunnyScoops`), always in try/catch.
 - **Escaping:** any user text (names) inserted as HTML must go through the `esc()` helper or `textContent`.
 - **New game:** create `games/<name>/index.html`, reuse `assets/portal.css`, `theme.js` and `player.js`
   (pre-fill Player 1 from `PlayerName.get()`), plus `sound.js` (after `theme.js`), then add an entry to `games.js`.
@@ -157,5 +161,9 @@ and no console errors. Playwright with Chromium works well:
 13. Tower Builder scenery redone: background houses, sky with clouds/birds/kites/hot-air balloons, planes and
     helicopters, CSS stars/moon/planets in space; clouds, birds, balloons, planes and helicopters glide left ↔ right.
 14. ⚙️ Settings menu at the top right of every page (Sound, Christmas music, Color theme); Jingle Bells in the Christmas theme.
+15. Sunny Scoops: ice cream shop money game. Kids order 1–4 items from a menu (ice cream single/double in 7 flavours,
+    bakery, drinks); the player types the total, the customer pays more, and the player taps AUD notes/coins
+    ($20 … 5c) to give change. 10% profit per sale, $20 float each day, short change = shortage + $1 fine,
+    too much change = the extra is lost. 8 customers a day, 3 levels, stars and a day summary.
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
