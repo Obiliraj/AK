@@ -68,6 +68,15 @@
           <button class="btn yellow big" id="startBtn" type="button">🧱 Start!</button>
         </div>
 
+        <h2>🎨 Block style</h2>
+        <p class="hint">Build taller towers to unlock new looks!</p>
+        <div class="style-grid" id="styleGrid" role="group" aria-label="Block style"></div>
+        <p class="hint" id="styleMsg" aria-live="polite"></p>
+
+        <h2>🌍 Worlds</h2>
+        <p class="hint">The sky changes as your tower grows. Can you reach space?</p>
+        <div class="worlds" id="worlds"></div>
+
         <div class="stats" id="menuStats"></div>
         <div class="tricky hidden" id="trickyBox">
           <h3>🎯 Tricky facts (they'll come up more often)</h3>
@@ -108,11 +117,19 @@
       </div>
 
       <div class="play">
-        <div class="tower-box" id="towerBox" aria-hidden="true">
-          <div class="stack" id="stack">
-            <div class="best-line hidden" id="bestLine"><span>🏆 Best</span></div>
+        <div class="tower-box" id="towerBox">
+          <div class="tower-scroll" id="towerScroll" tabindex="0" aria-label="Your tower. Scroll to look up and down.">
+            <div class="world" id="world" aria-hidden="true">
+              <div class="stack" id="stack" data-style="wood">
+                <div class="best-line hidden" id="bestLine"><span>🏆 Best</span></div>
+              </div>
+            </div>
           </div>
-          <div class="ground"></div>
+          <div class="zone-badge" id="zoneBadge" aria-live="polite">🌱 Ground</div>
+          <div class="scroll-btns">
+            <button type="button" class="scroll-btn hidden" id="toTopBtn" aria-label="Scroll to the top of the tower">⬆️</button>
+            <button type="button" class="scroll-btn hidden" id="toGroundBtn" aria-label="Scroll down to the ground">⬇️</button>
+          </div>
           <div class="tower-empty" id="towerEmpty">Answer a question to place your first block!</div>
         </div>
 
@@ -148,6 +165,10 @@
         <div class="trophy" id="endEmoji">🏗️</div>
         <h1 id="endTitle">Great building!</h1>
         <div class="end-stats" id="endStats"></div>
+        <div class="tricky hidden" id="endUnlockBox">
+          <h3>🔓 Unlocked!</h3>
+          <div class="tricky-list" id="endUnlocks"></div>
+        </div>
         <div class="tricky hidden" id="endTrickyBox">
           <h3>📚 Practise these next time</h3>
           <div class="tricky-list" id="endTricky"></div>

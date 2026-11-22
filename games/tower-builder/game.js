@@ -19,6 +19,26 @@
   const START_TABLES = [6, 7, 8, 9];   // always pre-selected when the game opens
   const CLOCK_SECONDS = 60;
   const MASTERED = 3;             // right this many times in a row = green on the mastery map
+  const HEADROOM = 3;             // blocks of sky kept above the tower (room for the next block to drop)
+
+  // Block styles, unlocked by the highscore (best tower in Tower challenge or Beat the clock).
+  // need = the highscore that unlocks it (owner's list: stone at 20, brick at 40, then "more than" 50/70/90/100).
+  const STYLES = [
+    { id: "wood",   name: "Wood",   emoji: "🪵", need: 0,   rule: "Ready to use" },
+    { id: "stone",  name: "Stone",  emoji: "🪨", need: 20,  rule: "Best tower 20" },
+    { id: "brick",  name: "Brick",  emoji: "🧱", need: 40,  rule: "Best tower 40" },
+    { id: "ice",    name: "Ice",    emoji: "🧊", need: 51,  rule: "Best over 50" },
+    { id: "silver", name: "Silver", emoji: "🥈", need: 71,  rule: "Best over 70" },
+    { id: "gold",   name: "Gold",   emoji: "🥇", need: 91,  rule: "Best over 90" },
+    { id: "lego",   name: "Lego",   emoji: "🟥", need: 101, rule: "Best over 100" }
+  ];
+  // Worlds: the sky changes with height (in blocks). Reaching one the first time unlocks it.
+  const ZONES = [
+    { id: "ground", name: "Ground", emoji: "🌱", at: 0,  to: 10 },
+    { id: "clouds", name: "Clouds", emoji: "☁️", at: 10, to: 25 },
+    { id: "birds",  name: "Birds",  emoji: "🐦", at: 25, to: 40 },
+    { id: "space",  name: "Space",  emoji: "🚀", at: 40, to: Infinity }
+  ];
 
   // Per-mode rules
   const KINDS = {
@@ -50,6 +70,8 @@
       tables: START_TABLES.slice(),
       practiceTable: START_TABLES[0],
       mode: "choice",             // answer style: "choice" or "pad"
+      blockStyle: "wood",         // chosen block style (must be unlocked)
+      zoneMax: 0,                 // highest world reached (index in ZONES)
       facts: {},                  // "7x8": { right, wrong, trouble, streak }
       totals: { right: 0, wrong: 0, games: 0 },
       current: null               // unfinished Tower challenge: { blocks: [...], tables, mode, oops }
@@ -71,6 +93,9 @@
         }
         if (validTable(Number(raw.practiceTable))) d.practiceTable = Number(raw.practiceTable);
         if (raw.mode === "pad" || raw.mode === "choice") d.mode = raw.mode;
+        if (STYLES.some((x) => x.id === raw.blockStyle)) d.blockStyle = raw.blockStyle;
+        const z = Number(raw.zoneMax);
+        if (Number.isInteger(z) && z >= 0 && z < ZONES.length) d.zoneMax = z;
         if (raw.facts && typeof raw.facts === "object") d.facts = raw.facts;
         if (raw.totals && typeof raw.totals === "object") Object.assign(d.totals, raw.totals);
         if (raw.current && Array.isArray(raw.current.blocks)) {
@@ -86,6 +111,20 @@
     try { localStorage.setItem(STORE_KEY, JSON.stringify(data)); } catch (e) { /* storage blocked */ }
   }
   const data = load();
+
+  // ---------------- Unlocks ----------------
+  const highscore = () => Math.max(data.best, data.clockBest);
+  const styleById = (id) => STYLES.find((x) => x.id === id) || STYLES[0];
+  const styleUnlocked = (st, hs) => (hs === undefined ? highscore() : hs) >= st.need;
+  function currentStyle() {
+    const st = styleById(data.blockStyle);
+    return styleUnlocked(st) ? st.id : "wood";
+  }
+  function zoneIndex(height) {
+    let i = 0;
+    ZONES.forEach((z, n) => { if (height >= z.at) i = n; });
+    return i;
+  }
 
   // ---------------- Sound (Web Audio) ----------------
   // One site-wide on/off switch on the landing page (assets/sound.js).
@@ -253,6 +292,9 @@
     }
     document.querySelectorAll(".mode").forEach((m) => m.setAttribute("aria-checked", m.dataset.mode === pickMode ? "true" : "false"));
 
+    renderStyles();
+    renderWorlds();
+
     const stats = $("menuStats");
     stats.innerHTML = "";
     const answered = data.totals.right + data.totals.wrong;
@@ -281,6 +323,65 @@
     } else {
       cont.classList.add("hidden");
     }
+  }
+
+  function previewBlock(styleId) {
+    const wrap = document.createElement("span");
+    wrap.className = "preview";
+    wrap.dataset.style = styleId;
+    wrap.setAttribute("aria-hidden", "true");
+    const b = document.createElement("span");
+    b.className = "block c0";
+    b.textContent = "56";
+    wrap.appendChild(b);
+    return wrap;
+  }
+
+  function renderStyles() {
+    const grid = $("styleGrid");
+    grid.innerHTML = "";
+    const chosen = currentStyle();
+    STYLES.forEach((st) => {
+      const open = styleUnlocked(st);
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "style-tile" + (open ? "" : " locked");
+      b.setAttribute("aria-pressed", String(st.id === chosen));
+      if (!open) b.setAttribute("aria-disabled", "true");
+      b.setAttribute("aria-label", st.name + (open ? "" : ", locked: " + st.rule));
+      const name = document.createElement("span");
+      name.textContent = (open ? "" : "🔒 ") + st.name;
+      const rule = document.createElement("small");
+      rule.textContent = open ? (st.id === chosen ? "✓ Chosen" : "Tap to use") : st.rule;
+      b.append(previewBlock(st.id), name, rule);
+      b.addEventListener("click", () => {
+        sfx.tap();
+        if (!open) {
+          $("styleMsg").textContent = "🔒 " + st.name + " unlocks when your best tower (Tower challenge or Beat the clock) is " +
+            (st.rule.indexOf("over") >= 0 ? "more than " + (st.need - 1) : st.need) + " blocks. Your best is " + highscore() + ".";
+          return;
+        }
+        data.blockStyle = st.id;
+        save();
+        $("styleMsg").textContent = st.emoji + " " + st.name + " blocks chosen!";
+        renderStyles();
+        const again = Array.from($("styleGrid").children)[STYLES.indexOf(st)];
+        if (again) again.focus();
+      });
+      grid.appendChild(b);
+    });
+  }
+
+  function renderWorlds() {
+    const box = $("worlds");
+    box.innerHTML = "";
+    ZONES.forEach((z, i) => {
+      const c = document.createElement("span");
+      const open = i <= data.zoneMax;
+      c.className = "world-chip" + (open ? "" : " locked");
+      c.textContent = open ? z.emoji + " " + z.name + " ✓" : "🔒 " + z.name + " (" + z.at + " blocks)";
+      box.appendChild(c);
+    });
   }
 
   function statEl(value, label) {
@@ -444,10 +545,15 @@
     $("timeItem").classList.remove("hurry");
     $("timeVal").textContent = CLOCK_SECONDS;
 
+    $("stack").dataset.style = currentStyle();
+    game.zoneShown = zoneIndex(game.blocks.length);   // world messages only for worlds reached in this game
+    game.unlocks = [];
+
     $("choices").classList.toggle("hidden", mode !== "choice");
     $("pad").classList.toggle("hidden", mode !== "pad");
     $("towerEmpty").textContent = kind === "clock" ? "Ready? The clock starts now!" : "Answer a question to place your first block!";
     show("game");
+    buildWorld();
     drawTower();
     updateHud();
     nextQuestion();
@@ -613,23 +719,110 @@
     const stack = $("stack");
     stack.querySelectorAll(".block").forEach((b) => b.remove());
     game.blocks.forEach((b, i) => stack.appendChild(makeBlockEl(b, i)));
-    fitTower();
+    layoutWorld(true);
   }
 
-  // Keep the top of the tower in view by sliding the whole stack down.
-  function fitTower() {
+  // ---------------- The world (scrollable, sky changes with height) ----------------
+  function groundHeight() {
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--ground-h")) || 22;
+  }
+  const yOf = (level) => groundHeight() + level * blockHeight();   // px from the bottom of the world
+
+  // Fixed spots for decorations, so the scenery looks the same every game.
+  const DECOS = {
+    ground: [["🌳", 3, 0], ["🏡", 80, 0], ["🌷", 22, 0], ["🌼", 70, 0], ["🌲", 90, 0]],
+    clouds: [["☁️", 4, 11], ["☁️", 72, 13.5], ["☁️", 16, 16.5], ["☁️", 80, 19], ["☁️", 2, 21.5], ["☁️", 66, 23.5]],
+    birds:  [["🐦", 8, 26.5], ["🕊️", 78, 28.5], ["🐦", 14, 31], ["🐦", 82, 33.5], ["🕊️", 6, 36], ["🐦", 74, 38.5]],
+    space:  [["🌙", 78, 42], ["⭐", 8, 44], ["🛰️", 6, 48], ["🪐", 80, 51], ["✨", 12, 55], ["☄️", 76, 59],
+             ["🌍", 8, 64], ["⭐", 84, 68], ["👽", 10, 74], ["🚀", 78, 80], ["🌟", 12, 88], ["🪐", 80, 96], ["✨", 10, 105]]
+  };
+
+  function buildWorld() {
+    const world = $("world");
+    world.querySelectorAll(".zone, .grass, .deco, .zone-sign, .zone-line").forEach((e) => e.remove());
+    const stack = $("stack");
+    ZONES.forEach((z) => {
+      const d = document.createElement("div");
+      d.className = "zone zone-" + z.id;
+      if (z.id === "ground") d.style.height = yOf(z.to) + "px";
+      else {
+        d.style.bottom = yOf(z.at) + "px";
+        if (z.to !== Infinity) d.style.height = (z.to - z.at) * blockHeight() + "px";
+      }
+      world.insertBefore(d, stack);
+      if (z.at > 0) {
+        const sign = document.createElement("div");
+        sign.className = "zone-sign";
+        sign.style.bottom = yOf(z.at) + 4 + "px";
+        sign.textContent = z.emoji + " " + (z.id === "space" ? "SPACE!" : z.name) + " · " + z.at;
+        world.insertBefore(sign, stack);
+        const line = document.createElement("div");
+        line.className = "zone-line";
+        line.style.bottom = yOf(z.at) + "px";
+        world.insertBefore(line, stack);
+      }
+      (DECOS[z.id] || []).forEach(([emoji, left, level], i) => {
+        const e = document.createElement("span");
+        e.className = "deco " + (z.id === "clouds" ? "cloud" : z.id === "birds" ? "bird" : z.id === "space" ? "space" : "ground");
+        if (z.id === "birds" && i % 2) e.classList.add("flip");
+        e.textContent = emoji;
+        e.style.left = left + "%";
+        e.style.bottom = (z.id === "ground" ? groundHeight() - 4 : yOf(level)) + "px";
+        e.style.animationDelay = -i * 1.3 + "s";
+        world.insertBefore(e, stack);
+      });
+    });
+    const grass = document.createElement("div");
+    grass.className = "grass";
+    world.insertBefore(grass, stack);
+  }
+
+  // Size the world to the tower (plus a little sky), and optionally scroll so the top of the tower is in view.
+  function layoutWorld(follow) {
     const bh = blockHeight();
-    const room = $("towerBox").clientHeight - 14 - bh * 2.5;   // leave space above for the next block
-    const height = game.blocks.length * bh;
-    const overflow = Math.max(0, height - room);
-    $("stack").style.bottom = 14 - overflow + "px";
-    $("towerEmpty").classList.toggle("hidden", game.blocks.length > 0);
+    const sc = $("towerScroll");
+    const view = sc.clientHeight;
+    const n = game.blocks.length;
+    const worldH = Math.max(view, Math.ceil(yOf(n + HEADROOM)));
+    $("world").style.height = worldH + "px";
+    $("towerEmpty").classList.toggle("hidden", n > 0);
 
     const best = Math.max(bestFor(game.kind), game.peak);
     const line = $("bestLine");
     line.classList.toggle("hidden", game.kind === "practice" || best === 0);
     line.style.bottom = best * bh + "px";
+
+    if (follow) scrollToTop(follow === "smooth");
+    updateScrollUi();
   }
+
+  function scrollToTop(smooth) {
+    const sc = $("towerScroll");
+    const worldH = $("world").offsetHeight;
+    const topFromTop = worldH - yOf(game ? game.blocks.length : 0);
+    const target = Math.max(0, Math.min(sc.scrollHeight - sc.clientHeight, topFromTop - sc.clientHeight * 0.4));
+    sc.scrollTo({ top: target, behavior: smooth ? "smooth" : "auto" });
+  }
+  function scrollToGround() {
+    const sc = $("towerScroll");
+    sc.scrollTo({ top: sc.scrollHeight, behavior: "smooth" });
+  }
+
+  // Badge shows the world at the middle of the view; arrow buttons appear when there is somewhere to scroll.
+  function updateScrollUi() {
+    const sc = $("towerScroll");
+    const worldH = $("world").offsetHeight;
+    const midLevel = (worldH - sc.scrollTop - sc.clientHeight / 2 - groundHeight()) / blockHeight();
+    const z = ZONES[zoneIndex(Math.max(0, midLevel))];
+    const badge = z.emoji + " " + z.name;
+    if ($("zoneBadge").textContent !== badge) $("zoneBadge").textContent = badge;
+    const canScroll = sc.scrollHeight > sc.clientHeight + 4;
+    $("toTopBtn").classList.toggle("hidden", !canScroll || sc.scrollTop < 8);
+    $("toGroundBtn").classList.toggle("hidden", !canScroll || sc.scrollTop > sc.scrollHeight - sc.clientHeight - 8);
+  }
+  $("towerScroll").addEventListener("scroll", () => { if (game) updateScrollUi(); }, { passive: true });
+  $("toTopBtn").addEventListener("click", () => { sfx.tap(); scrollToTop(true); });
+  $("toGroundBtn").addEventListener("click", () => { sfx.tap(); scrollToGround(); });
 
   function addBlock(q) {
     const prev = game.blocks[game.blocks.length - 1];
@@ -645,11 +838,32 @@
 
     if (game.blocks.length > game.peak) game.peak = game.blocks.length;
     if (game.kind !== "practice" && game.peak > bestFor(game.kind)) {
+      const hsBefore = highscore();
       setBestFor(game.kind, game.peak);
       if (!game.newBest && game.startBest > 0) { setTimeout(sfx.best, 450); setFeedback("🏆 New best tower!", "right"); }
       game.newBest = true;
+      // New block styles unlocked by the new highscore
+      STYLES.forEach((st) => {
+        if (st.need > hsBefore && st.need <= highscore()) {
+          game.unlocks.push(st.emoji + " " + st.name + " blocks");
+          setTimeout(() => { sfx.best(); setFeedback("🔓 New block style: " + st.name + "! " + st.emoji, "right"); }, 500);
+        }
+      });
     }
-    fitTower();
+    // Reaching a new world
+    const zi = zoneIndex(game.blocks.length);
+    if (zi > game.zoneShown) {
+      const z = ZONES[zi];
+      game.zoneShown = zi;
+      if (zi > data.zoneMax) {
+        data.zoneMax = zi;
+        game.unlocks.push(z.emoji + " " + z.name + " world");
+        setTimeout(() => { sfx.best(); setFeedback("🔓 New world: " + z.name + "! " + z.emoji, "right"); }, 500);
+      } else {
+        setFeedback(z.id === "space" ? "🚀 You reached SPACE!" : z.emoji + " You reached the " + z.name.toLowerCase() + "!", "right");
+      }
+    }
+    layoutWorld("smooth");
     updateHud();
     save();
   }
@@ -672,7 +886,7 @@
     }
     sfx.fall();
     setFeedback("Oh no! 3 oopses — the top block fell off!", "wrong");   // the oops dots start again
-    setTimeout(fitTower, 300);
+    setTimeout(() => layoutWorld("smooth"), 300);
     updateHud();
     save();
   }
@@ -762,6 +976,16 @@
       stats.appendChild(statEl(data.best, "🏆 Best ever"));
     }
 
+    $("endUnlockBox").classList.toggle("hidden", game.unlocks.length === 0);
+    const ul = $("endUnlocks");
+    ul.innerHTML = "";
+    game.unlocks.forEach((t) => {
+      const c = document.createElement("span");
+      c.className = "chip good";
+      c.textContent = t;
+      ul.appendChild(c);
+    });
+
     const missed = Array.from(game.missed);
     $("endTrickyBox").classList.toggle("hidden", missed.length === 0);
     fillChips($("endTricky"), missed);
@@ -812,12 +1036,12 @@
     show("menu");
   });
   $("resetBtn").addEventListener("click", () => {
-    if (!window.confirm("Reset your best towers, mastery map and all your progress?")) return;
+    if (!window.confirm("Reset your best towers, mastery map, unlocked block styles and worlds, and all your progress?")) return;
     Object.assign(data, defaults(), { mode: pickMode, kind: pickKind });
     save();
     renderMenu();
   });
-  window.addEventListener("resize", () => { if (game) fitTower(); });
+  window.addEventListener("resize", () => { if (game) { buildWorld(); layoutWorld(true); } });
 
   // Move a mute chosen with the old in-game button over to the site-wide setting.
   if (data.oldMuted) {

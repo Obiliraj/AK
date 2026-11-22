@@ -37,7 +37,7 @@ Timing after an answer: Practice 0.9 s right / 2.4 s wrong; Tower challenge 0.9 
 - **Answer style:** *Pick an answer* (4 multiple-choice buttons) or *Type it in* (on-screen number pad). Used by all modes.
 - **Keep building (N):** shown in Tower challenge when an unfinished tower is saved; continues it with its tables, answer style and oops count.
 - Shows best tower, best in 60 s, accuracy, mastered facts (out of 144) and up to 8 "tricky facts".
-- **Reset my progress** (with a confirm) clears both bests, stats, tricky facts and the mastery map.
+- **Reset my progress** (with a confirm) clears both bests, stats, tricky facts, the mastery map, unlocked block styles and worlds.
 
 ### 2. Game (all modes)
 - A question `a × b = ?`. The table's factor is randomly shown first or second (e.g. `7 × 3` or `3 × 7`).
@@ -87,6 +87,47 @@ Timing after an answer: Practice 0.9 s right / 2.4 s wrong; Tower challenge 0.9 
 - Green is the one fixed colour in this game: the site themes have no green role, so it is set in `style.css` (`--map-green`).
   In Silver Steel the "yellow" role is dark grey, which still reads differently from grey and green.
 
+## Block styles (unlocked by highscore)
+
+The **highscore** is the best tower in Tower challenge or Beat the clock (`max(best, clockBest)`). Practice has no record, so it does not unlock styles.
+
+| Style | Unlocks at highscore | Look |
+|---|---|---|
+| 🪵 Wood | always (default) | brown planks with grain |
+| 🪨 Stone | **20** | grey speckled stone |
+| 🧱 Brick | **40** | red bricks with mortar lines |
+| 🧊 Ice | **more than 50** (51) | see-through blue with a shine |
+| 🥈 Silver | **more than 70** (71) | metal with a moving shine |
+| 🥇 Gold | **more than 90** (91) | gold with a moving shine and glow |
+| 🟥 Lego | **more than 100** (101) | the theme's colors with studs on top |
+
+- Menu → **🎨 Block style**: tiles with a preview block. Unlocked ones can be chosen (saved as `blockStyle`); locked ones show 🔒 and the rule, and tapping one explains what is needed and the current best.
+- When a new highscore passes a threshold during a game: fanfare + "🔓 New block style: Stone! 🪨". It is listed on the end screen under **🔓 Unlocked!** The new style is not switched on automatically.
+- Each block keeps a color index c0–c5; materials use it as a small brightness change so neighbouring blocks look slightly different.
+- Materials and the sky use fixed colors (a material should look the same in every site theme). The sky colors are mixed with the theme's `--bg`, so dark themes get a dimmer sky.
+
+## Worlds: the sky changes with height
+
+The tower stands in a tall picture. Heights are counted in blocks:
+
+| World | Blocks | Scenery |
+|---|---|---|
+| 🌱 Ground | 0–9 | grass, tree, house, flowers |
+| ☁️ Clouds | 10–24 | light sky, drifting clouds |
+| 🐦 Birds | 25–39 | deeper blue sky, flapping birds |
+| 🚀 Space | 40+ | dark sky with stars, moon, planets, satellite, rocket, alien |
+
+- A dashed line and a sign ("☁️ Clouds · 10") mark where each world starts.
+- Reaching a world for the **first time ever** unlocks it (saved as `zoneMax`): fanfare + "🔓 New world: Space! 🚀", also listed on the end screen. Reaching it again in a later game shows "🚀 You reached SPACE!". This works in every mode, including Practice.
+- Menu → **🌍 Worlds** shows which worlds are unlocked and how tall the tower must be for the others.
+
+## Scrolling the tower
+
+- The tower box is a scrolling window (touch-drag, mouse wheel or keyboard). The world is as tall as the tower plus 3 blocks of sky, so players can scroll from the ground to the top and back.
+- After every new or lost block the view scrolls smoothly so the top of the tower is in view (about 40% from the top of the box).
+- **⬆️** (top right) jumps to the top of the tower; **⬇️** (bottom right) scrolls down to the ground. Each shows only when there is somewhere to go.
+- The badge in the top-left corner names the world at the middle of the view (🌱 Ground, ☁️ Clouds, 🐦 Birds, 🚀 Space) and changes while scrolling, so the background always matches the height you are looking at.
+
 ## Picking questions (wrong answers come back more often)
 - The pool is every fact `t × n` for each chosen table `t` and `n = 1…12`, keyed `"t" + "x" + "n"` (e.g. `"7x8"`).
 - Practice uses only the 12 facts of its one table.
@@ -115,6 +156,8 @@ localStorage key **`kgz.towerBuilder`** (always in try/catch, game works without
   tables: [6, 7, 8, 9],         // tables of the last challenge / clock game (the menu still opens with 6–9)
   practiceTable: 4,             // table of the last Practice game (the menu still opens with 6)
   mode: "choice",               // "choice" or "pad"
+  blockStyle: "wood",           // chosen block style (falls back to wood if it is not unlocked)
+  zoneMax: 3,                   // highest world reached: 0 ground, 1 clouds, 2 birds, 3 space
   facts: { "7x8": { right: 3, wrong: 2, trouble: 3, streak: 1 } },   // streak = right in a row (mastery map)
   totals: { right: 40, wrong: 7, games: 5 },
   current: { blocks: [{ a, b, answer, color, shift }], tables, mode, oops }   // unfinished tower, or null

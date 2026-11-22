@@ -38,7 +38,7 @@ New games must get their own `README.md` in the same style.
 
 ## Conventions
 
-- **Colors:** never hard-code colors in game CSS (one agreed exception: Tower Builder's mastery-map green, `--map-green`). Use the role variables from `assets/portal.css`:
+- **Colors:** never hard-code colors in game CSS (agreed exceptions in Tower Builder: the mastery-map green `--map-green`, the block materials wood/stone/brick/ice/silver/gold, and the sky scenery, which is mixed with `--bg`). Use the role variables from `assets/portal.css`:
   `--yellow` (highlight, main buttons, card borders), `--coral` (option A, wrong answer, player 1),
   `--teal` (option B, right answer, player 2), and `--on-yellow/--on-coral/--on-teal` for text on top of them.
   Surfaces: `--bg`, `--surface`, `--surface-2`, `--line`, `--ink`, `--ink-soft`, plus `--*-tint`.
@@ -140,5 +140,7 @@ and no console errors. Playwright with Chromium works well:
     and drops a block on every 3rd wrong answer (not only 3 in a row).
 11. Tower Builder modes: Practice (one table, calm), Tower challenge, Beat the clock (60 s) and a 12×12 Mastery map
     (grey → yellow → green after 3 right in a row).
+12. Tower Builder unlocks: block styles by highscore (wood → stone 20 → brick 40 → ice >50 → silver >70 → gold >90 →
+    Lego >100), worlds by height (ground → clouds 10 → birds 25 → space 40), and a scrollable tower.
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
