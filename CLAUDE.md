@@ -9,12 +9,14 @@ The owner prefers to be called **Harini**. Content must be appropriate for kids 
 ## Layout
 
 ```
-index.html                 Landing page: game list (⭐ favourites first), player-name dialog, sound on/off, color-theme picker
+index.html                 Landing page: game list (⭐ favourites first), player-name dialog
 games.js                   List of games shown on the landing page (PORTAL_GAMES)
 assets/portal.css          Shared styles + ALL color themes (one CSS block per theme)
 assets/theme.js            Theme list + applies saved theme; loaded in <head> of every page
 assets/player.js           PlayerName.get()/set(): saved player name (localStorage "kgz.playerName")
 assets/sound.js            SiteSound.isMuted()/setMuted(): one sound on/off for all games (localStorage "kgz.muted")
+assets/music.js            SiteMusic: "Jingle Bells" (Web Audio) in the Christmas theme (localStorage "kgz.music")
+assets/settings.js         ⚙️ Settings menu at the top right of every page: Sound, Christmas music, Color theme
 assets/names.js            Word lists for the silly-name builder ("Curious Cucumber")
 games/would-you-rather/    2–4 player card game; 100 cards in cards.js (window.WYR_CARDS)
 games/quiz/                "Quiz Champs": 1–4 player quiz
@@ -54,14 +56,24 @@ New games must get their own `README.md` in the same style.
   twinkling roof lights. **Window lights (owner's requirement):** one at a time, at a random interval of 5–10 s,
   one lit on-screen apartment switches off and a different one switches on 0.7 s later. Never switch many at once.
   New pages must include `<script src="…/assets/skyline.js"></script>` before `</body>`.
-- **Sound:** one site-wide on/off switch, the 🔊 Sound button on the landing page (no mute buttons inside games).
-  Every page loads `<script src="…/assets/sound.js"></script>` right after `theme.js`. Before playing any sound or
-  reading aloud, check `SiteSound.isMuted()`. While muted `<html>` has class `muted` and `.speak` buttons are hidden.
+- **⚙️ Settings menu (owner's requirement: top right, on every page):** `assets/settings.js` adds the button into the
+  page's `[data-settings-slot]` element (landing page: `.header-actions`; games: the `.topbar-right` group next to the
+  game's own Finish/End button) and builds the dialog with **Sound**, **Christmas music** and **Color theme**.
+  There are no separate sound/theme buttons anywhere else. On phones the top-bar buttons show only their icon
+  (`.lbl` text is hidden below 560px), so give them an `aria-label`.
+- **Sound:** one site-wide on/off switch (Settings → Sound). Every page loads `<script src="…/assets/sound.js"></script>`
+  right after `theme.js`. Before playing any sound or reading aloud, check `SiteSound.isMuted()`.
+  While muted `<html>` has class `muted` and `.speak` buttons are hidden.
+- **Christmas music (owner's requirement):** "Jingle Bells" (public domain) plays in the background in the Christmas
+  theme, synthesized in `assets/music.js` (melody, bass and sleigh bells; no audio files). It plays only if the theme is
+  Christmas, Sound is on, Settings → Christmas music is on (default) and the page is visible; it starts on the first
+  tap/key press (browser autoplay rules) and resumes at the same spot on the next page (sessionStorage `kgz.musicPos`).
+- **Every page ends with:** `music.js`, `settings.js`, then `skyline.js` (before `</body>`).
 - **Favourites:** each game card on the landing page has a ☆/★ button (top right). Favourite games (saved by `url`
   in `kgz.favourites`) are listed first, then the rest, each group in `games.js` order.
 - **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
   emoji as icons. Keep pages working without the font.
-- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.muted`, `kgz.favourites`, `kgz.towerBuilder`), always in try/catch.
+- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.muted`, `kgz.music`, `kgz.favourites`, `kgz.towerBuilder`), always in try/catch.
 - **Escaping:** any user text (names) inserted as HTML must go through the `esc()` helper or `textContent`.
 - **New game:** create `games/<name>/index.html`, reuse `assets/portal.css`, `theme.js` and `player.js`
   (pre-fill Player 1 from `PlayerName.get()`), plus `sound.js` (after `theme.js`), then add an entry to `games.js`.
@@ -118,7 +130,7 @@ and no console errors. Playwright with Chromium works well:
 - jsDelivr may be blocked in sandboxes; route `cdn.jsdelivr.net` requests to locally installed
   `flag-icons` / `simple-icons` npm packages to test images.
 - A good quiz check: play a solo 10-question game answering everything correctly, and expect 13 points (10 + 1 + 2).
-- Also check: the name dialog (Enter key must not re-open it), and the theme picker applying across pages.
+- Also check: the name dialog (Enter key must not re-open it), the ⚙️ Settings menu on every page, and the theme applying across pages.
 
 ## Git
 
@@ -144,5 +156,6 @@ and no console errors. Playwright with Chromium works well:
     Lego >100), worlds by height (ground → sky 10 → planes 25 → space 40), and a scrollable tower.
 13. Tower Builder scenery redone: background houses, sky with clouds/birds/kites/hot-air balloons, planes and
     helicopters, CSS stars/moon/planets in space; clouds, birds, balloons, planes and helicopters glide left ↔ right.
+14. ⚙️ Settings menu at the top right of every page (Sound, Christmas music, Color theme); Jingle Bells in the Christmas theme.
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.

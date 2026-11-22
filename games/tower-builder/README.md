@@ -154,7 +154,7 @@ The right answer plus 3 believable wrong ones from: neighbouring facts (`(a±1)�
 Up to 3 digits, ⌫ deletes, ✓ checks (does nothing when empty). A leading 0 is replaced.
 
 ## Sound
-Web Audio API oscillators, no sound files: tap, right, land, wrong, fall, best. The audio context is created on the first tap (browsers need a user gesture). There is no mute button in the game: sound is switched on/off for **all games** with the 🔊 Sound button on the landing page (`SiteSound.isMuted()`, localStorage `kgz.muted`). A mute saved by the old in-game button is moved over to that setting once.
+Web Audio API oscillators, no sound files: tap, right, land, wrong, fall, best. The audio context is created on the first tap (browsers need a user gesture). There is no mute button in the game: sound is switched on/off for **all games** in ⚙️ Settings → Sound (top right of every page) (`SiteSound.isMuted()`, localStorage `kgz.muted`). A mute saved by the old in-game button is moved over to that setting once.
 
 ## Saved data
 localStorage key **`kgz.towerBuilder`** (always in try/catch, game works without it):

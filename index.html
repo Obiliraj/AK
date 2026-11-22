@@ -206,55 +206,12 @@
     .word-group.first .word.on { background: var(--coral); border-color: var(--coral); color: var(--on-coral); }
     .word-group.last .word.on { background: var(--teal); border-color: var(--teal); color: var(--on-teal); }
     .name-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
-    /* ---------- Color theme picker ---------- */
+    /* ---------- Settings button (assets/settings.js) sits at the top right ---------- */
     header { position: relative; }
     .header-actions { position: absolute; top: 16px; right: 0; display: flex; gap: 8px; }
-    .theme-box {
-      position: relative;
-      width: 100%; max-width: 720px;
-      background: var(--surface);
-      border: 4px solid var(--yellow);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: clamp(20px, 4vw, 32px);
-      text-align: center;
-      animation: popIn .3s cubic-bezier(.3,1.5,.5,1);
-    }
-    .theme-box h2 { margin: 0 0 6px; font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
-    .theme-box .sub { margin: 0; color: var(--ink-soft); font-size: 1.1rem; }
-    .theme-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 12px;
-      margin: 18px 0 20px;
-    }
-    .theme-card {
-      position: relative;
-      display: flex; flex-direction: column; gap: 10px;
-      padding: 14px;
-      border-radius: 20px;
-      border: 4px solid var(--line);
-      background: var(--bg);
-      color: var(--ink);
-      font-size: 1.1rem; font-weight: 600;
-      text-align: left;
-      transition: transform .12s ease, border-color .12s;
-    }
-    .theme-card:active { transform: scale(.97); }
-    .theme-card[aria-pressed="true"] { border-color: var(--yellow); }
-    .theme-card[aria-pressed="true"]::after {
-      content: "✓"; position: absolute; top: 10px; right: 12px;
-      width: 28px; height: 28px; border-radius: 50%;
-      display: grid; place-items: center;
-      background: var(--yellow); color: var(--on-yellow); font-size: 1rem;
-    }
-    .theme-card .swatch { display: flex; height: 34px; border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 2px rgba(0,0,0,.15); }
-    .theme-card .swatch span { flex: 1; }
     @media (max-width: 520px) {
       header { padding-top: 64px; }
-      .header-actions { top: 12px; left: 0; justify-content: flex-end; }
-      .theme-grid { grid-template-columns: 1fr 1fr; }
-      .theme-card { font-size: 1rem; padding: 10px; }
+      .header-actions { top: 12px; }
     }
 
     @keyframes starPop { 0% { transform: scale(.4); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
@@ -265,10 +222,7 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="header-actions">
-        <button type="button" class="btn ghost small" id="soundBtn" aria-pressed="true">🔊 Sound on</button>
-        <button type="button" class="btn ghost small" id="themeBtn" aria-haspopup="dialog">🎨 Theme</button>
-      </div>
+      <div class="header-actions" data-settings-slot></div>
       <div class="logo" aria-hidden="true">🎈</div>
       <h1><span>Kids</span> <span>Game</span> <span>Zone</span></h1>
       <p class="tagline">Fun games to play together with family and friends!</p>
@@ -284,17 +238,6 @@
     </main>
 
     <footer>Made with 💛 for curious kids</footer>
-  </div>
-
-  <!-- Color theme picker -->
-  <div class="overlay" id="themeOverlay" hidden>
-    <div class="theme-box" role="dialog" aria-modal="true" aria-labelledby="themeTitle">
-      <button type="button" class="close-x" id="themeClose" aria-label="Close">✕</button>
-      <h2 id="themeTitle">🎨 Pick a color theme</h2>
-      <p class="sub">Tap a theme to try it. It's used in every game.</p>
-      <div class="theme-grid" id="themeGrid"></div>
-      <button type="button" class="btn yellow" id="themeDone">✅ Done</button>
-    </div>
   </div>
 
   <!-- Name picker -->
@@ -389,50 +332,6 @@
         render(url);
       });
       render();
-    })();
-
-    /* ---------- Sound on/off for every game (assets/sound.js) ---------- */
-    (function () {
-      const btn = document.getElementById("soundBtn");
-      function show(muted) {
-        btn.textContent = muted ? "🔇 Sound off" : "🔊 Sound on";
-        btn.setAttribute("aria-pressed", String(!muted));
-        btn.setAttribute("aria-label", muted ? "Sound is off for all games. Tap to turn it on." : "Sound is on for all games. Tap to turn it off.");
-      }
-      btn.addEventListener("click", () => SiteSound.toggle());
-      SiteSound.onChange(show);
-      show(SiteSound.isMuted());
-    })();
-
-    /* ---------- Color theme ---------- */
-    (function () {
-      const $ = (id) => document.getElementById(id);
-      const grid = $("themeGrid");
-      function render() {
-        const current = SiteTheme.get();
-        grid.innerHTML = "";
-        SiteTheme.list.forEach((t) => {
-          const b = document.createElement("button");
-          b.type = "button";
-          b.className = "theme-card";
-          b.setAttribute("aria-pressed", String(t.id === current));
-          const name = document.createElement("span");
-          name.textContent = `${t.emoji} ${t.name}`;
-          const sw = document.createElement("span");
-          sw.className = "swatch";
-          sw.setAttribute("aria-hidden", "true");
-          t.swatch.forEach((c) => { const x = document.createElement("span"); x.style.background = c; sw.appendChild(x); });
-          b.append(name, sw);
-          b.addEventListener("click", () => { SiteTheme.set(t.id); render(); grid.querySelector('[aria-pressed="true"]').focus(); });
-          grid.appendChild(b);
-        });
-      }
-      function open() { render(); $("themeOverlay").hidden = false; document.body.style.overflow = "hidden"; }
-      function close() { $("themeOverlay").hidden = true; document.body.style.overflow = ""; $("themeBtn").focus(); }
-      $("themeBtn").addEventListener("click", open);
-      $("themeClose").addEventListener("click", close);
-      $("themeDone").addEventListener("click", close);
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("themeOverlay").hidden) close(); });
     })();
 
     /* ---------- Player name ---------- */
@@ -551,6 +450,8 @@
       if (saved) showHello(saved); else open();
     })();
   </script>
+  <script src="assets/music.js"></script>
+  <script src="assets/settings.js"></script>
   <script src="assets/skyline.js"></script>
 </body>
 </html>

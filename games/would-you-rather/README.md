@@ -43,7 +43,7 @@ The game shows "Would you rather…" in front of both options, so options start 
 
 ### 3. A turn
 1. The reader taps the deck. The top card is drawn (`deck.pop()`), dealt in, and flips over to show **A** (coral) "or" **B** (teal).
-2. The message changes to "*Name*, read the card out loud!". **🔊 Read it to me** uses the browser's speech synthesis to read: "Would you rather *A*? Or, *B*?". It is hidden while sound is switched off on the landing page (`assets/sound.js`).
+2. The message changes to "*Name*, read the card out loud!". **🔊 Read it to me** uses the browser's speech synthesis to read: "Would you rather *A*? Or, *B*?". It is hidden while sound is switched off in ⚙️ Settings (`assets/sound.js`).
 3. An "Everyone pick A or B!" panel lists every player with **A** and **B** buttons. A player can change their pick until the turn ends. Each pick puts that player's avatar under the chosen option on the card.
 4. When **every** player has picked, "Now take turns telling everyone **why** you picked it!" appears and the pass button is enabled.
 5. **Pass the deck to *next player* ➜** saves the card and everyone's picks to the history, moves the reader to the next player (wrapping round after the last player), and puts a fresh face-down deck in the center.

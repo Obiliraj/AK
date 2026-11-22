@@ -66,7 +66,7 @@ Flag pictures come from [flag-icons](https://github.com/lipis/flag-icons) and lo
 
 ## Color themes
 
-The 🎨 **Theme** button on the homepage switches the colors of the whole site, games included. The choice is saved in the browser.
+**⚙️ Settings → 🎨 Color theme** (top right of every page) switches the colors of the whole site, games included. The choice is saved in the browser.
 
 | Theme | Notes |
 |---|---|
@@ -75,9 +75,20 @@ The 🎨 **Theme** button on the homepage switches the colors of the whole site,
 | 🐢 Neon Lagoon | Dark amethyst with turquoise and lime |
 | 🌅 Ocean Sunset | Ink black with golden orange and rust |
 | 🪙 Silver Steel | A light grey theme |
-| 🎄 Christmas | Green and cream, with CSS snow falling in the background |
+| 🎄 Christmas | Green and cream, with CSS snow falling in the background and "Jingle Bells" playing softly |
 
 The colors are in `assets/portal.css` (one block per theme), and the list of themes is in `assets/theme.js`.
+
+## ⚙️ Settings
+
+Every page has a **⚙️ Settings** button at the top right (`assets/settings.js`). It holds:
+
+- **🔊 Sound** — on/off for game sounds and "Read it to me" in every game (`assets/sound.js`).
+- **🎵 Christmas music** — "Jingle Bells" plays softly in the background while the 🎄 Christmas theme is on
+  (and Sound is on). It is played note by note with the Web Audio API (`assets/music.js`), so there is no audio file.
+  Browsers only allow sound after a tap, so it starts with the first tap or key press on a page, and it carries on
+  from the same spot when moving to another page.
+- **🎨 Color theme** — the theme picker.
 
 Every page has a **city skyline** in the background (`assets/skyline.js`), colored to match the theme. In the 🎄 Christmas theme it's a snowy city at night with a moon. Apartment lights switch on and off one at a time, every 5–10 seconds.
 

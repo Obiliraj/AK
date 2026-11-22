@@ -413,3 +413,115 @@ button {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ---------- Top bars: right-hand group (game button + ⚙️ Settings) ---------- */
+.topbar-right { display: flex; align-items: center; gap: 8px; justify-self: end; }
+@media (max-width: 560px) {
+  .topbar .lbl { display: none; }                       /* icon-only buttons on phones */
+  .topbar .btn.small:has(.lbl) { width: 48px; padding: 0; }
+}
+
+/* ---------- Settings menu (assets/settings.js) ---------- */
+.settings-btn { white-space: nowrap; }
+.settings-btn.floating {
+  position: fixed; z-index: 40;
+  top: max(12px, env(safe-area-inset-top)); right: 12px;
+}
+body.set-open { overflow: hidden; }
+.set-overlay {
+  position: fixed; inset: 0; z-index: 60;
+  background: var(--overlay);
+  display: grid; place-items: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+.set-overlay[hidden] { display: none; }
+.set-box {
+  position: relative;
+  width: 100%; max-width: 720px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 4px solid var(--yellow);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 4vw, 32px);
+  text-align: center;
+  animation: setPop .3s cubic-bezier(.3, 1.5, .5, 1);
+}
+.set-box h2 { margin: 0 0 16px; font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+.set-box h3 { margin: 22px 0 0; font-size: 1.25rem; text-align: left; }
+.set-close {
+  position: absolute; top: 12px; right: 12px;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: none; background: var(--surface-2); color: var(--ink);
+  font-size: 1.3rem;
+}
+.set-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border-radius: 18px;
+  background: var(--surface-2);
+  text-align: left;
+}
+.set-text { display: flex; flex-direction: column; gap: 2px; }
+.set-text b { font-size: 1.15rem; }
+.set-text span { color: var(--ink-soft); font-size: .95rem; }
+.set-switch {                                            /* big on/off switch */
+  flex: none;
+  position: relative;
+  width: 74px; height: 44px;
+  border: none; border-radius: 999px;
+  background: var(--line);
+  transition: background-color .2s;
+}
+.set-switch .knob {
+  position: absolute; top: 5px; left: 5px;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--ink);
+  transition: transform .2s ease;
+}
+.set-switch[aria-checked="true"] { background: var(--teal); }
+.set-switch[aria-checked="true"] .knob { transform: translateX(30px); background: var(--on-teal); }
+.set-switch[aria-checked="true"]::after,
+.set-switch[aria-checked="false"]::after {               /* ✓ / ✗ so it is clear without color */
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-size: .9rem; font-weight: 700;
+}
+.set-switch[aria-checked="true"]::after  { content: "✓"; left: 12px; color: var(--on-teal); }
+.set-switch[aria-checked="false"]::after { content: "✗"; right: 12px; color: var(--ink-soft); }
+.set-switch:disabled { opacity: .45; }
+.set-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 12px 0 20px;
+}
+.set-card {
+  position: relative;
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 14px;
+  border-radius: 20px;
+  border: 4px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 1.1rem; font-weight: 600;
+  text-align: left;
+  transition: transform .12s ease, border-color .12s;
+}
+.set-card:active { transform: scale(.97); }
+.set-card[aria-pressed="true"] { border-color: var(--yellow); }
+.set-card[aria-pressed="true"]::after {
+  content: "✓"; position: absolute; top: 10px; right: 12px;
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--yellow); color: var(--on-yellow); font-size: 1rem;
+}
+.set-card > span:first-child { padding-right: 30px; }
+.set-card .swatch { display: flex; height: 34px; border-radius: 10px; overflow: hidden; box-shadow: inset 0 0 0 2px rgba(0,0,0,.15); }
+.set-card .swatch span { flex: 1; }
+@media (max-width: 520px) {
+  .set-grid { grid-template-columns: 1fr 1fr; }
+  .set-card { font-size: 1rem; padding: 10px; }
+}
+@keyframes setPop { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
