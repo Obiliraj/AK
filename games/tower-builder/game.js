@@ -34,10 +34,10 @@
   ];
   // Worlds: the sky changes with height (in blocks). Reaching one the first time unlocks it.
   const ZONES = [
-    { id: "ground", name: "Ground", emoji: "🌱", at: 0,  to: 10 },
-    { id: "clouds", name: "Clouds", emoji: "☁️", at: 10, to: 25 },
-    { id: "birds",  name: "Birds",  emoji: "🐦", at: 25, to: 40 },
-    { id: "space",  name: "Space",  emoji: "🚀", at: 40, to: Infinity }
+    { id: "ground", name: "Ground", emoji: "🌱", at: 0,  to: 10,       reach: "" },
+    { id: "sky",    name: "Sky",    emoji: "☁️", at: 10, to: 25,       reach: "☁️ You're up in the sky!" },
+    { id: "planes", name: "Planes", emoji: "✈️", at: 25, to: 40,       reach: "✈️ You're flying with the planes!" },
+    { id: "space",  name: "Space",  emoji: "🚀", at: 40, to: Infinity, reach: "🚀 You reached SPACE!" }
   ];
 
   // Per-mode rules
@@ -728,14 +728,91 @@
   }
   const yOf = (level) => groundHeight() + level * blockHeight();   // px from the bottom of the world
 
-  // Fixed spots for decorations, so the scenery looks the same every game.
-  const DECOS = {
-    ground: [["🌳", 3, 0], ["🏡", 80, 0], ["🌷", 22, 0], ["🌼", 70, 0], ["🌲", 90, 0]],
-    clouds: [["☁️", 4, 11], ["☁️", 72, 13.5], ["☁️", 16, 16.5], ["☁️", 80, 19], ["☁️", 2, 21.5], ["☁️", 66, 23.5]],
-    birds:  [["🐦", 8, 26.5], ["🕊️", 78, 28.5], ["🐦", 14, 31], ["🐦", 82, 33.5], ["🕊️", 6, 36], ["🐦", 74, 38.5]],
-    space:  [["🌙", 78, 42], ["⭐", 8, 44], ["🛰️", 6, 48], ["🪐", 80, 51], ["✨", 12, 55], ["☄️", 76, 59],
-             ["🌍", 8, 64], ["⭐", 84, 68], ["👽", 10, 74], ["🚀", 78, 80], ["🌟", 12, 88], ["🪐", 80, 96], ["✨", 10, 105]]
+  // ---------------- Scenery ----------------
+  // Fixed spots, so the scenery looks the same every game. level = height in blocks.
+  // Movers glide left → right → left (see .mover in style.css); dur = seconds for one full trip there and back.
+  // face: which way the picture points ("r" right, "l" left) so it can turn round at each end.
+  const SCENERY = {
+    ground: [
+      // a row of houses on the hill in the background (small and faded), then the front row
+      { emoji: "🏠", cls: "house-back", left: 0 },  { emoji: "🏘️", cls: "house-back", left: 7 },
+      { emoji: "🏡", cls: "house-back", left: 14 }, { emoji: "🏠", cls: "house-back", left: 21 },
+      { emoji: "🏘️", cls: "house-back", left: 36 }, { emoji: "🏠", cls: "house-back", left: 55 },
+      { emoji: "🏘️", cls: "house-back", left: 72 }, { emoji: "🏠", cls: "house-back", left: 79 },
+      { emoji: "🏡", cls: "house-back", left: 86 }, { emoji: "🏘️", cls: "house-back", left: 93 },
+      { emoji: "🌳", cls: "front", left: 1 },  { emoji: "🌷", cls: "front small", left: 11 },
+      { emoji: "🌸", cls: "front small", left: 17 },
+      { emoji: "🌼", cls: "front small", left: 76 }, { emoji: "🏡", cls: "front", right: 30 },
+      { emoji: "🌲", cls: "front", right: 2 }
+    ],
+    sky: [
+      { css: "cloud", level: 11,   dur: 140, delay: 0.1 },
+      { css: "cloud big", level: 15,   dur: 180, delay: 0.6 },
+      { css: "cloud", level: 19.5, dur: 160, delay: 0.35 },
+      { css: "cloud big", level: 23,   dur: 200, delay: 0.8 },
+      { css: "bird",  level: 13,   dur: 60, delay: 0.3 },
+      { css: "bird",  level: 13.6, dur: 60, delay: 0.32 },
+      { css: "bird",  level: 18,   dur: 75, delay: 0.7 },
+      { css: "bird",  level: 21.5, dur: 68, delay: 0.1 },
+      { css: "balloon", level: 12.5, dur: 220, delay: 0.55 },
+      { css: "balloon b2", level: 20.5, dur: 260, delay: 0.2 },
+      { emoji: "🪁", cls: "kite", left: 8,  level: 16 },
+      { emoji: "🪁", cls: "kite", left: 84, level: 22.5 }
+    ],
+    planes: [
+      { emoji: "✈️", cls: "plane", face: "r", level: 26.5, dur: 70, delay: 0.2 },
+      { emoji: "🚁", cls: "heli",  face: "l", level: 30,   dur: 95, delay: 0.65 },
+      { emoji: "✈️", cls: "plane", face: "r", level: 33.5, dur: 80, delay: 0.85 },
+      { emoji: "🚁", cls: "heli",  face: "l", level: 36.5, dur: 90, delay: 0.3 },
+      { css: "cloud thin", level: 28.5, dur: 210, delay: 0.4 },
+      { css: "cloud thin", level: 38,   dur: 240, delay: 0.9 }
+    ],
+    space: [
+      // kept near the edges so the tower doesn't hide them
+      { css: "moon", right: 8, level: 45 },
+      { css: "planet mars", left: 3, level: 50 },
+      { css: "planet ringed", right: 22, level: 59 },
+      { css: "planet jupiter", left: 2, level: 70 },
+      { css: "planet neptune", right: 10, level: 82 },
+      { css: "planet violet", left: 4, level: 95 },
+      { emoji: "🚀", cls: "rocket", left: 3, level: 56 },
+      { emoji: "👽", cls: "alien", right: 8, level: 66 },
+      { emoji: "🚀", cls: "rocket", right: 8, level: 104 }
+    ]
   };
+  const STAR_COUNT = 240;         // CSS stars spread through space (from block 40 up to block 130)
+
+  // Small repeatable random numbers, so the stars are in the same places every game.
+  function seeded(seed) {
+    let x = seed;
+    return () => { x = (x * 16807) % 2147483647; return (x - 1) / 2147483646; };
+  }
+
+  function makeScenery(item, zone) {
+    const art = document.createElement("span");
+    if (item.css) art.className = "art " + item.css;
+    else { art.className = "art emoji " + (item.cls || ""); art.textContent = item.emoji; }
+    art.setAttribute("aria-hidden", "true");
+    const bottom = zone === "ground" ? groundHeight() - 4 : yOf(item.level);
+
+    if (item.dur) {                                  // a mover: glides across and turns round
+      const mover = document.createElement("span");
+      mover.className = "deco mover";
+      mover.style.bottom = bottom + "px";
+      mover.style.setProperty("--dur", item.dur + "s");
+      mover.style.setProperty("--delay", -(item.delay * item.dur) + "s");
+      const face = document.createElement("span");
+      face.className = "face " + (item.face || "n");
+      face.appendChild(art);
+      mover.appendChild(face);
+      return mover;
+    }
+    art.classList.add("deco");
+    if (item.right !== undefined) art.style.right = item.right + "px";
+    else art.style.left = item.left + "%";
+    art.style.bottom = bottom + "px";
+    return art;
+  }
 
   function buildWorld() {
     const world = $("world");
@@ -761,17 +838,26 @@
         line.style.bottom = yOf(z.at) + "px";
         world.insertBefore(line, stack);
       }
-      (DECOS[z.id] || []).forEach(([emoji, left, level], i) => {
-        const e = document.createElement("span");
-        e.className = "deco " + (z.id === "clouds" ? "cloud" : z.id === "birds" ? "bird" : z.id === "space" ? "space" : "ground");
-        if (z.id === "birds" && i % 2) e.classList.add("flip");
-        e.textContent = emoji;
-        e.style.left = left + "%";
-        e.style.bottom = (z.id === "ground" ? groundHeight() - 4 : yOf(level)) + "px";
-        e.style.animationDelay = -i * 1.3 + "s";
-        world.insertBefore(e, stack);
-      });
+      (SCENERY[z.id] || []).forEach((item) => world.insertBefore(makeScenery(item, z.id), stack));
     });
+
+    // Stars: little CSS dots that glow and dim, each at its own speed
+    const rnd = seeded(42);
+    for (let i = 0; i < STAR_COUNT; i++) {
+      const star = document.createElement("span");
+      star.className = "deco star";
+      const size = 2 + Math.round(rnd() * 3);
+      star.style.width = star.style.height = size + "px";
+      star.style.left = (1 + rnd() * 97) + "%";
+      star.style.bottom = yOf(40.4 + rnd() * 90) + "px";
+      star.style.animationDuration = (1.8 + rnd() * 3.2).toFixed(2) + "s";
+      star.style.animationDelay = (-rnd() * 5).toFixed(2) + "s";
+      world.insertBefore(star, stack);
+    }
+
+    const hills = document.createElement("div");
+    hills.className = "deco hills";
+    world.insertBefore(hills, world.querySelector(".house-back"));
     const grass = document.createElement("div");
     grass.className = "grass";
     world.insertBefore(grass, stack);
@@ -860,7 +946,7 @@
         game.unlocks.push(z.emoji + " " + z.name + " world");
         setTimeout(() => { sfx.best(); setFeedback("🔓 New world: " + z.name + "! " + z.emoji, "right"); }, 500);
       } else {
-        setFeedback(z.id === "space" ? "🚀 You reached SPACE!" : z.emoji + " You reached the " + z.name.toLowerCase() + "!", "right");
+        setFeedback(z.reach, "right");
       }
     }
     layoutWorld("smooth");

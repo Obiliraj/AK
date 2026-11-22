@@ -112,13 +112,24 @@ The tower stands in a tall picture. Heights are counted in blocks:
 
 | World | Blocks | Scenery |
 |---|---|---|
-| 🌱 Ground | 0–9 | grass, tree, house, flowers |
-| ☁️ Clouds | 10–24 | light sky, drifting clouds |
-| 🐦 Birds | 25–39 | deeper blue sky, flapping birds |
-| 🚀 Space | 40+ | dark sky with stars, moon, planets, satellite, rocket, alien |
+| 🌱 Ground | 0–9 | grass, tree, a house, flowers; a row of faded houses on green hills in the background |
+| ☁️ Sky | 10–24 | drifting clouds, flying birds, hot-air balloons, kites swaying on their strings |
+| ✈️ Planes | 25–39 | airplanes and helicopters (plus a few thin clouds), deeper blue sky |
+| 🚀 Space | 40+ | dark sky, 240 twinkling stars, the moon, planets (no Earth), rockets and an alien |
 
-- A dashed line and a sign ("☁️ Clouds · 10") mark where each world starts.
-- Reaching a world for the **first time ever** unlocks it (saved as `zoneMax`): fanfare + "🔓 New world: Space! 🚀", also listed on the end screen. Reaching it again in a later game shows "🚀 You reached SPACE!". This works in every mode, including Practice.
+How the scenery is made (`SCENERY` in `game.js`, styles under "Scenery" in `style.css`):
+- **CSS drawings, not emoji:** clouds, birds (two flapping wings), hot-air balloons (striped envelope, ropes, basket),
+  stars, the moon (with craters and a soft pulsing glow) and planets (red, banded, ringed, blue, violet).
+- **Stars** are small CSS dots that glow and dim, each at its own speed; their places come from a fixed random seed, so they are the same every game.
+- **Emoji:** houses, tree, flowers, kites 🪁, airplanes ✈️ (turned to point right), helicopters 🚁, rockets 🚀 and the alien 👽.
+- **Movers** (clouds, birds, hot-air balloons, airplanes, helicopters) glide slowly from the left edge to the right edge and back,
+  and turn round at each end (so planes and helicopters always face the way they fly). One trip there and back takes
+  60–75 s for birds, 70–95 s for planes and helicopters, 140–240 s for clouds and 220–260 s for balloons. They pass behind the tower.
+- Kites sway, rockets/alien/planets float gently, the moon glows. Things in space are kept near the edges so the tower doesn't hide them.
+- With "reduce motion" switched on in the device settings, all of this stands still (`portal.css`).
+
+- A dashed line and a sign ("☁️ Sky · 10") mark where each world starts.
+- Reaching a world for the **first time ever** unlocks it (saved as `zoneMax`): fanfare + "🔓 New world: Space! 🚀", also listed on the end screen. Reaching it again in a later game shows "☁️ You're up in the sky!", "✈️ You're flying with the planes!" or "🚀 You reached SPACE!". This works in every mode, including Practice.
 - Menu → **🌍 Worlds** shows which worlds are unlocked and how tall the tower must be for the others.
 
 ## Scrolling the tower
@@ -126,7 +137,7 @@ The tower stands in a tall picture. Heights are counted in blocks:
 - The tower box is a scrolling window (touch-drag, mouse wheel or keyboard). The world is as tall as the tower plus 3 blocks of sky, so players can scroll from the ground to the top and back.
 - After every new or lost block the view scrolls smoothly so the top of the tower is in view (about 40% from the top of the box).
 - **⬆️** (top right) jumps to the top of the tower; **⬇️** (bottom right) scrolls down to the ground. Each shows only when there is somewhere to go.
-- The badge in the top-left corner names the world at the middle of the view (🌱 Ground, ☁️ Clouds, 🐦 Birds, 🚀 Space) and changes while scrolling, so the background always matches the height you are looking at.
+- The badge in the top-left corner names the world at the middle of the view (🌱 Ground, ☁️ Sky, ✈️ Planes, 🚀 Space) and changes while scrolling, so the background always matches the height you are looking at.
 
 ## Picking questions (wrong answers come back more often)
 - The pool is every fact `t × n` for each chosen table `t` and `n = 1…12`, keyed `"t" + "x" + "n"` (e.g. `"7x8"`).
@@ -157,7 +168,7 @@ localStorage key **`kgz.towerBuilder`** (always in try/catch, game works without
   practiceTable: 4,             // table of the last Practice game (the menu still opens with 6)
   mode: "choice",               // "choice" or "pad"
   blockStyle: "wood",           // chosen block style (falls back to wood if it is not unlocked)
-  zoneMax: 3,                   // highest world reached: 0 ground, 1 clouds, 2 birds, 3 space
+  zoneMax: 3,                   // highest world reached: 0 ground, 1 sky, 2 planes, 3 space
   facts: { "7x8": { right: 3, wrong: 2, trouble: 3, streak: 1 } },   // streak = right in a row (mastery map)
   totals: { right: 40, wrong: 7, games: 5 },
   current: { blocks: [{ a, b, answer, color, shift }], tables, mode, oops }   // unfinished tower, or null

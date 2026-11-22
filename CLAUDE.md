@@ -141,6 +141,8 @@ and no console errors. Playwright with Chromium works well:
 11. Tower Builder modes: Practice (one table, calm), Tower challenge, Beat the clock (60 s) and a 12×12 Mastery map
     (grey → yellow → green after 3 right in a row).
 12. Tower Builder unlocks: block styles by highscore (wood → stone 20 → brick 40 → ice >50 → silver >70 → gold >90 →
-    Lego >100), worlds by height (ground → clouds 10 → birds 25 → space 40), and a scrollable tower.
+    Lego >100), worlds by height (ground → sky 10 → planes 25 → space 40), and a scrollable tower.
+13. Tower Builder scenery redone: background houses, sky with clouds/birds/kites/hot-air balloons, planes and
+    helicopters, CSS stars/moon/planets in space; clouds, birds, balloons, planes and helicopters glide left ↔ right.
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
