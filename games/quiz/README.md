@@ -84,7 +84,7 @@ Flag pictures are from `flag-icons@7.6.0` and logos from `simple-icons@16.36.0`,
 - The next question's picture is preloaded.
 - If a picture fails to load, "This picture didn't load" appears with **⏭️ Skip this question**. Skipping draws a different question for the **same** player, nothing is scored, and the turn is not used up.
 - **Answers:** multiple-choice answers are shuffled and labelled A–D. True/False always shows **👍 True** then **👎 False**.
-- **🔊 Read it to me** reads the question and its options aloud with speech synthesis.
+- **🔊 Read it to me** reads the question and its options aloud with speech synthesis. It is hidden while sound is switched off on the landing page (`assets/sound.js`).
 
 ### 5. Answering and scoring
 When the player taps an answer, all buttons lock. The correct answer turns teal with ✓. If the pick was wrong, it turns coral with ✗ and shakes. The other answers are dimmed.

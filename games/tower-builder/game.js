@@ -2,7 +2,8 @@
   Tower Builder — times tables practice.
   Right answer = a new block drops onto the tower.
   Wrong answer = the tower wobbles and the right answer is shown.
-  Three wrong in a row = the top block falls off.
+  Every third wrong answer (not just in a row) = the top block falls off,
+  and the wrong-answer count starts again.
   Game logic is described in README.md.
 */
 (function () {
@@ -14,6 +15,8 @@
   const RIGHT_DELAY = 900;        // ms before the next question
   const WRONG_DELAY = 2200;
   const COLORS = 6;               // block color classes c0…c5
+  const OOPS_LIMIT = 3;           // wrong answers (at any time) that knock off the top block
+  const START_TABLES = [6, 7, 8, 9];   // always pre-selected when the game opens
 
   const $ = (id) => document.getElementById(id);
 
@@ -21,8 +24,7 @@
   function defaults() {
     return {
       best: 0,
-      muted: false,
-      tables: [2, 3, 4, 5],
+      tables: START_TABLES.slice(),
       mode: "choice",
       facts: {},                  // "7x8": { right, wrong, trouble }
       totals: { right: 0, wrong: 0, games: 0 },
@@ -35,7 +37,7 @@
       const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
       if (raw && typeof raw === "object") {
         if (Number.isFinite(raw.best)) d.best = Math.max(0, Math.floor(raw.best));
-        d.muted = !!raw.muted;
+        if (raw.muted === true) d.oldMuted = true;   // from the old in-game mute button
         if (Array.isArray(raw.tables)) {
           const t = raw.tables.map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= 12);
           if (t.length) d.tables = Array.from(new Set(t)).sort((a, b) => a - b);
@@ -43,7 +45,11 @@
         if (raw.mode === "pad" || raw.mode === "choice") d.mode = raw.mode;
         if (raw.facts && typeof raw.facts === "object") d.facts = raw.facts;
         if (raw.totals && typeof raw.totals === "object") Object.assign(d.totals, raw.totals);
-        if (raw.current && Array.isArray(raw.current.blocks)) d.current = raw.current;
+        if (raw.current && Array.isArray(raw.current.blocks)) {
+          d.current = raw.current;
+          const o = Number(raw.current.oops);
+          d.current.oops = Number.isInteger(o) && o > 0 && o < OOPS_LIMIT ? o : 0;
+        }
       }
     } catch (e) { /* storage blocked or bad JSON: start fresh */ }
     return d;
@@ -56,7 +62,7 @@
   // ---------------- Sound (Web Audio) ----------------
   let audio = null;
   function ctx() {
-    if (data.muted) return null;
+    if (window.SiteSound && SiteSound.isMuted()) return null;
     try {
       if (!audio) {
         const AC = window.AudioContext || window.webkitAudioContext;
@@ -160,7 +166,7 @@
   }
 
   // ---------------- Menu ----------------
-  let pickTables = new Set(data.tables);
+  let pickTables = new Set(START_TABLES);   // the menu always opens with 6–9 picked
   let pickMode = data.mode;
 
   function renderMenu() {
@@ -246,7 +252,7 @@
       mode: mode,
       pool: buildPool(tables),
       blocks: resume ? data.current.blocks.slice() : [],
-      oops: 0,
+      oops: resume ? data.current.oops || 0 : 0,
       asked: 0,
       right: 0,
       wrong: 0,
@@ -261,7 +267,7 @@
       entry: ""
     };
     game.peak = game.blocks.length;
-    data.current = { blocks: game.blocks, tables: tables, mode: mode };
+    data.current = { blocks: game.blocks, tables: tables, mode: mode, oops: game.oops };
     save();
 
     $("choices").classList.toggle("hidden", mode !== "choice");
@@ -334,7 +340,6 @@
       info.trouble = Math.max(0, (info.trouble || 0) - 1);
       data.totals.right++;
       game.right++;
-      game.oops = 0;
       slot.classList.add("right");
       setFeedback(cheer(), "right");
       sfx.right();
@@ -352,12 +357,11 @@
       setFeedback((game.mode === "pad" ? "✗ You typed " + value + ". " : "✗ Not quite! ") + "The answer is " + q.answer + ".", "wrong");
       sfx.wrong();
       wobble();
-      if (game.oops >= 3) {
-        game.oops = 0;
-        setTimeout(removeTop, 650);
-      }
+      // The 3rd dot lights up, then the top block falls and the dots start again (in removeTop).
+      if (game.oops >= OOPS_LIMIT) setTimeout(removeTop, 650);
       setTimeout(nextQuestion, WRONG_DELAY);
     }
+    if (data.current) data.current.oops = game.oops;
     updateHud();
     save();
   }
@@ -434,6 +438,10 @@
 
   function removeTop() {
     if (!game) return;
+    game.oops = 0;
+    if (data.current) data.current.oops = 0;
+    updateHud();
+    save();
     if (!game.blocks.length) { setFeedback("Keep trying — you can do it! 💪", "wrong"); return; }
     game.blocks.pop();
     const els = $("stack").querySelectorAll(".block");
@@ -444,7 +452,7 @@
       setTimeout(() => top.remove(), 800);
     }
     sfx.fall();
-    setFeedback("Oh no! 3 oopses — the top block fell off!", "wrong");
+    setFeedback("Oh no! 3 oopses — the top block fell off!", "wrong");   // the oops dots start again
     setTimeout(fitTower, 300);
     updateHud();
     save();
@@ -523,15 +531,7 @@
   }
 
   // ---------------- Buttons ----------------
-  function setMuted(m) {
-    data.muted = m;
-    const b = $("muteBtn");
-    b.textContent = m ? "🔇" : "🔊";
-    b.setAttribute("aria-pressed", m ? "true" : "false");
-    b.setAttribute("aria-label", m ? "Turn sounds on" : "Mute sounds");
-    save();
-  }
-  $("muteBtn").addEventListener("click", () => { setMuted(!data.muted); sfx.tap(); });
+  // Sound on/off is one setting for all games, switched on the landing page (assets/sound.js).
 
   document.querySelectorAll(".mode").forEach((m) => m.addEventListener("click", () => {
     sfx.tap();
@@ -547,14 +547,17 @@
   $("menuBtn").addEventListener("click", () => { pickTables = new Set(data.tables); pickMode = data.mode; renderMenu(); show("menu"); });
   $("resetBtn").addEventListener("click", () => {
     if (!window.confirm("Reset your best tower and all your progress?")) return;
-    const muted = data.muted;
-    Object.assign(data, defaults(), { muted: muted, tables: Array.from(pickTables), mode: pickMode });
-    if (!data.tables.length) data.tables = defaults().tables;
+    Object.assign(data, defaults(), { mode: pickMode });
     save();
     renderMenu();
   });
   window.addEventListener("resize", () => { if (game) fitTower(); });
 
-  setMuted(data.muted);
+  // Move a mute chosen with the old in-game button over to the site-wide setting.
+  if (data.oldMuted) {
+    if (window.SiteSound) SiteSound.setMuted(true);
+    delete data.oldMuted;
+    save();
+  }
   renderMenu();
 })();

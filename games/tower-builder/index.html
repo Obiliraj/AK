@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#1A252C" />
   <script src="../../assets/theme.js"></script>
+  <script src="../../assets/sound.js"></script>
   <title>Tower Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,6 @@
       <a class="btn ghost small" href="../../" aria-label="All games">🏠 <span class="lbl">Games</span></a>
       <div class="title">🧱 Tower Builder</div>
       <div class="topbar-right">
-        <button class="btn ghost small icon" id="muteBtn" type="button" aria-pressed="false" aria-label="Mute sounds">🔊</button>
         <button class="btn ghost small hidden" id="finishBtn" type="button" aria-label="Finish">🏁 <span class="lbl">Finish</span></button>
       </div>
     </nav>
@@ -27,7 +27,7 @@
     <section id="menu" class="screen">
       <div class="panel">
         <h1 id="hello">Let's build a tower!</h1>
-        <p class="hint">Every right answer adds a block. Three oopses in a row knock the top block off!</p>
+        <p class="hint">Every right answer adds a block. Every 3 wrong answers knock the top block off!</p>
 
         <h2>Which times tables?</h2>
         <div class="tables" id="tables" role="group" aria-label="Times tables to practise"></div>
@@ -66,7 +66,7 @@
       <div class="hud">
         <div class="hud-item"><span class="hud-label">Tower</span><span class="hud-value" id="heightVal">0</span></div>
         <div class="hud-item"><span class="hud-label">🏆 Best</span><span class="hud-value" id="bestVal">0</span></div>
-        <div class="hud-item oops" aria-label="Wrong answers in a row">
+        <div class="hud-item oops" aria-label="Wrong answers (3 knock off a block)">
           <span class="hud-label">Oops</span>
           <span class="oops-dots" id="oopsDots"><i></i><i></i><i></i></span>
         </div>

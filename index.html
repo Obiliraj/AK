@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#1A252C" />
   <script src="assets/theme.js"></script>
+  <script src="assets/sound.js"></script>
   <title>Kids Game Zone</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,6 +48,7 @@
     }
     .game-card {
       position: relative;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       background: var(--surface);
@@ -58,8 +60,30 @@
       overflow: hidden;
       transition: transform 0.15s ease;
     }
-    .game-card:hover { transform: translateY(-4px) rotate(-0.5deg); }
-    .game-card:active { transform: scale(0.98); }
+    .card-wrap { position: relative; display: flex; transition: transform 0.15s ease; }
+    .card-wrap > .game-card { flex: 1; }
+    .card-wrap:hover { transform: translateY(-4px) rotate(-0.5deg); }
+    .card-wrap:has(.game-card:active) { transform: scale(0.98); }
+    .fav {
+      position: absolute; top: 10px; right: 10px; z-index: 1;
+      width: 52px; height: 52px;
+      display: grid; place-items: center;
+      border: none; border-radius: 50%;
+      background: var(--surface);
+      color: var(--ink-soft);
+      font-size: 1.7rem; line-height: 1;
+      box-shadow: 0 4px 0 var(--press);
+      transition: transform .12s ease, background-color .15s;
+    }
+    .fav:active { transform: scale(.9); }
+    .fav[aria-pressed="true"] { background: var(--yellow); color: var(--on-yellow); }
+    .fav[aria-pressed="true"] .star { animation: starPop .35s ease; }
+    .fav-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--yellow); color: var(--on-yellow);
+      font-size: .9rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 999px;
+    }
     .game-art {
       height: 150px;
       display: grid;
@@ -184,7 +208,7 @@
     .name-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
     /* ---------- Color theme picker ---------- */
     header { position: relative; }
-    .theme-btn { position: absolute; top: 16px; right: 0; }
+    .header-actions { position: absolute; top: 16px; right: 0; display: flex; gap: 8px; }
     .theme-box {
       position: relative;
       width: 100%; max-width: 720px;
@@ -228,11 +252,12 @@
     .theme-card .swatch span { flex: 1; }
     @media (max-width: 520px) {
       header { padding-top: 64px; }
-      .theme-btn { top: 12px; }
+      .header-actions { top: 12px; left: 0; justify-content: flex-end; }
       .theme-grid { grid-template-columns: 1fr 1fr; }
       .theme-card { font-size: 1rem; padding: 10px; }
     }
 
+    @keyframes starPop { 0% { transform: scale(.4); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
     @keyframes popIn { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
     @keyframes bob { 0%,100% { transform: translateY(0) rotate(-4deg);} 50% { transform: translateY(-10px) rotate(4deg);} }
   </style>
@@ -240,7 +265,10 @@
 <body>
   <div class="wrap">
     <header>
-      <button type="button" class="btn ghost small theme-btn" id="themeBtn" aria-haspopup="dialog">🎨 Theme</button>
+      <div class="header-actions">
+        <button type="button" class="btn ghost small" id="soundBtn" aria-pressed="true">🔊 Sound on</button>
+        <button type="button" class="btn ghost small" id="themeBtn" aria-haspopup="dialog">🎨 Theme</button>
+      </div>
       <div class="logo" aria-hidden="true">🎈</div>
       <h1><span>Kids</span> <span>Game</span> <span>Zone</span></h1>
       <p class="tagline">Fun games to play together with family and friends!</p>
@@ -307,8 +335,26 @@
       const gameColors = (c) => ["yellow", "coral", "teal"].includes(c)
         ? `--game-color:var(--${c});--game-on:var(--on-${c})`
         : `--game-color:${esc(c || "var(--teal)")};--game-on:#1A252C`;
-      grid.innerHTML = games.map((g) => `
+      // Favourite games (saved per device) are shown first, then the rest, each in games.js order.
+      const FAV_KEY = "kgz.favourites";
+      function loadFavs() {
+        try {
+          const v = JSON.parse(localStorage.getItem(FAV_KEY) || "[]");
+          return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+        } catch (e) { return []; }
+      }
+      function saveFavs(list) {
+        try { localStorage.setItem(FAV_KEY, JSON.stringify(list)); } catch (e) { /* storage blocked */ }
+      }
+      let favs = loadFavs();
+
+      function card(g) {
+        const on = favs.includes(g.url);
+        const label = (on ? "Remove " : "Add ") + g.title + (on ? " from favourites" : " to favourites");
+        return `
+        <div class="card-wrap">
         <a class="game-card" href="${esc(g.url)}" style="${gameColors(g.color)}">
+          ${on ? `<span class="fav-badge">⭐ Favourite</span>` : ""}
           <div class="game-art" aria-hidden="true">${esc(g.emoji || "🎲")}</div>
           <div class="game-body">
             <h3>${esc(g.title)}</h3>
@@ -319,8 +365,43 @@
             </div>
             <span class="btn play">▶ Play</span>
           </div>
-        </a>`).join("") + `
+        </a>
+        <button type="button" class="fav" data-url="${esc(g.url)}" aria-pressed="${on}" aria-label="${esc(label)}" title="${on ? "Favourite" : "Mark as favourite"}"><span class="star" aria-hidden="true">${on ? "★" : "☆"}</span></button>
+        </div>`;
+      }
+
+      function render(focusUrl) {
+        const sorted = games.filter((g) => favs.includes(g.url)).concat(games.filter((g) => !favs.includes(g.url)));
+        grid.innerHTML = sorted.map(card).join("") + `
         <div class="coming-soon"><div>🧩</div><p>More games<br>coming soon!</p></div>`;
+        if (focusUrl) {
+          const b = Array.from(grid.querySelectorAll(".fav")).find((x) => x.dataset.url === focusUrl);
+          if (b) b.focus();
+        }
+      }
+
+      grid.addEventListener("click", (e) => {
+        const b = e.target.closest(".fav");
+        if (!b) return;
+        const url = b.dataset.url;
+        favs = favs.includes(url) ? favs.filter((x) => x !== url) : favs.concat(url);
+        saveFavs(favs);
+        render(url);
+      });
+      render();
+    })();
+
+    /* ---------- Sound on/off for every game (assets/sound.js) ---------- */
+    (function () {
+      const btn = document.getElementById("soundBtn");
+      function show(muted) {
+        btn.textContent = muted ? "🔇 Sound off" : "🔊 Sound on";
+        btn.setAttribute("aria-pressed", String(!muted));
+        btn.setAttribute("aria-label", muted ? "Sound is off for all games. Tap to turn it on." : "Sound is on for all games. Tap to turn it off.");
+      }
+      btn.addEventListener("click", () => SiteSound.toggle());
+      SiteSound.onChange(show);
+      show(SiteSound.isMuted());
     })();
 
     /* ---------- Color theme ---------- */

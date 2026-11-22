@@ -357,6 +357,9 @@ body {
   50%  { background-position: 8px 1px, 0 1px; }
 }
 
+/* Sound switched off on the landing page (assets/sound.js): hide read-aloud buttons */
+:root.muted .speak { display: none !important; }
+
 button, input { font-family: inherit; }
 
 button {

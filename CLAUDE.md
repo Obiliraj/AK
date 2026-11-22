@@ -9,11 +9,12 @@ The owner prefers to be called **Harini**. Content must be appropriate for kids 
 ## Layout
 
 ```
-index.html                 Landing page: game list, player-name dialog, color-theme picker
+index.html                 Landing page: game list (⭐ favourites first), player-name dialog, sound on/off, color-theme picker
 games.js                   List of games shown on the landing page (PORTAL_GAMES)
 assets/portal.css          Shared styles + ALL color themes (one CSS block per theme)
 assets/theme.js            Theme list + applies saved theme; loaded in <head> of every page
 assets/player.js           PlayerName.get()/set(): saved player name (localStorage "kgz.playerName")
+assets/sound.js            SiteSound.isMuted()/setMuted(): one sound on/off for all games (localStorage "kgz.muted")
 assets/names.js            Word lists for the silly-name builder ("Curious Cucumber")
 games/would-you-rather/    2–4 player card game; 100 cards in cards.js (window.WYR_CARDS)
 games/quiz/                "Quiz Champs": 1–4 player quiz
@@ -52,12 +53,17 @@ New games must get their own `README.md` in the same style.
   twinkling roof lights. **Window lights (owner's requirement):** one at a time, at a random interval of 5–10 s,
   one lit on-screen apartment switches off and a different one switches on 0.7 s later. Never switch many at once.
   New pages must include `<script src="…/assets/skyline.js"></script>` before `</body>`.
+- **Sound:** one site-wide on/off switch, the 🔊 Sound button on the landing page (no mute buttons inside games).
+  Every page loads `<script src="…/assets/sound.js"></script>` right after `theme.js`. Before playing any sound or
+  reading aloud, check `SiteSound.isMuted()`. While muted `<html>` has class `muted` and `.speak` buttons are hidden.
+- **Favourites:** each game card on the landing page has a ☆/★ button (top right). Favourite games (saved by `url`
+  in `kgz.favourites`) are listed first, then the rest, each group in `games.js` order.
 - **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
   emoji as icons. Keep pages working without the font.
-- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.towerBuilder`), always in try/catch.
+- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.muted`, `kgz.favourites`, `kgz.towerBuilder`), always in try/catch.
 - **Escaping:** any user text (names) inserted as HTML must go through the `esc()` helper or `textContent`.
 - **New game:** create `games/<name>/index.html`, reuse `assets/portal.css`, `theme.js` and `player.js`
-  (pre-fill Player 1 from `PlayerName.get()`), then add an entry to `games.js`.
+  (pre-fill Player 1 from `PlayerName.get()`), plus `sound.js` (after `theme.js`), then add an entry to `games.js`.
 
 ## Quiz Champs rules (as specified by the owner)
 
@@ -129,5 +135,7 @@ and no console errors. Playwright with Chromium works well:
 7. Per-folder game READMEs, this file, and the question validator.
 8. City skyline background; Christmas night city with wandering window lights and snow.
 9. Tower Builder: times tables game (blocks drop on right answers, tricky facts repeat, Web Audio sounds).
+10. Site-wide sound switch on the landing page, favourite stars on game cards; Tower Builder opens with tables 6–9
+    and drops a block on every 3rd wrong answer (not only 3 in a row).
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.

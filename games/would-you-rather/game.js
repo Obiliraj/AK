@@ -181,6 +181,7 @@
 
   function speak(text) {
     if (!("speechSynthesis" in window)) return;
+    if (window.SiteSound && SiteSound.isMuted()) return;
     window.speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(text);
     u.rate = 0.9;

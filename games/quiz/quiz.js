@@ -343,6 +343,7 @@
   /* ---------- Read aloud ---------- */
   $("speakBtn").addEventListener("click", () => {
     const q = state.current; if (!q || !("speechSynthesis" in window)) return;
+    if (window.SiteSound && SiteSound.isMuted()) return;
     const opts = Array.from(document.querySelectorAll(".answer")).map((b) => b.dataset.choice);
     const text = q.isTF ? `${q.q} True or false?` : `${q.q} Is it ${opts.slice(0, -1).join(", ")}, or ${opts[opts.length - 1]}?`;
     window.speechSynthesis.cancel();
