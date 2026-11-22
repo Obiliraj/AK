@@ -20,6 +20,7 @@ games/quiz/                "Quiz Champs": 1–4 player quiz
   quiz.js / quiz.css       Game logic and styles
   themes/themes.json       List of quiz themes: id, name, emoji, color, file, imageStyle
   themes/*.json            Questions, one file per theme (150+ each)
+games/tower-builder/      Times tables tower game: index.html, style.css, game.js (saves to "kgz.towerBuilder")
 tools/validate-questions.mjs   Checks all quiz JSON (run before committing question changes)
 ```
 
@@ -29,6 +30,7 @@ Each game folder has a `README.md` describing its full game logic: rules, flow, 
 **Read it before changing a game, and update it in the same commit whenever the game's behaviour changes.**
 - `games/would-you-rather/README.md`
 - `games/quiz/README.md`
+- `games/tower-builder/README.md`
 
 New games must get their own `README.md` in the same style.
 
@@ -52,7 +54,7 @@ New games must get their own `README.md` in the same style.
   New pages must include `<script src="…/assets/skyline.js"></script>` before `</body>`.
 - **Design:** dark-first, playful, rounded font "Fredoka" from Google Fonts, big tap targets (≥44px),
   emoji as icons. Keep pages working without the font.
-- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`), always in try/catch.
+- **Storage:** localStorage only for per-device conveniences (`kgz.playerName`, `kgz.theme`, `kgz.towerBuilder`), always in try/catch.
 - **Escaping:** any user text (names) inserted as HTML must go through the `esc()` helper or `textContent`.
 - **New game:** create `games/<name>/index.html`, reuse `assets/portal.css`, `theme.js` and `player.js`
   (pre-fill Player 1 from `PlayerName.get()`), then add an entry to `games.js`.
@@ -126,5 +128,6 @@ and no console errors. Playwright with Chromium works well:
 6. Site-wide color theme picker with six themes.
 7. Per-folder game READMEs, this file, and the question validator.
 8. City skyline background; Christmas night city with wandering window lights and snow.
+9. Tower Builder: times tables game (blocks drop on right answers, tricky facts repeat, Web Audio sounds).
 
 Ideas not yet done: light/dark toggle per theme, more games, a timer option for the quiz.
